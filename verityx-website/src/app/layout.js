@@ -1,8 +1,8 @@
-import { Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 
 // Font
-const inter = Inter({ subsets: ["latin"] });
+const dm_sans = DM_Sans({ subsets: ["latin"] });
 
 // Provider
 import Provider from "./components/provider";
@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={dm_sans.className}>
         <Provider>
           <main>{children}</main>
         </Provider>
