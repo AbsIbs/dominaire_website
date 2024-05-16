@@ -1,20 +1,15 @@
-const Home = async () => {
-  const data = [...Array(100).keys()];
+// Components
+import Hero from "./components/hero"
 
+const Home = async () => {
   return (
     <>
       <section className="h-screen flex justify-center">
-        <div className="w-full flex flex-col items-center">
-          <h1>Hello world</h1>
+        <div className="w-full">
+          <Hero />
         </div>
       </section>
-      <section>
-        <div className="flex flex-col gap-20">
-          {data.map((item, index) => (
-            <p>{item}</p>
-          ))}
-        </div>
-      </section>
+      <section className="py-48 flex justify-center px-24"></section>
     </>
   );
 };

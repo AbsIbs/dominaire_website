@@ -1,5 +1,23 @@
 @tailwind base;
 @tailwind components;
+
+.res-text-hero{
+  @apply ~2xl/sm:~text-hero/mobile-hero text-text-normal leading-[125%]
+}
+
+.res-text-21{
+  @apply ~lg/sm:~text-21/mobile-21
+}
+
+.res-text-38{
+  @apply ~lg/sm:~text-38/mobile-38
+}
+
+.res-text-50{
+  @apply ~lg/sm:~text-50/mobile-50
+}
+
+
 @tailwind utilities;
 
 body {
@@ -7,7 +25,29 @@ body {
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+
+}
+
+.sliderContainer{
+  position: absolute;
+}
+
+.slider{
+  position: relative;
+  white-space: nowrap;
+}
+
+.slider p{
+  position: relative;
+  margin: 0px;
+  color: white;
+  font-size: 230px;
+  font-weight: 500;
+  padding-right: 50px;
+}
+
+.slider p:nth-of-type(2){
+  position: absolute;
+  left: 100%;
+  top: 0;
 }

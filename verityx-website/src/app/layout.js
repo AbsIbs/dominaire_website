@@ -9,6 +9,7 @@ import Provider from "./components/provider";
 
 // Components
 import SmoothScrolling from "./components/smoothscrolling";
+import Header from "./components/header";
 
 export const metadata = {
   title: "Verityx Agency",
@@ -21,6 +22,7 @@ export default function RootLayout({ children }) {
       <body className={dm_sans.className}>
         <Provider>
           <SmoothScrolling>
+            <Header />
             <main>{children}</main>
           </SmoothScrolling>
         </Provider>
