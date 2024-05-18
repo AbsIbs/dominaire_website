@@ -28,24 +28,10 @@ const TextReveal = () => {
     },
   };
 
-  const opacity = {
-    initial: {
-      opacity: 0,
-    },
-    open: {
-      opacity: 1,
-      transition: { duration: 0.5 },
-    },
-    closed: {
-      opacity: 0,
-      transition: { duration: 0.5 },
-    },
-  };
-
   return (
     <>
       <div ref={description}>
-        <p className="reveal-text res-text-50 text-text-normal leading-[125%]">
+        <p className="res-text-38 text-text-normal">
           {phrase.split(" ").map((word, index) => {
             return (
               <span
@@ -60,6 +46,7 @@ const TextReveal = () => {
                 >
                   {word}
                 </motion.span>
+                <span>&nbsp;</span>
               </span>
             );
           })}

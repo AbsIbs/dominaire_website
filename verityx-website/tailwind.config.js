@@ -15,10 +15,10 @@ module.exports = {
     fontSize,
     extend: {
       fontSize: {
-        "21": ["1.3rem"],
-        "28": ["1.75rem"],
-        "38": ["2.375rem"],
-        "50": ["3.125rem"],
+        21: ["1.3rem"],
+        28: ["1.75rem"],
+        38: ["2.375rem"],
+        50: ["3.125rem"],
         hero: ["4.125rem"],
         "mobile-21": ["1rem"],
         "mobile-28": ["1.25rem"],
@@ -35,7 +35,7 @@ module.exports = {
         light: {
           layout: {},
           colors: {
-            bg: "#ffffff",
+            bg: "#F4F4F4",
             "bg-alt": "#000",
             "text-normal": "#222",
             "text-normal-70": "#00000050",
