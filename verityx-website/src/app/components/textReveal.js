@@ -8,11 +8,6 @@ const TextReveal = () => {
   const description = useRef(null);
   const isInView = useInView(description);
 
-  const wordsVariants = {
-    hidden: { opacity: 0 },
-    reveal: { opacity: 1 },
-  };
-
   // Animations
   const slideUp = {
     initial: {

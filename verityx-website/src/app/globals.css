@@ -2,7 +2,7 @@
 @tailwind components;
 
 .res-text-hero{
-  @apply ~2xl/sm:~text-hero/mobile-hero text-text-normal leading-[125%]
+  @apply ~2xl/sm:~text-hero/mobile-hero text-text-normal
 }
 
 .res-text-21{
@@ -23,6 +23,10 @@
 
 .xpadding {
   @apply px-[5vw]
+}
+
+.ypadding {
+  @apply py-48
 }
 
 @tailwind utilities;
@@ -66,4 +70,14 @@ body {
   position: absolute;
   left: 100%;
   top: 0;
+}
+
+/* In your global CSS file */
+@keyframes fillBackground {
+  0% {
+    transform: translate(-100%, 100%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }

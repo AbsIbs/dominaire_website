@@ -2,6 +2,7 @@
 import Hero from "./components/hero";
 import TextReveal from "./components/textReveal";
 import MagneticButton from "./components/magneticButton/magneticButton";
+import ExpertiseSection from "./components/expertiseSection";
 
 const Home = async () => {
   return (
@@ -28,6 +29,9 @@ const Home = async () => {
             </MagneticButton>
           </div>
         </div>
+      </section>
+      <section className="flex justify-center ypadding">
+        <ExpertiseSection />
       </section>
     </>
   );

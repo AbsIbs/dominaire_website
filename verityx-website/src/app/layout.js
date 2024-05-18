@@ -5,10 +5,9 @@ import "./globals.css";
 const dm_sans = DM_Sans({ subsets: ["latin"] });
 
 // Provider
-import Provider from "./components/provider";
+import Providers from "./providers";
 
 // Components
-import SmoothScrolling from "./components/smoothscrolling";
 import Header from "./components/header";
 
 export const metadata = {
@@ -20,12 +19,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={dm_sans.className}>
-        <Provider>
-          <SmoothScrolling>
-            <Header />
-            <main>{children}</main>
-          </SmoothScrolling>
-        </Provider>
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
       </body>
     </html>
   );
