@@ -1,6 +1,5 @@
 "use client";
 // Components
-import MagneticButton from "./magneticButton/magneticButton";
 import StationaryButton from "./magneticButton/stationaryButton"
 // Material UI
 import DesignServicesIcon from "@mui/icons-material/DesignServices";
@@ -92,7 +91,7 @@ const ExpertiseSection = () => {
 
   return (
     <div className="w-full flex flex-col">
-      <div className="flex w-full justify-center items-center py-24 border-b-line border-b">
+      <div className="flex w-full justify-center items-center py-24 border-b-line border-b-2">
         <div className="w-[1280px] flex flex-col gap-5">
           <p className="res-text-21 text-text-normal-70">OUR EXPERTISE</p>
           <p className="res-text-38 text-text-normal">

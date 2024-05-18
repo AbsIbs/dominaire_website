@@ -21,6 +21,10 @@
   @apply ~lg/sm:~text-50/mobile-50
 }
 
+.res-text-80{
+  @apply ~lg/sm:~text-80/mobile-80
+}
+
 .xpadding {
   @apply px-[5vw]
 }
