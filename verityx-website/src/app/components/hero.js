@@ -1,14 +1,12 @@
 // Material UI
 import SouthEastIcon from "@mui/icons-material/SouthEast";
-// Components
-import HeroTextScroll from "./heroTextScroll";
 
 const Hero = () => {
-
     return (
-      <div className="bg-[#999D9E] h-screen flex flex-col justify-end w-full">
+      <div className="bg-[#999D9E] h-screen flex flex-col justify-between w-full xpadding py-[10vh]">
+        <p className="text-white font-bold">© Verityx Studios 2024</p>
         {/* Text Row */}
-        <div className="flex justify-between px-[5vw] py-20">
+        <div className="flex gap-40 justify-between">
           <div className="flex flex-col gap-5">
             <div className="flex items-center gap-5 py-8 px-16 rounded-full shadow-lg bg-surface w-fit">
               <div className="h-6 w-6 bg-green-800 rounded-full animate-pulse"></div>
@@ -20,7 +18,7 @@ const Hero = () => {
               design, cutting-edge development, and data-driven marketing.
             </p>
           </div>
-          <div className="flex flex-col gap-10 px-[10vw]">
+          <div className="flex flex-col gap-10">
             <SouthEastIcon fontSize="large" sx={{ color: "white" }} />
             <div className="flex flex-col res-text-38 text-white">
               <p>Design</p>

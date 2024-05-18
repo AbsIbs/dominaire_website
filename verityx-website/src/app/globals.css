@@ -9,6 +9,10 @@
   @apply ~lg/sm:~text-21/mobile-21
 }
 
+.res-text-28{
+  @apply ~lg/sm:~text-28/mobile-28
+}
+
 .res-text-38{
   @apply ~lg/sm:~text-38/mobile-38
 }
@@ -17,8 +21,20 @@
   @apply ~lg/sm:~text-50/mobile-50
 }
 
+.xpadding {
+  @apply px-[5vw]
+}
 
 @tailwind utilities;
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 0;  /* Remove scrollbar space */
+}
 
 body {
   background-color: white;
