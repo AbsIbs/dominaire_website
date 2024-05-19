@@ -5,7 +5,12 @@ import Hero from "./components/hero";
 import TextReveal from "./components/textReveal";
 import MagneticButton from "./components/magneticButton/magneticButton";
 import ExpertiseSection from "./components/expertiseSection";
-import ProcessesSection from "./components/processesSection"
+import ProcessesSection from "./components/processesSection";
+import WorkPreview from "./components/workPreview"
+// Images
+import work1 from "../../public/work1.png";
+import work2 from "../../public/work2.png";
+import work3 from "../../public/work3.png";
 
 const Home = async () => {
   return (
@@ -76,9 +81,20 @@ const Home = async () => {
       <section className="flex ypadding xpadding bg-black">
         <div className="flex flex-col gap-10">
           <p className="w-2/3 text-white res-text-80 leading-[125%]">
-            Our robust methodology ensures that you’ll only get the best results
+            Our robusts <span className="text-primary">methodology</span>{" "}
+            ensures that you’ll only get the best results
           </p>
           <ProcessesSection />
+        </div>
+      </section>
+      <section className="flex ypadding justify-center">
+        <div className="flex flex-col gap-24">
+          <p className="res-text-80 text-center">Our latest and greatest work</p>
+          <div className="flex gap-5">
+            <WorkPreview image={work1} xpadding={24} />
+            <WorkPreview image={work2} />
+          </div>
+          <WorkPreview image={work3} xpadding={24} />
         </div>
       </section>
     </>

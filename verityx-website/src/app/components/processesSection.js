@@ -36,7 +36,7 @@ const ProcessesSection = () => {
             props.index == target ? "text-primary" : "text-[#CCC]"
           }`}
         >
-          {props.index}
+          {props.index + 1}
         </p>
       </div>
     );
