@@ -7,6 +7,7 @@ import MagneticButton from "./components/magneticButton/magneticButton";
 import ExpertiseSection from "./components/expertiseSection";
 import ProcessesSection from "./components/processesSection";
 import WorkPreview from "./components/workPreview"
+import TextSlider from "./components/textSlider/textSlider"
 // Images
 import work1 from "../../public/work1.png";
 import work2 from "../../public/work2.png";
@@ -89,13 +90,22 @@ const Home = async () => {
       </section>
       <section className="flex ypadding justify-center">
         <div className="flex flex-col gap-24">
-          <p className="res-text-80 text-center">Our latest and greatest work</p>
+          <p className="res-text-80 text-center">
+            Our latest and greatest work
+          </p>
           <div className="flex gap-5">
-            <WorkPreview image={work1} xpadding={24} />
-            <WorkPreview image={work2} />
+            <WorkPreview image={work1} xpadding={"px-24"} title={"DishDelve"} />
+            <WorkPreview image={work2} xpadding={0} title={"TDM Masjid"} />
           </div>
-          <WorkPreview image={work3} xpadding={24} />
+          <WorkPreview
+            image={work3}
+            xpadding={"px-24"}
+            title={"Pulse Poetry"}
+          />
         </div>
+      </section>
+      <section>
+        <TextSlider />
       </section>
     </>
   );
