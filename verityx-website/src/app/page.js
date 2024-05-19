@@ -5,6 +5,7 @@ import Hero from "./components/hero";
 import TextReveal from "./components/textReveal";
 import MagneticButton from "./components/magneticButton/magneticButton";
 import ExpertiseSection from "./components/expertiseSection";
+import ProcessesSection from "./components/processesSection"
 
 const Home = async () => {
   return (
@@ -70,6 +71,14 @@ const Home = async () => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+      <section className="flex ypadding xpadding bg-black">
+        <div className="flex flex-col gap-10">
+          <p className="w-2/3 text-white res-text-80 leading-[125%]">
+            Our robust methodology ensures that you’ll only get the best results
+          </p>
+          <ProcessesSection />
         </div>
       </section>
     </>
