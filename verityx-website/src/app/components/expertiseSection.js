@@ -8,6 +8,7 @@ import BrushIcon from "@mui/icons-material/Brush";
 import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import InsightsIcon from "@mui/icons-material/Insights";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
+import CampaignIcon from "@mui/icons-material/Campaign";
 // NextUI
 import { Accordion } from "@nextui-org/accordion";
 import { AccordionItem } from "@nextui-org/accordion";
@@ -17,6 +18,7 @@ const ExpertiseSection = () => {
     design: <DesignServicesIcon fontSize="inherit" sx={{ color: "#121212" }} />,
     development: <CodeIcon fontSize="inherit" sx={{ color: "#121212" }} />,
     branding: <BrushIcon fontSize="inherit" sx={{ color: "#121212" }} />,
+    marketing: <CampaignIcon fontSize="inherit" sx={{ color: "#121212" }} />,
     seo: <TravelExploreIcon fontSize="inherit" sx={{ color: "#121212" }} />,
     analytics: <InsightsIcon fontSize="inherit" sx={{ color: "#121212" }} />,
     consulting: (
@@ -67,6 +69,12 @@ const ExpertiseSection = () => {
       title: "Branding",
       icon: "branding",
       tags: ["logos", "mockups", "color palette", "typography", "style guide"],
+      desc: "Lorem ipsum dolor sit amet consectetur. Neque metus varius orci mattis eu nunc pellentesque. Nulla diam non nullam ut. Rhoncus id mattis mauris malesuada. Ut pulvinar urna lacus pharetra. Lorem ipsum dolor sit amet consectetur. Neque metus varius orci mattis eu nunc pellentesque. Nulla diam non nullam ut. Rhoncus id mattis mauris malesuada. Ut pulvinar urna lacus pharetra.",
+    },
+    {
+      title: "Online Marketing",
+      icon: "marketing",
+      tags: ["Instagram", "Facebook", "Google Ads"],
       desc: "Lorem ipsum dolor sit amet consectetur. Neque metus varius orci mattis eu nunc pellentesque. Nulla diam non nullam ut. Rhoncus id mattis mauris malesuada. Ut pulvinar urna lacus pharetra. Lorem ipsum dolor sit amet consectetur. Neque metus varius orci mattis eu nunc pellentesque. Nulla diam non nullam ut. Rhoncus id mattis mauris malesuada. Ut pulvinar urna lacus pharetra.",
     },
     {

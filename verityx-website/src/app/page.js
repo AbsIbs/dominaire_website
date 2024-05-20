@@ -105,7 +105,9 @@ const Home = async () => {
         </div>
       </section>
       <section>
-        <TextSlider />
+        <TextSlider
+          text={"Discover the Secrets of Online Success -"}
+        />
       </section>
     </>
   );

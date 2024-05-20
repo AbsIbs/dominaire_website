@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 
-const TextSlider = () => {
+const TextSlider = (props) => {
   const firstText = useRef(null);
   const secondText = useRef(null);
   const slider = useRef(null);
@@ -43,8 +43,8 @@ const TextSlider = () => {
     <div className={styles.mainContainer}>
       <div className={styles.sliderContainer}>
         <div ref={slider} className={styles.slider}>
-          <p ref={firstText}>Why should you choose us?</p>
-          <p ref={secondText}>Why should you choose us?</p>
+          <p ref={firstText}>{props.text}</p>
+          <p ref={secondText}>{props.text}</p>
         </div>
       </div>
     </div>
