@@ -47,9 +47,9 @@ const KeyFactsSection = () => {
         </div>
       </div>
       <div className="flex flex-1 b-l-line border-l-2 flex-col justify-between px-24">
-        <div className="embla" ref={emblaRef}>
-          <div className="embla__container">
-            <div className="embla__slide">
+        <div className="embla h-full" ref={emblaRef}>
+          <div className="embla__container h-full">
+            <div className="embla__slide ">
               <Slide1 />
             </div>
             <div className="embla__slide">

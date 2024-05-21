@@ -9,6 +9,7 @@ import ProcessesSection from "./components/processesSection";
 import WorkPreview from "./components/workPreview"
 import TextSlider from "./components/textSlider/textSlider"
 import KeyFactsSection from "./components/keyFactsSection/keyFactsSection"
+import ReviewCards from "./components/reviewCards"
 // Images
 import work1 from "../../public/work1.png";
 import work2 from "../../public/work2.png";
@@ -80,7 +81,7 @@ const Home = async () => {
           </div>
         </div>
       </section>
-      <section className="flex ypadding xpadding bg-black">
+      <section className="flex ypadding xpadding bg-surface">
         <div className="flex flex-col gap-10">
           <p className="w-2/3 text-white res-text-80 leading-[125%]">
             Our robusts <span className="text-primary">methodology</span>{" "}
@@ -105,13 +106,19 @@ const Home = async () => {
           />
         </div>
       </section>
-      <section>
-        <TextSlider
-          text={"Discover the Secrets of Online Success -"}
-        />
+      <section className="ypadding">
+        <TextSlider text={"Discover the Secrets of Online Success -"} />
       </section>
-      <section className="xpadding">
+      <section className="ypadding xpadding">
         <KeyFactsSection />
+      </section>
+      <section className="bg-surface xpadding ypadding flex">
+        <div className="flex flex-col gap-24">
+          <p className="res-text-80 text-white text-center">
+            What our clients say
+          </p>
+          <ReviewCards />
+        </div>
       </section>
     </>
   );

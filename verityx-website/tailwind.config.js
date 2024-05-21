@@ -15,12 +15,14 @@ module.exports = {
     fontSize,
     extend: {
       fontSize: {
+        16:["1rem"],
         21: ["1.3rem"],
         28: ["1.75rem"],
         38: ["2.375rem"],
         50: ["3.125rem"],
         80: ["5rem"],
         hero: ["3.5rem"],
+        "mobile-16": ["0.8rem"],
         "mobile-21": ["1rem"],
         "mobile-28": ["1.25rem"],
         "mobile-38": ["1.5rem"],

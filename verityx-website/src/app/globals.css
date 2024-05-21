@@ -5,6 +5,10 @@
   @apply ~2xl/sm:~text-hero/mobile-hero text-text-normal
 }
 
+.res-text-base{
+  @apply ~lg/sm:~text-16/mobile-16
+}
+
 .res-text-21{
   @apply ~lg/sm:~text-21/mobile-21
 }
