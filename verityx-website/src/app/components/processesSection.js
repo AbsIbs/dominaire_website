@@ -5,7 +5,7 @@ import { useState } from "react";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 
 const ProcessesSection = () => {
-  const [selectedKeys, setSelectedKeys] = useState(new Set(["1"]));
+  const [selectedKeys, setSelectedKeys] = useState(new Set(["0"]));
 
   const data = [
     {

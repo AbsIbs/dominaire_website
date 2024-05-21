@@ -8,6 +8,7 @@ import ExpertiseSection from "./components/expertiseSection";
 import ProcessesSection from "./components/processesSection";
 import WorkPreview from "./components/workPreview"
 import TextSlider from "./components/textSlider/textSlider"
+import KeyFactsSection from "./components/keyFactsSection/keyFactsSection"
 // Images
 import work1 from "../../public/work1.png";
 import work2 from "../../public/work2.png";
@@ -39,7 +40,7 @@ const Home = async () => {
           </div>
         </div>
       </section>
-      <section className="flex justify-center ypadding">
+      <section id="expertise" className="flex justify-center ypadding">
         <ExpertiseSection />
       </section>
       <section className="flex justify-center ypadding xpadding">
@@ -108,6 +109,9 @@ const Home = async () => {
         <TextSlider
           text={"Discover the Secrets of Online Success -"}
         />
+      </section>
+      <section className="xpadding">
+        <KeyFactsSection />
       </section>
     </>
   );

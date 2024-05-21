@@ -40,6 +40,23 @@ html {
   overflow-x: hidden;
 }
 
+/* Lenis scroll */
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 ::-webkit-scrollbar {
   width: 0;  /* Remove scrollbar space */
 }
@@ -84,4 +101,16 @@ body {
   100% {
     transform: translate(0, 0);
   }
+}
+
+/* Slider */
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
 }
