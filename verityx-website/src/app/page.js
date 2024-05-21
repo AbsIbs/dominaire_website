@@ -10,6 +10,7 @@ import WorkPreview from "./components/workPreview"
 import TextSlider from "./components/textSlider/textSlider"
 import KeyFactsSection from "./components/keyFactsSection/keyFactsSection"
 import ReviewCards from "./components/reviewCards"
+import FAQs from "./components/faqs";
 // Images
 import work1 from "../../public/work1.png";
 import work2 from "../../public/work2.png";
@@ -115,9 +116,17 @@ const Home = async () => {
       <section className="bg-surface xpadding ypadding flex">
         <div className="flex flex-col gap-24">
           <p className="res-text-80 text-white text-center">
-            What our clients say
+            What our <span className="text-primary">clients</span> say
           </p>
           <ReviewCards />
+        </div>
+      </section>
+      <section className="bg-surface xpadding ypadding flex">
+        <div className="flex flex-col gap-24 w-full">
+          <p className="res-text-80 text-white">
+            Frequently asked <span className="text-primary">questions</span>
+          </p>
+          <FAQs />
         </div>
       </section>
     </>

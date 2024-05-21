@@ -1,6 +1,5 @@
 // Material UI
-import { Reviews } from "@mui/icons-material";
-import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
+import FormatQuoteRoundedIcon from "@mui/icons-material/FormatQuoteRounded";
 
 const ReviewCards = () => {
   const maxLength = 200;
@@ -37,7 +36,11 @@ const ReviewCards = () => {
         <div className="flex w-full justify-end"></div>
         <div className="flex flex-col">
           <p className="text-[50px]">
-            <FormatQuoteIcon fontSize="inherit" sx={{ color: "black" }} />
+            <FormatQuoteRoundedIcon
+              fontSize="inherit"
+              sx={{ color: "black" }}
+              className=" rotate-180"
+            />
           </p>
           <p className="res-text-38 text-text-normal line-clamp-5">
             {props.desc}
@@ -48,7 +51,7 @@ const ReviewCards = () => {
             {props.jobs.map((job, index) => (
               <div
                 key={index}
-                className="flex px-4 py-2 rounded-full border-2 border-line"
+                className="flex px-6 py-2 rounded-full border-2 border-line"
               >
                 <p className="text-text-normal res-text-21">{job}</p>
               </div>
