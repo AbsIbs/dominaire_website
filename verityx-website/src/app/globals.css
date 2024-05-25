@@ -34,7 +34,7 @@
 }
 
 .xpadding {
-  @apply px-[5vw]
+  @apply px-[2.5vw]
 }
 
 .ypadding {
@@ -121,4 +121,9 @@ html {
 .embla__slide {
   flex: 0 0 100%;
   min-width: 0;
+}
+
+.transition-border {
+  transition-property: border-color;
+  transition-duration: 0.5s; /* Adjust transition duration as needed */
 }
