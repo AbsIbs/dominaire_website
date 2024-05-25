@@ -29,6 +29,10 @@
   @apply ~lg/sm:~text-80/mobile-80
 }
 
+.res-text-180{
+  @apply ~lg/sm:~text-180/mobile-180
+}
+
 .xpadding {
   @apply px-[5vw]
 }

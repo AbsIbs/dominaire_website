@@ -1,3 +1,5 @@
+// NextJS
+import Link from "next/link";
 // Material UI
 import SouthEastIcon from "@mui/icons-material/SouthEast";
 // Components
@@ -127,6 +129,25 @@ const Home = async () => {
             Frequently asked <span className="text-primary">questions</span>
           </p>
           <FAQs />
+        </div>
+      </section>
+      <section className="xpadding ypadding flex justify-center">
+        <div className="flex flex-col gap-24 w-[1280px]">
+          <p className="res-text-180 text-text-normal text-center font-semibold">
+            GET IN T<span className="text-primary">O</span>UCH
+          </p>
+          <div className="flex gap-10 justify-center">
+            <Link href={""}>
+              <MagneticButton>
+                <p className="res-text-38">Email us</p>
+              </MagneticButton>
+            </Link>
+            <Link href={""}>
+              <MagneticButton>
+                <p className="res-text-38">Book a meeting</p>
+              </MagneticButton>
+            </Link>
+          </div>
         </div>
       </section>
     </>
