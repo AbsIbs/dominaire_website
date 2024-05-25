@@ -1,6 +1,5 @@
 "use client";
-import React from "react";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styles from "./style.module.scss";
 import gsap from "gsap";
 
@@ -17,7 +16,7 @@ const Magnetic = ({ children }) => {
       ease: "elastic.out(1, 0.3)",
     });
 
-    magnetic.current.addEventListener("mousemove", (e) => {
+    const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
       const { height, width, left, top } =
         magnetic.current.getBoundingClientRect();
@@ -25,26 +24,37 @@ const Magnetic = ({ children }) => {
       const y = clientY - (top + height / 2);
       xTo(x * 0.35);
       yTo(y * 0.35);
-    });
-    magnetic.current.addEventListener("mouseleave", (e) => {
+    };
+
+    const handleMouseLeave = () => {
       xTo(0);
       yTo(0);
-    });
+    };
+
+    const magneticElement = magnetic.current;
+    magneticElement.addEventListener("mousemove", handleMouseMove);
+    magneticElement.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      magneticElement.removeEventListener("mousemove", handleMouseMove);
+      magneticElement.removeEventListener("mouseleave", handleMouseLeave);
+    };
   }, []);
 
   return React.cloneElement(children, { ref: magnetic });
 };
 
-export default function MagneticButton({
+export default function SelectButton({
   children,
   backgroundColor = "#E9204F",
   ...attributes
 }) {
+  const [active, setActive] = useState(false)
   const circle = useRef(null);
-  let timeline = useRef(null);
-  let timeoutId = null;
+  const timeline = useRef(gsap.timeline({ paused: true }));
+  let timeoutId = useRef(null);
+
   useEffect(() => {
-    timeline.current = gsap.timeline({ paused: true });
     timeline.current
       .to(
         circle.current,
@@ -59,27 +69,24 @@ export default function MagneticButton({
   }, []);
 
   const manageMouseEnter = () => {
-    if (timeoutId) clearTimeout(timeoutId);
+    if (timeoutId.current) clearTimeout(timeoutId.current);
     timeline.current.tweenFromTo("enter", "exit");
+    setActive(true);
   };
 
   const manageMouseLeave = () => {
-    timeoutId = setTimeout(() => {
+    timeoutId.current = setTimeout(() => {
       timeline.current.play();
+      setActive(false)
     }, 300);
   };
 
   return (
     <Magnetic>
       <div
-        className={styles.roundedButton}
+        className={styles.selectButton}
         style={{ overflow: "hidden" }}
-        onMouseEnter={() => {
-          manageMouseEnter();
-        }}
-        onMouseLeave={() => {
-          manageMouseLeave();
-        }}
+        onClick={() => (active ? manageMouseLeave() : manageMouseEnter())}
         {...attributes}
       >
         {children}

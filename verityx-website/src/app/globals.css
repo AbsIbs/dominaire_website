@@ -69,7 +69,7 @@ html {
   width: 0;  /* Remove scrollbar space */
 }
 
-body {
+html {
   background-color: #F4F4F4;
 }
 

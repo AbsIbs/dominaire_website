@@ -137,7 +137,7 @@ const Home = async () => {
             GET IN T<span className="text-primary">O</span>UCH
           </p>
           <div className="flex gap-10 justify-center">
-            <Link href={""}>
+            <Link href={"/contact-us"}>
               <MagneticButton>
                 <p className="res-text-38">Email us</p>
               </MagneticButton>

@@ -4,7 +4,7 @@ import SouthEastIcon from "@mui/icons-material/SouthEast";
 const Hero = () => {
     return (
       <div className="bg-[#999D9E] h-screen flex flex-col justify-between w-full xpadding py-[10vh]">
-        <p className="text-white font-bold">© Verityx Studios 2024</p>
+        <p className="text-white font-bold">© Dominare Studios 2024</p>
         {/* Text Row */}
         <div className="flex gap-40 justify-between">
           <div className="flex flex-col gap-5">
