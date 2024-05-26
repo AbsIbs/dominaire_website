@@ -1,6 +1,6 @@
 "use client";
 // React
-import { useState, useEffect, useRef, forwardRef } from "react";
+import { useState, useRef } from "react";
 // Components
 import SelectButton from "../components/magneticButton/selectButton";
 
@@ -29,10 +29,6 @@ const ContactForm = () => {
     });
   };
 
-  useEffect(() => {
-    console.log(categoriesData);
-  }, [categoriesData]);
-
   const categories = [
     "Web design",
     "Web development",
@@ -43,26 +39,7 @@ const ContactForm = () => {
     "Consulting",
   ];
 
-  // We use forwardRef because you cannot pass in normal refs as props to funcitonal components
-  const InputCard = forwardRef((props, ref) => {
-    return (
-      <div className="flex gap-6">
-        <div className="h-full">
-          <p className="res-text-21 text-normal-70 font-medium">
-            0{props.step}
-          </p>
-        </div>
-        <div className="flex-1 flex-col gap-2">
-          <input
-            className="transition-border w-full res-text-38 text-text-normal bottom-4 pb-4 border-b-2 border-b-line focus:outline-none focus:border-b-black"
-            type={props.type}
-            placeholder={props.placeholder}
-            ref={ref}
-          />
-        </div>
-      </div>
-    );
-  });
+  const maxLength = 1000;
 
   const submitHandler = () => {
     console.log({
@@ -70,49 +47,15 @@ const ContactForm = () => {
       email: emailRef.current.value,
       organisation: organisationRef.current.value,
       website: websiteRef.current.value,
+      categories: categoriesData,
+      message: message,
     });
   };
 
-  const questions = [
-    {
-      type: "text",
-      question: "What is your name?",
-      placeholder: "John Doe",
-      name: "name",
-      ref: nameRef,
-    },
-    {
-      type: "email",
-      question: "What is your email?",
-      placeholder: "johndoe@gmail.com",
-      name: "email",
-      ref: emailRef,
-    },
-    {
-      type: "text",
-      question: "What is the name of your organisation?",
-      placeholder: "John & Doe inc",
-      name: "organisation",
-      ref: organisationRef,
-    },
-    {
-      type: "text",
-      question: "What is your website? (optional)",
-      placeholder: "John Doe",
-      name: "website",
-      ref: websiteRef,
-    },
-    /*    {
-      type: "text",
-      question: "Your message",
-      placeholder: "Hi, I would like you to help me...",
-      name: "message",
-    }, */
-  ];
-
   return (
-    <form className="flex flex-col gap-20">
+    <form className="flex flex-col gap-24">
       <div className="flex flex-col gap-4">
+        {/* Categories input */}
         <label htmlFor="">
           <p className="res-text-38 font-light">I'm interested in...</p>
         </label>
@@ -139,24 +82,96 @@ const ContactForm = () => {
           ))}
         </div>
       </div>
-      {questions.map((item, index) => (
-        <div key={index}>
-          <InputCard
-            step={index + 1}
-            placeholder={item.placeholder}
-            question={item.question}
-            type={item.type}
-            name={item.name}
-            ref={item.ref}
+      {/* Name input */}
+      <div className="flex gap-6">
+        <div className="h-full">
+          <p className="res-text-21 text-normal-70 font-medium">01</p>
+        </div>
+        <div className="flex-1 flex-col gap-2">
+          <label className="res-text-28">What is your name?</label>
+          <input
+            className="transition-border w-full res-text-38 text-text-normal bottom-4 pb-4 border-b-2 border-b-line focus:outline-none focus:border-b-black"
+            type={"text"}
+            placeholder={"John Doe"}
+            ref={nameRef}
           />
         </div>
-      ))}
+      </div>
+      {/* Email input */}
+      <div className="flex gap-6">
+        <div className="h-full">
+          <p className="res-text-21 text-normal-70 font-medium">02</p>
+        </div>
+        <div className="flex-1 flex-col gap-2">
+          <label className="res-text-28">What is your email?</label>
+          <input
+            className="transition-border w-full res-text-38 text-text-normal bottom-4 pb-4 border-b-2 border-b-line focus:outline-none focus:border-b-black"
+            type={"text"}
+            placeholder={"johndoe@gmail.com"}
+            ref={emailRef}
+          />
+        </div>
+      </div>
+      {/* Organisation input */}
+      <div className="flex gap-6">
+        <div className="h-full">
+          <p className="res-text-21 text-normal-70 font-medium">03</p>
+        </div>
+        <div className="flex-1 flex-col gap-2">
+          <label className="res-text-28">What is your organisation?</label>
+          <input
+            className="transition-border w-full res-text-38 text-text-normal bottom-4 pb-4 border-b-2 border-b-line focus:outline-none focus:border-b-black"
+            type={"text"}
+            placeholder={"John & Doe"}
+            ref={organisationRef}
+          />
+        </div>
+      </div>
+      {/* Organisation input */}
+      <div className="flex gap-6">
+        <div className="h-full">
+          <p className="res-text-21 text-normal-70 font-medium">04</p>
+        </div>
+        <div className="flex-1 flex-col gap-2">
+          <label className="res-text-28">What is your website url?</label>
+          <input
+            className="transition-border w-full res-text-38 text-text-normal bottom-4 pb-4 border-b-2 border-b-line focus:outline-none focus:border-b-black"
+            type={"text"}
+            placeholder={"www.johnDoe.com"}
+            ref={websiteRef}
+          />
+        </div>
+      </div>
+      {/* Message input */}
+      <div className="flex gap-6">
+        <div className="h-full">
+          <p className="res-text-21 text-normal-70 font-medium">05</p>
+        </div>
+        <div className="flex-1 flex-col gap-2">
+          <label className="res-text-28">Message</label>
+          <input
+            className="transition-border w-full res-text-38 text-text-normal bottom-4 pb-4 border-b-2 border-b-line focus:outline-none focus:border-b-black"
+            type={"text"}
+            placeholder={"Hi, I would like help with..."}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            maxLength={maxLength}
+          />
+          <div className="flex justify-end w-full">
+            <p className="res-text-28 text-text-normal-70">
+              {message.length}/{maxLength}
+            </p>
+          </div>
+        </div>
+      </div>
       <button
         type="button"
         onClick={submitHandler}
-        className="bg-black rounded-full text-white py-6"
+        className="w-fit"
       >
-        click me
+        <SelectButton>
+          <p className="res-text-28 px-12 py-5">SEND</p>
+        </SelectButton>
       </button>
     </form>
   );
