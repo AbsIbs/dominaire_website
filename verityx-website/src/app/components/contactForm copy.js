@@ -1,37 +1,37 @@
 "use client";
 // React
-import { useState, useEffect, useRef, forwardRef } from "react";
+import { useState, useEffect } from "react";
 // Components
 import SelectButton from "../components/magneticButton/selectButton";
 
 const ContactForm = () => {
-  // States
-  const [categoriesData, setCategoriesData] = useState([]);
-  // We use state for message input to display total count/max length
-  const [message, setMessage] = useState("");
-
-  // Refs. We use refs to avoid unnecessary rerenders when a user types
-  const nameRef = useRef();
-  const emailRef = useRef();
-  const organisationRef = useRef();
-  const websiteRef = useRef();
+  const [formData, setFormData] = useState({
+    name: "a",
+    email: "",
+    organisation: "",
+    website: "",
+    categories: [],
+    message: "",
+  });
 
   const categoryHandler = (name) => {
-    setCategoriesData((prev) => {
+    setFormData((prev) => {
       // Check if the category is already in the array
-      if (prev.includes(name)) {
+      if (prev.categories.includes(name)) {
         // Remove the category if it is already present
-        return prev.filter((category) => category !== name);
+        return {
+          ...prev,
+          categories: prev.categories.filter((category) => category !== name),
+        };
       } else {
         // Add the category if it is not present
-        return [...prev, name];
+        return {
+          ...prev,
+          categories: [...prev.categories, name],
+        };
       }
     });
   };
-
-  useEffect(() => {
-    console.log(categoriesData);
-  }, [categoriesData]);
 
   const categories = [
     "Web design",
@@ -43,8 +43,7 @@ const ContactForm = () => {
     "Consulting",
   ];
 
-  // We use forwardRef because you cannot pass in normal refs as props to funcitonal components
-  const InputCard = forwardRef((props, ref) => {
+  const InputCard = (props) => {
     return (
       <div className="flex gap-6">
         <div className="h-full">
@@ -53,23 +52,37 @@ const ContactForm = () => {
           </p>
         </div>
         <div className="flex-1 flex-col gap-2">
-          <input
-            className="transition-border w-full res-text-38 text-text-normal bottom-4 pb-4 border-b-2 border-b-line focus:outline-none focus:border-b-black"
-            type={props.type}
-            placeholder={props.placeholder}
-            ref={ref}
-          />
+          <label className="res-text-28">{props.question}</label>
+          {props.textarea ? (
+            <textarea
+              name={props.name}
+              className="transition-border w-full res-text-38 text-text-normal bottom-4 pb-4 border-b-2 border-b-line focus:outline-none focus:border-b-black"
+              type={props.type}
+              placeholder={props.placeholder}
+              onChange={inputHandler}
+            />
+          ) : (
+            <input
+              name={props.name}
+              className="transition-border w-full res-text-38 text-text-normal bottom-4 pb-4 border-b-2 border-b-line focus:outline-none focus:border-b-black"
+              type={props.type}
+              placeholder={props.placeholder}
+              onChange={inputHandler}
+            />
+          )}
         </div>
       </div>
     );
-  });
+  };
 
-  const submitHandler = () => {
-    console.log({
-      name: nameRef.current.value,
-      email: emailRef.current.value,
-      organisation: organisationRef.current.value,
-      website: websiteRef.current.value,
+  const inputHandler = (e) => {
+    const name = e.target.name;
+    const value = e.target.value;
+    setFormData((previousValue) => {
+      return {
+        ...previousValue,
+        [name]: value,
+      };
     });
   };
 
@@ -79,36 +92,36 @@ const ContactForm = () => {
       question: "What is your name?",
       placeholder: "John Doe",
       name: "name",
-      ref: nameRef,
     },
     {
       type: "email",
       question: "What is your email?",
       placeholder: "johndoe@gmail.com",
       name: "email",
-      ref: emailRef,
     },
     {
       type: "text",
       question: "What is the name of your organisation?",
       placeholder: "John & Doe inc",
       name: "organisation",
-      ref: organisationRef,
     },
     {
       type: "text",
       question: "What is your website? (optional)",
       placeholder: "John Doe",
       name: "website",
-      ref: websiteRef,
     },
-    /*    {
+    {
       type: "text",
       question: "Your message",
       placeholder: "Hi, I would like you to help me...",
       name: "message",
-    }, */
+    },
   ];
+
+  useEffect(() => {
+    console.log(formData);
+  }, [formData]);
 
   return (
     <form className="flex flex-col gap-20">
@@ -127,7 +140,7 @@ const ContactForm = () => {
               <SelectButton>
                 <p
                   className={`res-text-38 ${
-                    categoriesData.includes(item)
+                    formData.categories.includes(item)
                       ? "text-white"
                       : "text-text-normal"
                   }`}
@@ -146,18 +159,18 @@ const ContactForm = () => {
             placeholder={item.placeholder}
             question={item.question}
             type={item.type}
+            textarea={index == questions.length - 1 ? true : false}
             name={item.name}
-            ref={item.ref}
           />
         </div>
       ))}
-      <button
-        type="button"
-        onClick={submitHandler}
-        className="bg-black rounded-full text-white py-6"
-      >
-        click me
-      </button>
+      <textarea
+        name={"email"}
+        className="transition-border w-full res-text-38 text-text-normal bottom-4 pb-4 border-b-2 border-b-line focus:outline-none focus:border-b-black"
+        type={"text"}
+        placeholder={"help"}
+        onChange={inputHandler}
+      />
     </form>
   );
 };
