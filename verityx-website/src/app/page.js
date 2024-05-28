@@ -8,10 +8,10 @@ import TextReveal from "./components/textReveal";
 import MagneticButton from "./components/magneticButton/magneticButton";
 import ExpertiseSection from "./components/expertiseSection";
 import ProcessesSection from "./components/processesSection";
-import WorkPreview from "./components/workPreview"
-import TextSlider from "./components/textSlider/textSlider"
-import KeyFactsSection from "./components/keyFactsSection/keyFactsSection"
-import ReviewCards from "./components/reviewCards"
+import WorkPreview from "./components/workPreview";
+import TextSlider from "./components/textSlider/textSlider";
+import KeyFactsSection from "./components/keyFactsSection/keyFactsSection";
+import ReviewCards from "./components/reviewCards";
 import FAQs from "./components/faqs";
 // Images
 import work1 from "../../public/work1.png";
@@ -39,39 +39,25 @@ const Home = async () => {
       <section id="expertise" className="flex justify-center">
         <ExpertiseSection />
       </section>
-      {/* <section className="flex justify-center ypadding xpadding">
-        <div className="flex gap-24">
-          <div className="flex flex-1 flex-col gap-10">
-            <p className="text-text-normal res-text-80">
-              Your <span className="text-primary">pain-points</span> are our
-              problem to solve
-            </p>
-            <p className="text-text-normal-70 res-text-21">
-              Lorem ipsum dolor sit amet consectetur. Neque metus varius orci
-              mattis eu nunc pellentesque. Nulla diam non nullam ut. Rhoncus id
-              mattis mauris malesuada. Ut pulvinar urna lacus pharetra. Lorem
-              ipsum dolor sit amet consectetur. Neque metus varius orci mattis
-              eu nunc pellentesque. Nulla diam non nullam ut. Rhoncus id mattis
-              mauris malesuada. Ut pulvinar urna lacus pharetra.
-            </p>
-          </div>
-          <div className="flex flex-1 flex-col p-14 bg-surface rounded-lg gap-4">
-            <p className="res-text-21 text-[#CCC]">FROM US</p>
-            <p className="res-text-50 text-white">
-              Lorem ipsum dolor sit amet consectetur. Neque metus varius orci
-              mattis eu nunc pellentesque. Nulla diam non nullam ut. Rhoncus id
-              mattis mauris malesuada. Ut pulvinar urna lacus pharetra. Lorem
-              ipsum dolor sit amet consectetur.
-            </p>
-            <div className="flex justify-between res-text-21">
-              <div className="flex flex-col">
-                <p className="text-white ">Abass Ibrahim</p>
-                <p className="text-[#CCC] ">Founder and CEO</p>
-              </div>
-              <div className="flex gap-1">
-                <p className="text-white">Get in touch</p>
-                <SouthEastIcon sx={{ color: "white" }} fontSize="large" />
-              </div>
+      <section className="flex justify-center ypadding md:px-3">
+        <div className="w-[1280px] flex flex-col ~sm/lg:~p-4/14 bg-surface gap-4 md:rounded-lg">
+          <p className="res-text-21 text-[#CCC]">FROM US</p>
+          <p className="res-text-50 text-white">
+            Your <span className="text-primary">pain points</span> are our
+            problem. Neque metus varius orci mattis eu nunc pellentesque. Nulla
+            diam non nullam ut. Rhoncus id mattis mauris malesuada. Ut pulvinar
+            urna lacus pharetra. Lorem ipsum dolor sit amet consectetur.
+          </p>
+          <div className="flex justify-between res-text-21">
+            <div className="flex flex-col">
+              <p className="text-white">Abass Ibrahim</p>
+              <p className="text-[#CCC]">Founder and CEO</p>
+            </div>
+            <div className="flex items-center gap-1">
+              <p className="text-white">Get in touch</p>
+              <p className="text-[20px] lg:text-[40px] ">
+                <SouthEastIcon sx={{ color: "white" }} fontSize="inherit" />
+              </p>
             </div>
           </div>
         </div>
@@ -141,7 +127,7 @@ const Home = async () => {
             </Link>
           </div>
         </div>
-      </section> */}
+      </section>
     </>
   );
 };

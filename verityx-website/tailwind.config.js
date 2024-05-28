@@ -27,7 +27,7 @@ module.exports = {
         "mobile-21": ["1rem"],
         "mobile-28": ["1.25rem"],
         "mobile-38": ["1.5rem"],
-        "mobile-50": ["1.75rem"],
+        "mobile-50": ["1.5rem"],
         "mobile-80": ["2rem"],
         "mobile-180": ["4rem"],
         "mobile-hero": ["2rem"],
