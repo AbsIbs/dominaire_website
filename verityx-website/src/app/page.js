@@ -26,28 +26,20 @@ const Home = async () => {
           <Hero />
         </div>
       </section>
-      <section className="min-h-screen flex items-center justify-center xpadding">
-        <div className="flex gap-24 w-[1280px]">
-          <div className="flex flex-[2] flex-col gap-1">
-            <p className="res-text-21 text-text-normal-70">NICE TO MEET YOU</p>
-            <TextReveal />
-          </div>
-          <div className="flex flex-1 flex-col justify-between">
-            <p className="res-text-21 text-text-normal-70">
-              Let's Craft Your Digital Success Story, Chapter by Chapter: We
-              collaborate to develop a comprehensive strategy that tells your
-              brand story and drives results.
-            </p>
-            <MagneticButton>
-              <p className="py-2">Our expertise</p>
-            </MagneticButton>
-          </div>
+      <section className="ypadding flex items-center justify-center">
+        <div className="flex flex-col gap-1 w-[1280px] xpadding">
+          <p className="res-text-21 text-text-normal-70">NICE TO MEET YOU</p>
+          <TextReveal
+            text={
+              "We're obsessed with unlocking your digital potential, and we refuse to settle for mediocrity. We're a passionate team of experts, collaborating to craft winning digital strategies that go above and beyond."
+            }
+          />
         </div>
       </section>
-      <section id="expertise" className="flex justify-center ypadding">
+      <section id="expertise" className="flex justify-center">
         <ExpertiseSection />
       </section>
-      <section className="flex justify-center ypadding xpadding">
+      {/* <section className="flex justify-center ypadding xpadding">
         <div className="flex gap-24">
           <div className="flex flex-1 flex-col gap-10">
             <p className="text-text-normal res-text-80">
@@ -120,7 +112,7 @@ const Home = async () => {
           <p className="res-text-80 text-white text-center">
             What our <span className="text-primary">clients</span> say
           </p>
-          {/* <ReviewCards /> */}
+          <ReviewCards />
         </div>
       </section>
       <section className="bg-surface xpadding ypadding flex">
@@ -149,7 +141,7 @@ const Home = async () => {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   );
 };

@@ -1,6 +1,6 @@
 "use client";
 // Components
-import StationaryButton from "./magneticButton/stationaryButton"
+import StationaryButton from "./magneticButton/stationaryButton";
 // Material UI
 import DesignServicesIcon from "@mui/icons-material/DesignServices";
 import CodeIcon from "@mui/icons-material/Code";
@@ -29,12 +29,12 @@ const ExpertiseSection = () => {
   const StartContent = (props) => {
     return (
       <div className="w-full flex items-center">
-        <div className=" flex flex-col gap-2 ">
+        <div className=" flex flex-col gap-2 w-full">
           <div className="flex gap-2 items-center">
             <p className="res-text-50">{icons[props.icon]}</p>
             <p className="res-text-50 text-text-normal">{props.title}</p>
           </div>
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2 max-w-[80vw]">
             {props.tags.map((tag, index) => {
               return (
                 <div
@@ -99,22 +99,13 @@ const ExpertiseSection = () => {
 
   return (
     <div className="w-full flex flex-col">
-      <div className="flex w-full justify-center items-center py-24 border-b-line border-b-2">
-        <div className="w-[1280px] flex flex-col gap-5">
-          <p className="res-text-21 text-text-normal-70">OUR EXPERTISE</p>
-          <p className="res-text-38 text-text-normal">
-            Our vast expereince and range of services help solve complex
-            business problems with a personalized approach to each task.
-          </p>
-        </div>
-      </div>
       <Accordion className="flex flex-col items-center">
         {data.map((item, index) => {
           return (
             <AccordionItem
               key={index}
               aria-label={item.title}
-              className="py-24 max-w-[1280px] w-full"
+              className="~sm/md:~py-6/24 max-w-[1280px] w-full"
               startContent={
                 <StartContent
                   icon={item.icon}
@@ -126,7 +117,9 @@ const ExpertiseSection = () => {
               <div className="flex flex-col gap-8 w-fit">
                 <p className="text-text-normal res-text-21">{item.desc}</p>
                 <StationaryButton>
-                  <p className="text-text-normal res-text-28">discuss this project</p>
+                  <p className="text-text-normal res-text-28">
+                    discuss this project
+                  </p>
                 </StationaryButton>
               </div>
             </AccordionItem>

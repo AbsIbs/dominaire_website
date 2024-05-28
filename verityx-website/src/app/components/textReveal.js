@@ -2,9 +2,7 @@
 import { useInView, motion } from "framer-motion";
 import { useRef } from "react";
 
-const TextReveal = () => {
-  const phrase =
-    "We're obsessed with unlocking your digital potential, and we refuse to settle for mediocrity. We're a passionate team of experts, collaborating to craft winning digital strategies that go above and beyond.";
+const TextReveal = (props) => {
   const description = useRef(null);
   const isInView = useInView(description);
 
@@ -27,7 +25,7 @@ const TextReveal = () => {
     <>
       <div ref={description}>
         <p className="res-text-38 text-text-normal">
-          {phrase.split(" ").map((word, index) => {
+          {props.text.split(" ").map((word, index) => {
             return (
               <span
                 key={index}

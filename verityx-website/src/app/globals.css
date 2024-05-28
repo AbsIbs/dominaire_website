@@ -38,7 +38,7 @@
 }
 
 .ypadding {
-  @apply py-24
+  @apply ~sm/lg:~py-12/36
 }
 
 @tailwind utilities;
