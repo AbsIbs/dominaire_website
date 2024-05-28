@@ -26,7 +26,8 @@
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
     "react-google-charts": "^4.0.1",
-    "sass": "^1.77.1"
+    "sass": "^1.77.1",
+    "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
     "@types/node": "20.12.12",

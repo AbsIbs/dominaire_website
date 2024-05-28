@@ -1,34 +1,46 @@
-// Material UI
-import SouthEastIcon from "@mui/icons-material/SouthEast";
+"use client";
+// NextJS
+import Link from "next/link";
+// Google Font
+import { Syne } from "next/font/google";
+// Components
+import Typewriter from "typewriter-effect";
+
+const syne = Syne({ subsets: ["latin"] });
 
 const Hero = () => {
-    return (
-      <div className="bg-[#999D9E] h-screen flex flex-col justify-between w-full xpadding py-[10vh]">
-        <p className="text-white font-bold">© Dominare Studios 2024</p>
-        {/* Text Row */}
-        <div className="flex gap-40 justify-between">
-          <div className="flex flex-col gap-5">
-            <div className="flex items-center gap-5 py-8 px-16 rounded-full shadow-lg bg-surface w-fit">
-              <div className="h-6 w-6 bg-green-800 rounded-full animate-pulse"></div>
-              <p className="res-text-21 text-white">Available for work</p>
-            </div>
-            <p className="res-text-hero text-white flex-1">
-              We empower <span className="font-bold">visionary startups</span>{" "}
-              and established brands to achieve success through impactful
-              design, cutting-edge development, and data-driven marketing.
-            </p>
-          </div>
-          <div className="flex flex-col gap-10">
-            <SouthEastIcon fontSize="large" sx={{ color: "white" }} />
-            <div className="flex flex-col res-text-38 text-white">
-              <p>Design</p>
-              <p>Develop</p>
-              <p>Market</p>
-            </div>
-          </div>
+  return (
+    <div className="bg-surface h-screen flex items-center justify-center w-full xpadding">
+      <div className="flex flex-col gap-16 w-[1280px]">
+        <div className="flex flex-col gap-4 ">
+          <Typewriter
+            options={{
+              wrapperClassName: `${syne.className} font-bold text-primary res-text-hero`,
+              cursorClassName: "text-primary res-text-hero",
+              strings: ["DESIGN", "DEVELOPMENT", "MARKETING"],
+              autoStart: true,
+              loop: true,
+            }}
+          />
+          <p
+            className={`${syne.className} text-white leading-tight font-bold res-text-hero`}
+          >
+            SOLUTIONS TO HELP YOUR BUSINESS GROW
+          </p>
+          <p className="w-[640px] text-[rgba(225,225,225)] res-text-21">
+            Crafting imagination into innovation, through impactful design,
+            cutting-edge development, and data-driven marketing.
+          </p>
         </div>
+        <Link
+          href={""}
+          className="flex items-center justify-center bg-primary py-8 w-[25%] rounded-full"
+        >
+          <p className="text-[1.3rem] text-white font-bold">Our services</p>
+        </Link>
       </div>
-    );
+    </div>
+  );
 };
 
 export default Hero;
