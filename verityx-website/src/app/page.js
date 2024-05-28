@@ -120,7 +120,7 @@ const Home = async () => {
           <p className="res-text-80 text-white text-center">
             What our <span className="text-primary">clients</span> say
           </p>
-          <ReviewCards />
+          {/* <ReviewCards /> */}
         </div>
       </section>
       <section className="bg-surface xpadding ypadding flex">

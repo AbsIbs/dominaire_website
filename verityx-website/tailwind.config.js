@@ -30,7 +30,7 @@ module.exports = {
         "mobile-50": ["1.75rem"],
         "mobile-80": ["2rem"],
         "mobile-180": ["4rem"],
-        "mobile-hero": ["1.5rem"],
+        "mobile-hero": ["2rem"],
       },
     },
   },

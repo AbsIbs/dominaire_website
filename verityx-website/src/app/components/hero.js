@@ -10,8 +10,8 @@ const syne = Syne({ subsets: ["latin"] });
 
 const Hero = () => {
   return (
-    <div className="bg-surface h-screen flex items-center justify-center w-full xpadding">
-      <div className="flex flex-col gap-16 w-[1280px]">
+    <div className="bg-surface h-screen flex items-center justify-center w-full">
+      <div className="flex flex-col gap-8 lg:gap-16 w-[1280px] xpadding">
         <div className="flex flex-col gap-4 ">
           <Typewriter
             options={{
@@ -27,16 +27,16 @@ const Hero = () => {
           >
             SOLUTIONS TO HELP YOUR BUSINESS GROW
           </p>
-          <p className="w-[640px] text-[rgba(225,225,225)] res-text-21">
+          <p className="max-w-[640px] text-[rgba(225,225,225)] res-text-21">
             Crafting imagination into innovation, through impactful design,
             cutting-edge development, and data-driven marketing.
           </p>
         </div>
         <Link
           href={""}
-          className="flex items-center justify-center bg-primary py-8 w-[25%] rounded-full"
+          className="flex items-center justify-center bg-primary ~sm/lg:~py-4/8 ~sm/lg:~px-8/16 w-fit rounded-full"
         >
-          <p className="text-[1.3rem] text-white font-bold">Our services</p>
+          <p className="res-text-21 text-white font-bold">Our services</p>
         </Link>
       </div>
     </div>

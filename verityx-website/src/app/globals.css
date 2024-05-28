@@ -34,11 +34,11 @@
 }
 
 .xpadding {
-  @apply px-[2.5vw]
+  @apply px-3
 }
 
 .ypadding {
-  @apply py-48
+  @apply py-24
 }
 
 @tailwind utilities;
