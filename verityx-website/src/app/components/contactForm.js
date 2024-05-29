@@ -53,7 +53,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form className="flex flex-col gap-24">
+    <form className="flex flex-col ~sm/lg:~gap-8/24">
       <div className="flex flex-col gap-4">
         {/* Categories input */}
         <label htmlFor="">
@@ -69,7 +69,7 @@ const ContactForm = () => {
             >
               <SelectButton>
                 <p
-                  className={`res-text-38 ${
+                  className={`res-text-28 ${
                     categoriesData.includes(item)
                       ? "text-white"
                       : "text-text-normal"
@@ -170,7 +170,7 @@ const ContactForm = () => {
         className="w-fit"
       >
         <SelectButton>
-          <p className="res-text-28 px-12 py-5">SEND</p>
+          <p className="res-text-28 px-12">SEND</p>
         </SelectButton>
       </button>
     </form>
