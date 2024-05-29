@@ -9,7 +9,6 @@ import MagneticButton from "./components/magneticButton/magneticButton";
 import ExpertiseSection from "./components/expertiseSection";
 import ProcessesSection from "./components/processesSection";
 import WorkPreview from "./components/workPreview";
-import TextSlider from "./components/textSlider/textSlider";
 import KeyFactsSection from "./components/keyFactsSection/keyFactsSection";
 import ReviewCards from "./components/reviewCards";
 import FAQs from "./components/faqs";
@@ -83,14 +82,8 @@ const Home = async () => {
           </div>
         </div>
       </section>
-      <section className="ypadding">
-        <TextSlider text={"Discover the Secrets of Online Success -"} />
-      </section>
-      <section className="ypadding xpadding">
-        <KeyFactsSection />
-      </section>
       <section className="bg-surface xpadding ypadding flex">
-        <div className="flex flex-col gap-24">
+        <div className="flex flex-col ~sm/lg:~gap-4/24">
           <p className="res-text-80 text-white text-center">
             What our <span className="text-primary">clients</span> say
           </p>
@@ -98,7 +91,7 @@ const Home = async () => {
         </div>
       </section>
       <section className="bg-surface xpadding ypadding flex">
-        <div className="flex flex-col gap-24 w-full">
+        <div className="flex flex-col  w-full gap-4 lg:gap-24">
           <p className="res-text-80 text-white">
             Frequently asked <span className="text-primary">questions</span>
           </p>

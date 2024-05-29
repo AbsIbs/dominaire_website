@@ -15,17 +15,14 @@ const FAQs = () => {
     { question: "How much will it cost?", answer: answer },
   ];
 
-  const StartContent = (props) => {
-    return <p className="res-text-28 text-white">{props.title}</p>;
-  };
-
   return (
     <Accordion>
       {data.map((item, index) => (
         <AccordionItem
           key={index}
           aria-label={item.question}
-          startContent={<StartContent title={item.question} />}
+          title={item.question}
+          classNames={{ title: ["text-[1.3rem]", "text-white"] }}
         >
           <p className="text-[#ffffff70] res-text-21">{item.answer}</p>
         </AccordionItem>

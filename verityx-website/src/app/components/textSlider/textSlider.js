@@ -24,20 +24,20 @@ const TextSlider = (props) => {
     xPercent += 0.1 * direction;
   };
 
- useGSAP(() => {
-   gsap.registerPlugin(ScrollTrigger);
-   gsap.to(slider.current, {
-     scrollTrigger: {
-      /* markers: true, */
-       start: "top bottom", // When the top of the slider hits the bottom of the viewport
-       end: "bottom top", // When the bottom of the slider hits the top of the viewport
-       scrub: 0.25,
-       onUpdate: (e) => (direction = e.direction * -1),
-     },
-     x: "-500px",
-   });
-   requestAnimationFrame(animate);
- });
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to(slider.current, {
+      scrollTrigger: {
+        /* markers: true, */
+        start: "top bottom", // When the top of the slider hits the bottom of the viewport
+        end: "bottom top", // When the bottom of the slider hits the top of the viewport
+        scrub: 0.25,
+        onUpdate: (e) => (direction = e.direction * -1),
+      },
+      x: "-500px",
+    });
+    requestAnimationFrame(animate);
+  });
 
   return (
     <div className={styles.mainContainer}>

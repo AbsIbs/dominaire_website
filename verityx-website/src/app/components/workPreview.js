@@ -9,7 +9,7 @@ const WorkPreview = (props) => {
         <Image src={props.image} fill style={{ objectFit: "cover" }} />
       </div>
       <div className={`flex flex-col gap-5 xpadding`}>
-        <p className="text-text-normal res-text-38">
+        <p className="text-text-normal res-text-28">
           Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
           consectetur.
         </p>

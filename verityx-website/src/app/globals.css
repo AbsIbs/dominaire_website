@@ -25,6 +25,10 @@
   @apply ~lg/sm:~text-50/mobile-50
 }
 
+.res-text-64{
+  @apply ~lg/sm:~text-64/mobile-64
+}
+
 .res-text-80{
   @apply ~lg/sm:~text-80/mobile-80
 }
@@ -90,7 +94,7 @@ html {
   position: relative;
   margin: 0px;
   color: white;
-  font-size: 230px;
+  font-size: 120px;
   font-weight: 500;
   padding-right: 50px;
 }

@@ -32,8 +32,7 @@ const ReviewCards = () => {
 
   const Card = (props) => {
     return (
-      <div className="flex w-full flex-col h-[700px] justify-end rounded-lg bg-[#F4F4F4] gap-10 p-10">
-        <div className="flex w-full justify-end"></div>
+      <div className="flex-1 flex flex-col h-auto justify-end rounded-lg bg-[#F4F4F4] gap-10 ~sm/lg:~p-4/10 lg:h-[700px]">
         <div className="flex flex-col">
           <p className="text-[50px]">
             <FormatQuoteRoundedIcon
@@ -42,12 +41,12 @@ const ReviewCards = () => {
               className=" rotate-180"
             />
           </p>
-          <p className="res-text-38 text-text-normal line-clamp-5">
+          <p className="res-text-28 text-text-normal line-clamp-5">
             {props.desc}
           </p>
         </div>
         <div className="flex flex-col gap-6">
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             {props.jobs.map((job, index) => (
               <div
                 key={index}
@@ -71,7 +70,7 @@ const ReviewCards = () => {
   };
 
   return (
-    <div className="flex gap-5 max-w-screen">
+    <div className="grid grid-cols-1 gap-5 lg:grid-cols-3 2xl:flex-row">
       {data.map((review, index) => (
         <div key={index}>
           <Card

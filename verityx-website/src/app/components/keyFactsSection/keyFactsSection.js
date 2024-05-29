@@ -14,24 +14,24 @@ const KeyFactsSection = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel();
 
   // Slider Prev and Next
-   const scrollPrev = useCallback(() => {
-     if (emblaApi) emblaApi.scrollPrev();
-   }, [emblaApi]);
+  const scrollPrev = useCallback(() => {
+    if (emblaApi) emblaApi.scrollPrev();
+  }, [emblaApi]);
 
-   const scrollNext = useCallback(() => {
-     if (emblaApi) emblaApi.scrollNext();
-   }, [emblaApi]);
+  const scrollNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext();
+  }, [emblaApi]);
 
   return (
-    <div className="flex h-screen">
-      <div className="flex flex-1 flex-col justify-between">
-        <p className="res-text-80 text-text-normal leading-tight">
+    <div className="flex flex-col min-h-screen ~sm/2xl:~gap-4/10 2xl:flex-row">
+      <div className="flex flex-1 flex-col justify-between xpadding">
+        <p className="res-text-64 text-text-normal leading-tight">
           Here are the facts{" "}
           <span className="text-text-normal-70">
             and nothing but the facts.
           </span>
         </p>
-        <div className="flex gap-4">
+        <div className={`hidden gap-4 2xl:flex`}>
           <button
             onClick={scrollPrev}
             className="border-2 border-line justify-center items-center rounded-full p-5"
@@ -46,16 +46,30 @@ const KeyFactsSection = () => {
           </button>
         </div>
       </div>
-      <div className="flex flex-1 b-l-line border-l-2 flex-col justify-between px-24">
+      <div className="flex flex-1 flex-col justify-between xpadding 2xl:b-l-line 2xl:border-l-2 2xl:px-24">
         <div className="embla h-full" ref={emblaRef}>
           <div className="embla__container h-full">
-            <div className="embla__slide ">
+            <div className="embla__slide">
               <Slide1 />
             </div>
             <div className="embla__slide">
               <Slide2 />
             </div>
           </div>
+        </div>
+        <div className={`gap-2 md:gap-4 flex 2xl:hidden`}>
+          <button
+            onClick={scrollPrev}
+            className="border-2 border-line justify-center items-center rounded-full p-3 md:p-5"
+          >
+            <ChevronLeftIcon sx={{ color: "#333" }} fontSize="large" />
+          </button>
+          <button
+            onClick={scrollNext}
+            className="bg-surface justify-center items-center rounded-full p-3 md:p-5"
+          >
+            <ChevronRightIcon sx={{ color: "#fff" }} fontSize="large" />
+          </button>
         </div>
       </div>
     </div>
