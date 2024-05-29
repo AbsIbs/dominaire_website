@@ -57,7 +57,7 @@ const ContactForm = () => {
       <div className="flex flex-col gap-4">
         {/* Categories input */}
         <label htmlFor="">
-          <p className="res-text-38 font-light">I'm interested in...</p>
+          <p className="res-text-38 font-light">I&apos;m interested in...</p>
         </label>
         <div className="flex gap-5 flex-wrap">
           {categories.map((item, index) => (
@@ -164,11 +164,7 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
-      <button
-        type="button"
-        onClick={submitHandler}
-        className="w-fit"
-      >
+      <button type="button" onClick={submitHandler} className="w-fit">
         <SelectButton>
           <p className="res-text-28 px-12">SEND</p>
         </SelectButton>

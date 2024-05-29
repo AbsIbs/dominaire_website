@@ -8,7 +8,7 @@ const dm_sans = DM_Sans({ subsets: ["latin"] });
 import Providers from "./providers";
 
 // Components
-import Header from "./components/header";
+import Navbar from "./components/navbar";
 
 export const metadata = {
   title: "Dominare Agency",
@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${dm_sans.className}`}>
         <Providers>
-          {/* <Header /> */}
+          <Navbar />
           {children}
         </Providers>
       </body>

@@ -30,7 +30,7 @@ export const Slide1 = () => {
     <div className="flex flex-col h-full ~sm/2xl:~gap-4/12 2xl:justify-between">
       <div className="flex flex-col gap-2">
         <p className="res-text-50 text-text-normal-70">
-          "90% of online searches happen on Google."
+          &apos;90% of online searches happen on Google.&apos;
         </p>
         <div className="flex flex-col gap-2">
           <Key
@@ -72,7 +72,7 @@ export const Slide2 = () => {
     <div className="flex flex-col h-full justify-between">
       <div className="flex flex-col gap-2">
         <p className="res-text-50 text-text-normal-70">
-          "90% of online searches happen on Google."
+          &apos;90% of online searches happen on Google.&apos;
         </p>
         <div className="flex flex-col gap-2">
           <Key

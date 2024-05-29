@@ -1,7 +1,7 @@
 "use client";
 import useEmblaCarousel from "embla-carousel-react";
 
-export default EmblaCarousel = ({ children }) => {
+const EmblaCarousel = ({ children }) => {
   const [emblaRef] = useEmblaCarousel();
 
   return (
@@ -14,3 +14,5 @@ export default EmblaCarousel = ({ children }) => {
     </div>
   );
 };
+
+export default EmblaCarousel;
