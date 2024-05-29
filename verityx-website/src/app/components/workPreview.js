@@ -5,11 +5,11 @@ import NorthEastIcon from "@mui/icons-material/NorthEast";
 const WorkPreview = (props) => {
   return (
     <div className="flex flex-1 flex-col gap-10">
-      <div className="relative h-[1320px]">
-        <Image src={props.image} fill style={{ objectFit: "contain" }} />
+      <div className="relative h-[600px] xl:h-[1320px]">
+        <Image src={props.image} fill style={{ objectFit: "cover" }} />
       </div>
-      <div className={`flex flex-col gap-10 ${props.xpadding}`}>
-        <p className="text-text-normal res-text-50">
+      <div className={`flex flex-col gap-5 xpadding`}>
+        <p className="text-text-normal res-text-38">
           Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
           consectetur.
         </p>

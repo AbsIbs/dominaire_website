@@ -39,8 +39,8 @@ const Home = async () => {
       <section id="expertise" className="flex justify-center">
         <ExpertiseSection />
       </section>
-      <section className="flex justify-center ypadding md:px-3">
-        <div className="w-[1280px] flex flex-col ~sm/lg:~p-4/14 bg-surface gap-4 md:rounded-lg">
+      <section className="flex justify-center ypadding px-3">
+        <div className="w-[1280px] flex flex-col ~sm/lg:~p-3/14 bg-surface gap-4 rounded-lg">
           <p className="res-text-21 text-[#CCC]">FROM US</p>
           <p className="res-text-50 text-white">
             Your <span className="text-primary">pain points</span> are our
@@ -64,27 +64,23 @@ const Home = async () => {
       </section>
       <section className="flex ypadding xpadding bg-surface">
         <div className="flex flex-col gap-10">
-          <p className="w-full text-white res-text-80 leading-[125%] md:w-2/3">
-            Our robust <span className="text-primary">methodology</span>{" "}
+          <p className="w-full text-white res-text-80 leading-[125%] 2xl:w-2/3">
+            Our robust <span className="text-primary">methodology</span>
             ensures that you’ll only get the best results
           </p>
           <ProcessesSection />
         </div>
       </section>
       <section className="flex ypadding justify-center">
-        <div className="flex flex-col gap-24">
-          <p className="res-text-80 text-center">
-            Our latest and greatest work
-          </p>
-          <div className="flex gap-5">
-            <WorkPreview image={work1} xpadding={"px-24"} title={"DishDelve"} />
-            <WorkPreview image={work2} xpadding={0} title={"TDM Masjid"} />
+        <div className="flex flex-col ~sm/lg:~gap-6/24">
+          <p className="xpadding res-text-80 text-center">Our latest work</p>
+          <div className="flex flex-col ~sm/lg:~gap-10/20 xl:gap-5 xl:flex-row">
+            <WorkPreview image={work1} title={"DishDelve"} />
+            <WorkPreview image={work2} title={"TDM Masjid"} />
           </div>
-          <WorkPreview
-            image={work3}
-            xpadding={"px-24"}
-            title={"Pulse Poetry"}
-          />
+          <div className="~sm/lg:~pt-10/20 xl:pt-0">
+            <WorkPreview image={work3} title={"Pulse Poetry"} />
+          </div>
         </div>
       </section>
       <section className="ypadding">
