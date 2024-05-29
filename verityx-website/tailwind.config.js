@@ -14,14 +14,18 @@ module.exports = {
     screens,
     fontSize,
     extend: {
+      height: {
+        128: "32rem",
+        256: "64rem",
+      },
       fontSize: {
-        16:["1rem"],
+        16: ["1rem"],
         21: ["1.3rem"],
         28: ["1.75rem"],
         38: ["2.375rem"],
         50: ["3.125rem"],
         80: ["5rem"],
-        180: ['11.25rem'],
+        180: ["11.25rem"],
         hero: ["5rem"],
         "mobile-16": ["0.8rem"],
         "mobile-21": ["1rem"],

@@ -64,8 +64,8 @@ const Home = async () => {
       </section>
       <section className="flex ypadding xpadding bg-surface">
         <div className="flex flex-col gap-10">
-          <p className="w-2/3 text-white res-text-80 leading-[125%]">
-            Our robusts <span className="text-primary">methodology</span>{" "}
+          <p className="w-full text-white res-text-80 leading-[125%] md:w-2/3">
+            Our robust <span className="text-primary">methodology</span>{" "}
             ensures that you’ll only get the best results
           </p>
           <ProcessesSection />
