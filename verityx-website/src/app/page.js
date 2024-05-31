@@ -18,17 +18,20 @@ import work3 from "../../public/work3.png";
 const Home = async () => {
   return (
     <>
-      <section className="h-screen flex justify-center">
-        <div className="w-full">
+      <section className="py-44 flex justify-center">
+        <div className=" w-full">
           <Hero />
         </div>
       </section>
-      <section className="ypadding flex items-center justify-center">
+      <section>
+        <div className="h-[1280px] bg-surface w-full"></div>
+      </section>
+      <section className="h-screen flex items-center justify-center">
         <div className="flex flex-col gap-1 w-[1280px] xpadding">
           <p className="res-text-21 text-text-normal-70">NICE TO MEET YOU</p>
           <TextReveal
             text={
-              "We're obsessed with unlocking your digital potential, and we refuse to settle for mediocrity. We're a passionate team of experts, collaborating to craft winning digital strategies that go above and beyond."
+              "We're a passionate team of experts, collaborating to craft winning digital strategies that go above and beyond."
             }
           />
         </div>
@@ -62,8 +65,8 @@ const Home = async () => {
       <section className="flex ypadding xpadding bg-surface">
         <div className="flex flex-col gap-10">
           <p className="w-full text-white res-text-80 leading-[125%] 2xl:w-2/3">
-            Our robust <span className="text-primary">methodology</span>{" "}
-            ensures that you’ll only get the best results
+            Our robust <span className="text-primary">methodology</span> ensures
+            that you’ll only get the best results
           </p>
           <ProcessesSection />
         </div>

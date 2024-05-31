@@ -1,5 +1,6 @@
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
+import AnimatedCursor from "react-animated-cursor";
 
 // Font
 const dm_sans = DM_Sans({ subsets: ["latin"] });
@@ -21,6 +22,14 @@ export default function RootLayout({ children }) {
       <body className={`${dm_sans.className}`}>
         <Providers>
           <Navbar />
+          <AnimatedCursor
+            innerStyle={{
+              backgroundColor: "black",
+            }}
+            outerStyle={{
+              border: "3px solid black",
+            }}
+          />
           {children}
         </Providers>
       </body>
