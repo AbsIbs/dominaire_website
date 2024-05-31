@@ -5,11 +5,9 @@ import SouthEastIcon from "@mui/icons-material/SouthEast";
 // Components
 import Hero from "./components/hero";
 import TextReveal from "./components/textReveal";
-import MagneticButton from "./components/magneticButton/magneticButton";
 import ExpertiseSection from "./components/expertiseSection";
 import ProcessesSection from "./components/processesSection";
 import WorkPreview from "./components/workPreview";
-import KeyFactsSection from "./components/keyFactsSection/keyFactsSection";
 import ReviewCards from "./components/reviewCards";
 import FAQs from "./components/faqs";
 // Images
@@ -64,7 +62,7 @@ const Home = async () => {
       <section className="flex ypadding xpadding bg-surface">
         <div className="flex flex-col gap-10">
           <p className="w-full text-white res-text-80 leading-[125%] 2xl:w-2/3">
-            Our robust <span className="text-primary">methodology</span>
+            Our robust <span className="text-primary">methodology</span>{" "}
             ensures that you’ll only get the best results
           </p>
           <ProcessesSection />
@@ -104,10 +102,16 @@ const Home = async () => {
             GET IN T<span className="text-primary">O</span>UCH
           </p>
           <div className="flex gap-4 justify-center flex-col items-center md:gap-10 md:flex-row md:items-start">
-            <Link href={"/contact-us"} className="border border-line rounded-full ~sm/lg:~py-4/12 ~sm/lg:~px-8/24">
+            <Link
+              href={"/contact-us"}
+              className="border border-line rounded-full ~sm/lg:~py-4/12 ~sm/lg:~px-8/24"
+            >
               <p className="res-text-38">Email us</p>
             </Link>
-            <Link href={""} className="border border-line rounded-full ~sm/lg:~py-4/12 ~sm/lg:~px-8/24">
+            <Link
+              href={""}
+              className="border border-line rounded-full ~sm/lg:~py-4/12 ~sm/lg:~px-8/24"
+            >
               <p className="res-text-38">Book a meeting</p>
             </Link>
           </div>

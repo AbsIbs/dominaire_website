@@ -1,6 +1,3 @@
-"use client";
-// Components
-import StationaryButton from "./magneticButton/stationaryButton";
 // Material UI
 import DesignServicesIcon from "@mui/icons-material/DesignServices";
 import CodeIcon from "@mui/icons-material/Code";
@@ -9,11 +6,9 @@ import TravelExploreIcon from "@mui/icons-material/TravelExplore";
 import InsightsIcon from "@mui/icons-material/Insights";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import CampaignIcon from "@mui/icons-material/Campaign";
-// NextUI
-import { Accordion } from "@nextui-org/accordion";
-import { AccordionItem } from "@nextui-org/accordion";
 
 const ExpertiseSection = () => {
+
   const icons = {
     design: <DesignServicesIcon fontSize="inherit" sx={{ color: "#121212" }} />,
     development: <CodeIcon fontSize="inherit" sx={{ color: "#121212" }} />,
@@ -29,7 +24,7 @@ const ExpertiseSection = () => {
   const StartContent = (props) => {
     return (
       <div className="w-full flex items-center">
-        <div className=" flex flex-col gap-2 w-full">
+        <div className="flex-1 flex flex-col gap-2 w-full">
           <div className="flex gap-2 items-center">
             <p className="res-text-50">{icons[props.icon]}</p>
             <p className="res-text-50 text-text-normal">{props.title}</p>
@@ -98,34 +93,21 @@ const ExpertiseSection = () => {
   ];
 
   return (
-    <div className="w-full flex flex-col">
-      <Accordion className="flex flex-col items-center">
-        {data.map((item, index) => {
-          return (
-            <AccordionItem
-              key={index}
-              aria-label={item.title}
-              className="~sm/md:~py-6/24 max-w-[1280px] w-full"
-              startContent={
-                <StartContent
-                  icon={item.icon}
-                  title={item.title}
-                  tags={item.tags}
-                />
-              }
-            >
-              <div className="flex flex-col gap-8 w-fit">
-                <p className="text-text-normal res-text-21">{item.desc}</p>
-                <StationaryButton>
-                  <p className="text-text-normal res-text-28">
-                    discuss this project
-                  </p>
-                </StationaryButton>
-              </div>
-            </AccordionItem>
-          );
-        })}
-      </Accordion>
+    <div className="w-full flex flex-col items-center relative">
+      {data.map((item, index) => (
+        <div
+          className="border-b border-b-line flex justify-center xpadding transition-container ~sm/md:~py-6/8 w-full"
+          key={index}
+        >
+          <div className="w-[1280px]">
+            <StartContent
+              icon={item.icon}
+              title={item.title}
+              tags={item.tags}
+            />
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

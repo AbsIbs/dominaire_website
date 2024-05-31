@@ -131,3 +131,41 @@ html {
   transition-property: border-color;
   transition-duration: 0.5s; /* Adjust transition duration as needed */
 }
+
+.transition-container {
+  background: linear-gradient(transparent, transparent 50%, #121212 50%, #121212);
+  background-size: 100% 200%;
+  transition: background 0.45s, color 0.45s; /* Added color transition */
+}
+
+.transition-container:hover {
+  background-position: 100% 100%;
+  color: #252525; /* Ensure the color is applied on hover */
+}
+
+.transition-container p {
+  color: #222;
+  transition: color 0.25s; /* Ensure text color transition is smooth */
+}
+
+.transition-container:hover p {
+  color: white; /* Change text color on hover */
+}
+
+.transition-container svg {
+  transition: color 0.25s;
+}
+
+.transition-container:hover svg {
+  transition: color 0.25s;
+  color: white; /* Change icon color on hover */
+}
+
+.mouse-tracker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  white-space: nowrap;
+  visibility: hidden;
+}
