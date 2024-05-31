@@ -37,7 +37,7 @@ const Magnetic = ({ children }) => {
 
 export default function MagneticButton({
   children,
-  backgroundColor = "#E9204F",
+  backgroundColor = "#000",
   ...attributes
 }) {
   const circle = useRef(null);

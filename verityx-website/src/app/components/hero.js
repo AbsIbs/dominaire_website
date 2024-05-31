@@ -21,7 +21,7 @@ const Hero = () => {
             }}
           />
           <p
-            className={`${nunito_sans.className} font-light leading-tight res-text-hero`}
+            className={`${nunito_sans.className} font-light leading-none res-text-hero`}
           >
             solutions to help your business grow
           </p>

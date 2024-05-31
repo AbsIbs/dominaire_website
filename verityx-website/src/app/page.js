@@ -4,6 +4,7 @@ import Link from "next/link";
 import SouthEastIcon from "@mui/icons-material/SouthEast";
 // Components
 import Hero from "./components/hero";
+import MagneticButton from "../app/components/magneticButton/magneticButton"
 import TextReveal from "./components/textReveal";
 import ExpertiseSection from "./components/expertiseSection";
 import ProcessesSection from "./components/processesSection";
@@ -34,6 +35,11 @@ const Home = async () => {
               "We're a passionate team of experts, collaborating to craft winning digital strategies that go above and beyond."
             }
           />
+          <MagneticButton>
+            <div className="py-12 w-fit">
+              <p>Hello world</p>
+            </div>
+          </MagneticButton>
         </div>
       </section>
       <section id="expertise" className="flex justify-center">
