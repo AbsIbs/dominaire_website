@@ -2,7 +2,7 @@
 import { useInView, motion } from "framer-motion";
 import { useRef } from "react";
 
-const TextReveal = (props) => {
+const TextReveal = ({text, className}) => {
   const description = useRef(null);
   const isInView = useInView(description);
 
@@ -24,8 +24,8 @@ const TextReveal = (props) => {
   return (
     <>
       <div ref={description}>
-        <p className="res-text-38 text-text-normal">
-          {props.text.split(" ").map((word, index) => {
+        <p className={`${className}`}>
+          {text.split(" ").map((word, index) => {
             return (
               <span
                 key={index}

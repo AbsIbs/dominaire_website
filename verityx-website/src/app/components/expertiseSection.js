@@ -1,3 +1,5 @@
+// Components
+import TextReveal from "./textReveal";
 // Material UI
 import DesignServicesIcon from "@mui/icons-material/DesignServices";
 import CodeIcon from "@mui/icons-material/Code";
@@ -8,22 +10,21 @@ import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import CampaignIcon from "@mui/icons-material/Campaign";
 
 const ExpertiseSection = () => {
-
   const icons = {
-    design: <DesignServicesIcon fontSize="inherit" sx={{ color: "#121212" }} />,
-    development: <CodeIcon fontSize="inherit" sx={{ color: "#121212" }} />,
-    branding: <BrushIcon fontSize="inherit" sx={{ color: "#121212" }} />,
-    marketing: <CampaignIcon fontSize="inherit" sx={{ color: "#121212" }} />,
-    seo: <TravelExploreIcon fontSize="inherit" sx={{ color: "#121212" }} />,
-    analytics: <InsightsIcon fontSize="inherit" sx={{ color: "#121212" }} />,
+    design: <DesignServicesIcon fontSize="inherit" sx={{ color: "#fff" }} />,
+    development: <CodeIcon fontSize="inherit" sx={{ color: "#fff" }} />,
+    branding: <BrushIcon fontSize="inherit" sx={{ color: "#fff" }} />,
+    marketing: <CampaignIcon fontSize="inherit" sx={{ color: "#fff" }} />,
+    seo: <TravelExploreIcon fontSize="inherit" sx={{ color: "#fff" }} />,
+    analytics: <InsightsIcon fontSize="inherit" sx={{ color: "#fff" }} />,
     consulting: (
-      <BusinessCenterIcon fontSize="inherit" sx={{ color: "#121212" }} />
+      <BusinessCenterIcon fontSize="inherit" sx={{ color: "#fff" }} />
     ),
   };
 
   const StartContent = (props) => {
     return (
-      <div className="w-full flex items-center">
+      <div className="w-full flex items-center font-light">
         <div className="flex-1 flex flex-col gap-2 w-full">
           <div className="flex gap-2 items-center">
             <p className="res-text-50">{icons[props.icon]}</p>
@@ -93,21 +94,23 @@ const ExpertiseSection = () => {
   ];
 
   return (
-    <div className="w-full flex flex-col items-center relative">
-      {data.map((item, index) => (
-        <div
-          className="border-b border-b-line flex justify-center xpadding transition-container ~sm/md:~py-6/8 w-full"
-          key={index}
-        >
-          <div className="w-[1280px]">
-            <StartContent
-              icon={item.icon}
-              title={item.title}
-              tags={item.tags}
-            />
+    <div className="w-full flex flex-col items-center gap-20">
+      <div className="w-full">
+        {data.map((item, index) => (
+          <div
+            className="border-b border-b-[#222] flex justify-center transition-container ~sm/md:~py-6/8 w-full"
+            key={index}
+          >
+            <div className="w-[1280px] xpadding">
+              <StartContent
+                icon={item.icon}
+                title={item.title}
+                tags={item.tags}
+              />
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

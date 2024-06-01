@@ -22,14 +22,14 @@ export default function RootLayout({ children }) {
       <body className={`${dm_sans.className}`}>
         <Providers>
           <Navbar />
-          <AnimatedCursor
+          {/* <AnimatedCursor
             innerStyle={{
               backgroundColor: "black",
             }}
             outerStyle={{
               border: "3px solid black",
             }}
-          />
+          /> */}
           {children}
         </Providers>
       </body>

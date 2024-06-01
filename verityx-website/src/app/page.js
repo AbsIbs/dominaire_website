@@ -4,7 +4,7 @@ import Link from "next/link";
 import SouthEastIcon from "@mui/icons-material/SouthEast";
 // Components
 import Hero from "./components/hero";
-import MagneticButton from "../app/components/magneticButton/magneticButton"
+import MagneticButton from "../app/components/magneticButton/magneticButton";
 import TextReveal from "./components/textReveal";
 import ExpertiseSection from "./components/expertiseSection";
 import ProcessesSection from "./components/processesSection";
@@ -25,25 +25,43 @@ const Home = async () => {
         </div>
       </section>
       <section>
-        <div className="h-[1280px] bg-surface w-full"></div>
+        <div className="h-[320px] bg-surface w-full md:h-[640px] lg:h-[1280px]"></div>
       </section>
       <section className="h-screen flex items-center justify-center">
-        <div className="flex flex-col gap-1 w-[1280px] xpadding">
-          <p className="res-text-21 text-text-normal-70">NICE TO MEET YOU</p>
-          <TextReveal
-            text={
-              "We're a passionate team of experts, collaborating to craft winning digital strategies that go above and beyond."
-            }
-          />
+        <div className="flex flex-col gap-16 w-[1280px] xpadding items-center text-center">
+          <div className="flex flex-col gap-1">
+            <p className="res-text-21 text-text-normal-70">NICE TO MEET YOU</p>
+            <TextReveal
+              className="res-text-38"
+              text={
+                "We're a passionate team of experts, collaborating to craft winning digital strategies that go above and beyond."
+              }
+            />
+          </div>
           <MagneticButton>
-            <div className="py-12 w-fit">
-              <p>Hello world</p>
-            </div>
+            <Link href={""} className="~sm/lg:~py-3/6 ~sm/lg:~px-12/40">
+              <p className="res-text-28">How we work</p>
+            </Link>
           </MagneticButton>
         </div>
       </section>
-      <section id="expertise" className="flex justify-center">
-        <ExpertiseSection />
+      <section
+        id="expertise"
+        className="pt-48 flex flex-col gap-24 items-center bg-surface md:rounded-t-[6rem]"
+      >
+        <div className="flex flex-col gap-2 w-full max-w-[1280px] xpadding">
+          <TextReveal
+            text="Our"
+            className="text-white font-extralight text-[8rem] leading-none"
+          />
+          <TextReveal
+            text="Expertise"
+            className="text-white font-extralight text-[8rem] leading-none"
+          />
+        </div>
+        <div className="w-full">
+          <ExpertiseSection />
+        </div>
       </section>
       <section className="flex justify-center ypadding px-3">
         <div className="w-[1280px] flex flex-col ~sm/lg:~p-3/14 bg-surface gap-4 rounded-lg">
