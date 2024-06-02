@@ -40,7 +40,7 @@ const ProcessesSection = () => {
   const StartContent = (props) => {
     return (
       <div className="flex gap-3">
-        <p className="text-white res-text-38">{props.title}</p>
+        <p className="text-white res-text-38 font-light">{props.title}</p>
         <p
           className={`res-text-28 ${
             props.index == target ? "text-primary" : "text-[#CCC]"

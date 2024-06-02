@@ -1,12 +1,34 @@
+"use client";
 // NextJS
 import Image from "next/image";
 import NorthEastIcon from "@mui/icons-material/NorthEast";
+// Animation
+import { motion } from "framer-motion";
 
 const WorkPreview = (props) => {
+  const variants = {
+    offscreen: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" },
+    },
+  };
+
   return (
-    <div className="flex flex-1 flex-col gap-10">
-      <div className="relative h-[600px] xl:h-[1320px]">
-        <Image src={props.image} fill style={{ objectFit: "cover" }} />
+    <motion.div
+      initial="offscreen"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.5 }}
+      variants={variants}
+      className="flex flex-1 flex-col gap-10"
+    >
+      <div className="relative rounded-[2.5%] h-[600px] xl:h-[900px]">
+        <Image
+          src={props.image}
+          fill
+          style={{ objectFit: "cover", borderRadius: "2.5%" }}
+        />
       </div>
       <div className={`flex flex-col gap-5 xpadding`}>
         <p className="text-text-normal res-text-28">
@@ -18,7 +40,7 @@ const WorkPreview = (props) => {
           <NorthEastIcon sx={{ color: "#121212" }} fontSize="large" />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

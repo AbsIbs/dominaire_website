@@ -165,3 +165,7 @@ html {
   transition: color 0.25s;
   color: #222; /* Change icon color on hover */
 }
+
+.staggered-grid > :nth-child(2n) {
+  margin-top: 50%; /* Adjust this value as needed to achieve the desired staggered effect */
+}

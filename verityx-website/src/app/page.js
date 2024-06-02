@@ -47,7 +47,7 @@ const Home = async () => {
       </section>
       <section
         id="expertise"
-        className="pt-48 flex flex-col gap-24 items-center bg-surface md:rounded-t-[6rem]"
+        className="pt-48 flex flex-col gap-24 items-center bg-surface"
       >
         <div className="flex flex-col gap-2 w-full max-w-[1280px] xpadding">
           <TextReveal
@@ -90,7 +90,7 @@ const Home = async () => {
               luctus, porttitor arcu vel, convallis urna.
             </p>
             <p className="res-text-21">
-              Founder and CEO <br/>
+              Founder and CEO <br />
               <span className="font-semibold">Abass Ibrahim</span>
             </p>
           </div>
@@ -117,14 +117,20 @@ const Home = async () => {
         </div>
       </section>
       <section className="flex ypadding justify-center">
-        <div className="flex flex-col ~sm/lg:~gap-6/24">
-          <p className="xpadding res-text-80 text-center">Our latest work</p>
-          <div className="flex flex-col ~sm/lg:~gap-10/20 xl:gap-5 xl:flex-row">
-            <WorkPreview image={work1} title={"DishDelve"} />
-            <WorkPreview image={work2} title={"TDM Masjid"} />
-          </div>
-          <div className="~sm/lg:~pt-10/20 xl:pt-0">
-            <WorkPreview image={work3} title={"Pulse Poetry"} />
+        <div className="xpadding w-[1280px] flex flex-col ~sm/lg:~gap-6/24">
+          <TextReveal
+            text="Our work"
+            className="font-extralight res-text-140 leading-none"
+          />
+          <div className="grid grid-cols-2 gap-20">
+            <div className="space-y-20 col-span-1">
+              <WorkPreview image={work3} title={"Pulse Poetry"} />
+              <WorkPreview image={work2} title={"TDM Masjid"} />
+            </div>
+            <div className="space-y-20 col-span-1 pt-[50%]">
+              <WorkPreview image={work3} title={"Qurencia"} />
+              <WorkPreview image={work1} title={"DishDelve"} />
+            </div>
           </div>
         </div>
       </section>
