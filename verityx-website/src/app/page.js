@@ -63,7 +63,7 @@ const Home = async () => {
           <ExpertiseSection />
         </div>
       </section>
-      <section className="flex justify-center ypadding px-3">
+      {/* <section className="flex justify-center ypadding px-3">
         <div className="w-[1280px] flex">
           <div className="flex-3 flex flex-col gap-10">
             <div className="flex flex-col">
@@ -100,8 +100,8 @@ const Home = async () => {
             </p>
           </div>
         </div>
-      </section>
-      <section className="flex ypadding xpadding bg-surface">
+      </section> */}
+     {/*  <section className="flex ypadding xpadding bg-surface">
         <div className="flex flex-col gap-24">
           <div className="flex flex-col gap-2 xpadding">
             <TextReveal
@@ -115,7 +115,7 @@ const Home = async () => {
           </div>
           <ProcessesSection />
         </div>
-      </section>
+      </section> */}
       <section className="flex ypadding justify-center">
         <div className="xpadding w-[1280px] flex flex-col ~sm/lg:~gap-6/24">
           <TextReveal
@@ -134,16 +134,16 @@ const Home = async () => {
           </div>
         </div>
       </section>
-      <section className="bg-surface xpadding ypadding flex">
-        <div className="flex flex-col ~sm/lg:~gap-4/24">
+      <section className="bg-surface justify-center xpadding ypadding flex">
+        <div className="w-[1280px] flex flex-col ~sm/lg:~gap-4/24">
           <p className="res-text-80 text-white text-center">
             What our <span className="text-primary">clients</span> say
           </p>
           <ReviewCards />
         </div>
       </section>
-      <section className="bg-surface xpadding ypadding flex">
-        <div className="flex flex-col  w-full gap-4 lg:gap-24">
+      <section className="bg-surface justify-center xpadding ypadding flex">
+        <div className="w-[1280px] flex flex-col gap-4 lg:gap-24">
           <p className="res-text-80 text-white">
             Frequently asked <span className="text-primary">questions</span>
           </p>
