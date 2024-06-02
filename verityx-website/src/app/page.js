@@ -1,7 +1,7 @@
 // NextJS
 import Link from "next/link";
 // Material UI
-import SouthEastIcon from "@mui/icons-material/SouthEast";
+import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 // Components
 import Hero from "./components/hero";
 import MagneticButton from "../app/components/magneticButton/magneticButton";
@@ -52,11 +52,11 @@ const Home = async () => {
         <div className="flex flex-col gap-2 w-full max-w-[1280px] xpadding">
           <TextReveal
             text="Our"
-            className="text-white font-extralight text-[8rem] leading-none"
+            className="text-white font-extralight res-text-140 leading-none"
           />
           <TextReveal
             text="Expertise"
-            className="text-white font-extralight text-[8rem] leading-none"
+            className="text-white font-extralight res-text-140 leading-none"
           />
         </div>
         <div className="w-full">
@@ -64,34 +64,55 @@ const Home = async () => {
         </div>
       </section>
       <section className="flex justify-center ypadding px-3">
-        <div className="w-[1280px] flex flex-col ~sm/lg:~p-3/14 bg-surface gap-4 rounded-lg">
-          <p className="res-text-21 text-[#CCC]">FROM US</p>
-          <p className="res-text-50 text-white">
-            Your <span className="text-primary">pain points</span> are our
-            problem. Neque metus varius orci mattis eu nunc pellentesque. Nulla
-            diam non nullam ut. Rhoncus id mattis mauris malesuada. Ut pulvinar
-            urna lacus pharetra. Lorem ipsum dolor sit amet consectetur.
-          </p>
-          <div className="flex justify-between res-text-21">
+        <div className="w-[1280px] flex">
+          <div className="flex-3 flex flex-col gap-10">
             <div className="flex flex-col">
-              <p className="text-white">Abass Ibrahim</p>
-              <p className="text-[#CCC]">Founder and CEO</p>
+              <TextReveal
+                text={"Your Pain Points"}
+                className={"font-bold res-text-64 leading-tight"}
+              />
+              <div className="flex">
+                <TextReveal
+                  text={"Our Problem"}
+                  className={"font-bold res-text-64 leading-tight"}
+                />
+                <TextReveal
+                  text={"."}
+                  className={"font-bold res-text-64 text-primary leading-tight"}
+                />
+              </div>
             </div>
-            <div className="flex items-center gap-1">
-              <p className="text-white">Get in touch</p>
-              <p className="text-[20px] lg:text-[40px] ">
-                <SouthEastIcon sx={{ color: "white" }} fontSize="inherit" />
-              </p>
-            </div>
+            <p className="res-text-28">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu
+              tempus dui. Sed ut gravida quam. Vestibulum ante ipsum primis in
+              faucibus orci luctus et ultrices posuere cubilia curae; Duis
+              ultricies risus ac dolor volutpat sodales. Suspendisse eget elit
+              luctus, porttitor arcu vel, convallis urna.
+            </p>
+            <p className="res-text-21">
+              Founder and CEO <br/>
+              <span className="font-semibold">Abass Ibrahim</span>
+            </p>
+          </div>
+          <div className="flex-1">
+            <p className="text-[10rem]">
+              <FormatQuoteIcon fontSize="inherit" sx={{ color: "#CCC" }} />
+            </p>
           </div>
         </div>
       </section>
       <section className="flex ypadding xpadding bg-surface">
-        <div className="flex flex-col gap-10">
-          <p className="w-full text-white res-text-80 leading-[125%] 2xl:w-2/3">
-            Our robust <span className="text-primary">methodology</span> ensures
-            that you’ll only get the best results
-          </p>
+        <div className="flex flex-col gap-24">
+          <div className="flex flex-col gap-2 xpadding">
+            <TextReveal
+              text="Our"
+              className="text-white font-extralight res-text-140 leading-none"
+            />
+            <TextReveal
+              text="Methodology"
+              className="text-white font-extralight res-text-140 leading-none"
+            />
+          </div>
           <ProcessesSection />
         </div>
       </section>

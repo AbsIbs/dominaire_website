@@ -13,15 +13,15 @@ const Hero = () => {
         <div className="flex flex-col gap-4 ">
           <Typewriter
             options={{
-              wrapperClassName: `font-light italic res-text-hero`,
-              cursorClassName: `font-light res-text-hero`,
+              wrapperClassName: `font-light italic res-text-140`,
+              cursorClassName: `font-light res-text-140`,
               strings: ["design", "development", "marketing"],
               autoStart: true,
               loop: true,
             }}
           />
           <p
-            className={`${nunito_sans.className} font-light leading-none res-text-hero`}
+            className={`${nunito_sans.className} font-light leading-none res-text-140`}
           >
             solutions to help your business grow
           </p>

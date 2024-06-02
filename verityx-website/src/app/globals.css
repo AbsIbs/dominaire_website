@@ -33,6 +33,11 @@
   @apply ~lg/sm:~text-80/mobile-80
 }
 
+.res-text-140{
+  @apply ~lg/sm:~text-140/mobile-140
+}
+
+
 .res-text-180{
   @apply ~lg/sm:~text-180/mobile-180
 }
@@ -42,7 +47,7 @@
 }
 
 .ypadding {
-  @apply ~sm/lg:~py-12/36
+  @apply ~sm/lg:~py-12/48
 }
 
 @tailwind utilities;

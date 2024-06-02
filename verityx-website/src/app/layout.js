@@ -19,7 +19,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${dm_sans.className}`}>
+      <body className={`${dm_sans.className} text-text-normal`}>
         <Providers>
           <Navbar />
           {/* <AnimatedCursor
