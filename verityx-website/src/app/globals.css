@@ -33,10 +33,13 @@
   @apply ~lg/sm:~text-80/mobile-80
 }
 
+.res-text-100{
+  @apply ~lg/sm:~text-100/mobile-100
+}
+
 .res-text-140{
   @apply ~lg/sm:~text-140/mobile-140
 }
-
 
 .res-text-180{
   @apply ~lg/sm:~text-180/mobile-180

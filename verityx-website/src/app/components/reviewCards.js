@@ -67,8 +67,8 @@ const ReviewCards = () => {
   const Card = (props) => {
     return (
       <FadeIn viewport={{ once: true, amount: 0.5 }}>
-        <div className="flex flex-col gap-8 p-16 shadow-2xl bg-black text-white rounded-md relative">
-          <div className="flex-2 flex flex-col gap-2 pb-10">
+        <div className="flex flex-col gap-8 p-16 shadow-2xl bg-surface text-white rounded-md relative">
+          <div className="flex-2 flex flex-col gap-3 pb-10">
             <p className="res-text-21 font-light">
               {props.name}, {props.company}
             </p>
@@ -81,7 +81,7 @@ const ReviewCards = () => {
                 className="flex gap-2 items-center justify-center border border-[#333] rounded-full py-2 px-8"
               >
                 <p className="text-[36px]">{icons[job.icon]}</p>
-                <p className="res-text-21">{job.name}</p>
+                <p className="res-text-21 font-light">{job.name}</p>
               </div>
             ))}
           </div>

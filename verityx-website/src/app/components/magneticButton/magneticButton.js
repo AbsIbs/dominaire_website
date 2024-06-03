@@ -37,7 +37,10 @@ const Magnetic = ({ children }) => {
 
 export default function MagneticButton({
   children,
-  backgroundColor = "#000",
+  backgroundColor,
+  textColor,
+  textHover,
+  className,
   ...attributes
 }) {
   const circle = useRef(null);
@@ -72,7 +75,7 @@ export default function MagneticButton({
   return (
     <Magnetic>
       <div
-        className={styles.roundedButton}
+        className={`${styles.roundedButton} ${className}`}
         style={{ overflow: "hidden" }}
         onMouseEnter={() => {
           manageMouseEnter();

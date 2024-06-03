@@ -13,6 +13,8 @@ import TextSlider from "./components/textSlider/textSlider";
 import work1 from "../../public/work1.png";
 import work2 from "../../public/work2.png";
 import work3 from "../../public/work3.png";
+// Material UI
+import NorthEastIcon from "@mui/icons-material/NorthEast";
 
 const Home = async () => {
   return (
@@ -85,7 +87,7 @@ const Home = async () => {
           </div>
         </div>
       </section>
-      <section className="bg-[#161414] justify-center xpadding ypadding flex">
+      <section className="bg-black justify-center xpadding ypadding flex">
         <div className="w-[1280px] flex flex-col ~sm/lg:~gap-4/24">
           <div className="flex flex-col gap-2 w-full max-w-[1280px]">
             <TextReveal
@@ -112,14 +114,76 @@ const Home = async () => {
           <FAQs />
         </div>
       </section>
-      <section className="bg-surface ypadding flex justify-center">
+      <section className="bg-black ypadding flex flex-col gap-24 items-center">
         <div className="w-full">
           <TextSlider height={"h-[320px]"}>
             <span className={"text-white font-extralight text-[240px]"}>
-              Come and get in touch with us
-              <span className="text-primary">.</span>
+              Ready to elevate your company
+              <span className="text-primary">?</span>
             </span>
           </TextSlider>
+        </div>
+        <div className="w-full flex justify-center xpadding">
+          <div className="w-[1280px] flex text-white">
+            <div className="flex-1 flex flex-col gap-16 border-r border-r-line pr-16">
+              <TextReveal
+                text="Contact us"
+                className="text-white font-extralight res-text-80 leading-none tracking-wider"
+              />
+              <p className="res-text-21">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
+                sit amet risus viverra, lobortis sem ut, tempus eros.
+              </p>
+              <div className="grid grid-cols-2 gap-8">
+                <div className="flex flex-col gap-2">
+                  <p className="res-text-21 text-[rgba(255,255,255,0.50)] font-light tracking-widest">
+                    EMAIL
+                  </p>
+                  <p className="res-text-21 underline">support@dominare.com</p>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <p className="res-text-21 text-[rgba(255,255,255,0.50)] font-light tracking-widest">
+                    PHONE
+                  </p>
+                  <p className="res-text-21 underline">123456789</p>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <p className="res-text-21 text-[rgba(255,255,255,0.50)] font-light tracking-widest">
+                    LINKEDIN
+                  </p>
+                  <p className="res-text-21 underline">support@dominare.com</p>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <p className="res-text-21 text-[rgba(255,255,255,0.50)] font-light tracking-widest">
+                    INSTAGRAM
+                  </p>
+                  <p className="res-text-21 underline">support@dominare.com</p>
+                </div>
+              </div>
+              <div className="flex flex-col gap-2">
+                <p className="res-text-21 text-[rgba(255,255,255,0.50)] font-light tracking-widest">
+                  BUSINESS HOURS
+                </p>
+                <p className="res-text-21 underline">support@dominare.com</p>
+              </div>
+            </div>
+            <div className="flex-1 flex flex-col gap-8 pl-16">
+              <Link
+                href={"/contact-us"}
+                className="flex justify-between border border-line w-full px-8 py-8"
+              >
+                <p>Email us</p>
+                <NorthEastIcon sx={{ color: "white" }} />
+              </Link>
+              <Link
+                href={""}
+                className="flex justify-between border border-line w-full px-8 py-8"
+              >
+                <p>Book a schedule</p>
+                <NorthEastIcon sx={{ color: "white" }} />
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
     </>
