@@ -1,16 +1,30 @@
 "use client";
 import styles from "./style.module.scss";
 import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
 
-const TextSlider = (props) => {
+export default function Home({ children, className, height }) {
   const firstText = useRef(null);
   const secondText = useRef(null);
   const slider = useRef(null);
   let xPercent = 0;
   let direction = -1;
+
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to(slider.current, {
+      scrollTrigger: {
+        scrub: 0.25,
+        start: "top bottom", // When the top of the slider hits the bottom of the viewport
+        end: "bottom top", // When the bottom of the slider hits the top of the viewport
+        onUpdate: (e) => (direction = e.direction * -1),
+      },
+      x: "-500px",
+    });
+    requestAnimationFrame(animate);
+  });
 
   const animate = () => {
     if (xPercent < -100) {
@@ -24,31 +38,14 @@ const TextSlider = (props) => {
     xPercent += 0.1 * direction;
   };
 
-  useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.to(slider.current, {
-      scrollTrigger: {
-        /* markers: true, */
-        start: "top bottom", // When the top of the slider hits the bottom of the viewport
-        end: "bottom top", // When the bottom of the slider hits the top of the viewport
-        scrub: 0.25,
-        onUpdate: (e) => (direction = e.direction * -1),
-      },
-      x: "-500px",
-    });
-    requestAnimationFrame(animate);
-  });
-
   return (
-    <div className={styles.mainContainer}>
+    <main className={`${styles.main} ${height}`}>
       <div className={styles.sliderContainer}>
         <div ref={slider} className={styles.slider}>
-          <p ref={firstText}>{props.text}</p>
-          <p ref={secondText}>{props.text}</p>
+          <p ref={firstText}>{children}</p>
+          <p ref={secondText}>{children}</p>
         </div>
       </div>
-    </div>
+    </main>
   );
-};
-
-export default TextSlider;
+}

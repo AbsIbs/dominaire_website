@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 
-const FadeIn = ({ children, viewport, variants }) => {
+const FadeIn = ({ children, viewport, variants, initial }) => {
   const defaultVariants = {
     offscreen: { opacity: 0, y: 50 },
     visible: {
@@ -15,7 +15,7 @@ const FadeIn = ({ children, viewport, variants }) => {
 
   return (
     <motion.div
-      initial="offscreen"
+      initial={initial ? initial : "offscreen"}
       whileInView="visible"
       viewport={viewport ? viewport : defaultViewport}
       variants={variants ? variants : defaultVariants}

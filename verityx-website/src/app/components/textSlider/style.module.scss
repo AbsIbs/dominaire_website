@@ -1,4 +1,4 @@
-.mainContainer{
+.main{
   position: relative;
   display: flex;
   overflow: hidden;
@@ -16,11 +16,7 @@
 .slider p{
   position: relative;
   margin: 0px;
-  color: #333;
-  font-size: 1rem;
-  font-weight: 500;
   padding-right: 50px;
- 
 }
 
 .slider p:nth-of-type(2){

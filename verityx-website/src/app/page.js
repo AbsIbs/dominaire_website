@@ -1,16 +1,14 @@
 // NextJS
 import Link from "next/link";
-// Material UI
-import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 // Components
 import Hero from "./components/hero";
 import MagneticButton from "../app/components/magneticButton/magneticButton";
 import TextReveal from "./components/textReveal";
 import ExpertiseSection from "./components/expertiseSection";
-import ProcessesSection from "./components/processesSection";
 import WorkPreview from "./components/workPreview";
 import ReviewCards from "./components/reviewCards";
 import FAQs from "./components/faqs";
+import TextSlider from "./components/textSlider/textSlider";
 // Images
 import work1 from "../../public/work1.png";
 import work2 from "../../public/work2.png";
@@ -63,112 +61,65 @@ const Home = async () => {
           <ExpertiseSection />
         </div>
       </section>
-      {/* <section className="flex justify-center ypadding px-3">
-        <div className="w-[1280px] flex">
-          <div className="flex-3 flex flex-col gap-10">
-            <div className="flex flex-col">
-              <TextReveal
-                text={"Your Pain Points"}
-                className={"font-bold res-text-64 leading-tight"}
-              />
-              <div className="flex">
-                <TextReveal
-                  text={"Our Problem"}
-                  className={"font-bold res-text-64 leading-tight"}
-                />
-                <TextReveal
-                  text={"."}
-                  className={"font-bold res-text-64 text-primary leading-tight"}
-                />
-              </div>
-            </div>
-            <p className="res-text-28">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eu
-              tempus dui. Sed ut gravida quam. Vestibulum ante ipsum primis in
-              faucibus orci luctus et ultrices posuere cubilia curae; Duis
-              ultricies risus ac dolor volutpat sodales. Suspendisse eget elit
-              luctus, porttitor arcu vel, convallis urna.
-            </p>
-            <p className="res-text-21">
-              Founder and CEO <br />
-              <span className="font-semibold">Abass Ibrahim</span>
-            </p>
+      <section className="flex ypadding justify-center">
+        <div className="xpadding w-[1280px] flex flex-col ~sm/lg:~gap-6/24">
+          <div className="flex flex-col gap-2 w-full max-w-[1280px] xpadding">
+            <TextReveal
+              text="Our"
+              className="font-extralight res-text-140 leading-none"
+            />
+            <TextReveal
+              text="Work"
+              className="font-extralight res-text-140 leading-none"
+            />
           </div>
-          <div className="flex-1">
-            <p className="text-[10rem]">
-              <FormatQuoteIcon fontSize="inherit" sx={{ color: "#CCC" }} />
-            </p>
+          <div className="grid grid-cols-2 gap-20">
+            <div className="space-y-20 col-span-1">
+              <WorkPreview date="2024" image={work3} title={"Pulse Poetry"} />
+              <WorkPreview date="2024" image={work2} title={"TDM Masjid"} />
+            </div>
+            <div className="space-y-20 col-span-1 pt-[50%]">
+              <WorkPreview date="2024" image={work3} title={"Qurencia"} />
+              <WorkPreview date="2023" image={work1} title={"DishDelve"} />
+            </div>
           </div>
         </div>
-      </section> */}
-     {/*  <section className="flex ypadding xpadding bg-surface">
-        <div className="flex flex-col gap-24">
-          <div className="flex flex-col gap-2 xpadding">
+      </section>
+      <section className="bg-[#161414] justify-center xpadding ypadding flex">
+        <div className="w-[1280px] flex flex-col ~sm/lg:~gap-4/24">
+          <div className="flex flex-col gap-2 w-full max-w-[1280px]">
             <TextReveal
               text="Our"
               className="text-white font-extralight res-text-140 leading-none"
             />
             <TextReveal
-              text="Methodology"
+              text="Reviews"
               className="text-white font-extralight res-text-140 leading-none"
             />
           </div>
-          <ProcessesSection />
-        </div>
-      </section> */}
-      <section className="flex ypadding justify-center">
-        <div className="xpadding w-[1280px] flex flex-col ~sm/lg:~gap-6/24">
-          <TextReveal
-            text="Our work"
-            className="font-extralight res-text-140 leading-none"
-          />
-          <div className="grid grid-cols-2 gap-20">
-            <div className="space-y-20 col-span-1">
-              <WorkPreview image={work3} title={"Pulse Poetry"} />
-              <WorkPreview image={work2} title={"TDM Masjid"} />
-            </div>
-            <div className="space-y-20 col-span-1 pt-[50%]">
-              <WorkPreview image={work3} title={"Qurencia"} />
-              <WorkPreview image={work1} title={"DishDelve"} />
-            </div>
-          </div>
-        </div>
-      </section>
-      <section className="bg-surface justify-center xpadding ypadding flex">
-        <div className="w-[1280px] flex flex-col ~sm/lg:~gap-4/24">
-          <p className="res-text-80 text-white text-center">
-            What our <span className="text-primary">clients</span> say
-          </p>
           <ReviewCards />
         </div>
       </section>
-      <section className="bg-surface justify-center xpadding ypadding flex">
-        <div className="w-[1280px] flex flex-col gap-4 lg:gap-24">
-          <p className="res-text-80 text-white">
-            Frequently asked <span className="text-primary">questions</span>
-          </p>
+      <section className="items-center ypadding flex flex-col gap-24">
+        <div className="w-full">
+          <TextSlider height={"h-[300px]"}>
+            <span className={"font-extralight text-[240px]"}>
+              Frequently Asked Questions<span className="text-primary">.</span>
+            </span>
+          </TextSlider>
+        </div>
+        <div className="xpadding w-[1280px] flex flex-col gap-4 lg:gap-24">
           <FAQs />
         </div>
       </section>
-      <section className="xpadding ypadding flex justify-center">
-        <div className="flex flex-col ~sm/lg:~gap-4/24 w-[1280px]">
-          <p className="res-text-180 text-text-normal text-center font-semibold leading-tight">
-            GET IN T<span className="text-primary">O</span>UCH
-          </p>
-          <div className="flex gap-4 justify-center flex-col items-center md:gap-10 md:flex-row md:items-start">
-            <Link
-              href={"/contact-us"}
-              className="border border-line rounded-full ~sm/lg:~py-4/12 ~sm/lg:~px-8/24"
-            >
-              <p className="res-text-38">Email us</p>
-            </Link>
-            <Link
-              href={""}
-              className="border border-line rounded-full ~sm/lg:~py-4/12 ~sm/lg:~px-8/24"
-            >
-              <p className="res-text-38">Book a meeting</p>
-            </Link>
-          </div>
+      <section className="bg-surface ypadding flex justify-center">
+        <div className="w-full">
+          <TextSlider height={"h-[320px]"}>
+            <span className={"text-white font-extralight text-[240px]"}>
+              Come and get in touch with us
+              <span className="text-primary">.</span>
+            </span>
+          </TextSlider>
         </div>
       </section>
     </>

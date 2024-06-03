@@ -22,9 +22,9 @@ const FAQs = () => {
           key={index}
           aria-label={item.question}
           title={item.question}
-          classNames={{ title: ["text-[1.3rem]", "text-white"] }}
+          classNames={{ title: ["text-[1.75rem]"] }}
         >
-          <p className="text-[#ffffff70] res-text-21">{item.answer}</p>
+          <p className="res-text-21">{item.answer}</p>
         </AccordionItem>
       ))}
     </Accordion>
