@@ -1,31 +1,17 @@
-"use client";
-// Font
-import { Nunito_Sans } from "next/font/google";
-// Components
-import Typewriter from "typewriter-effect";
-
-const nunito_sans = Nunito_Sans({ subsets: ["latin"] });
+import FadeIn from "./fadeIn";
 
 const Hero = () => {
   return (
-    <div className="flex items-center justify-center w-full">
-      <div className="flex flex-col gap-8 lg:gap-16 w-[1280px] justify-center h-full xpadding">
-        <div className="flex flex-col gap-4 ">
-          <Typewriter
-            options={{
-              wrapperClassName: `font-light italic res-text-140`,
-              cursorClassName: `font-light res-text-140`,
-              strings: ["design", "development", "marketing"],
-              autoStart: true,
-              loop: true,
-            }}
-          />
-          <p
-            className={`${nunito_sans.className} font-light leading-none res-text-140`}
-          >
-            solutions to help your business grow
+    <div className="flex items-center justify-center h-[85vh] w-full">
+      <div className="flex flex-col w-[1280px] justify-center h-full xpadding">
+        <FadeIn>
+          <p className={`text-zinc-400 leading-tight res-text-80`}>
+            Transforming ideas into reality with exceptional{" "}
+            <span className="text-black">UI/UX, </span> cutting-edge{" "}
+            <span className="text-black">development, </span>
+            and strategic online <span className="text-black">marketing</span>
           </p>
-        </div>
+        </FadeIn>
       </div>
     </div>
   );

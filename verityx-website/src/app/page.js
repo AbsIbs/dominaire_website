@@ -19,7 +19,7 @@ import NorthEastIcon from "@mui/icons-material/NorthEast";
 const Home = async () => {
   return (
     <>
-      <section className="py-44 flex justify-center">
+      <section className="flex justify-center">
         <div className=" w-full">
           <Hero />
         </div>
@@ -125,7 +125,7 @@ const Home = async () => {
         </div>
         <div className="w-full flex justify-center xpadding">
           <div className="w-[1280px] flex text-white">
-            <div className="flex-1 flex flex-col gap-16 border-r border-r-line pr-16">
+            <div className="flex-[3] flex flex-col gap-16 border-r border-r-[rgba(255,255,255,0.50)] pr-16">
               <TextReveal
                 text="Contact us"
                 className="text-white font-extralight res-text-80 leading-none tracking-wider"
@@ -160,26 +160,20 @@ const Home = async () => {
                   <p className="res-text-21 underline">support@dominare.com</p>
                 </div>
               </div>
-              <div className="flex flex-col gap-2">
-                <p className="res-text-21 text-[rgba(255,255,255,0.50)] font-light tracking-widest">
-                  BUSINESS HOURS
-                </p>
-                <p className="res-text-21 underline">support@dominare.com</p>
-              </div>
             </div>
-            <div className="flex-1 flex flex-col gap-8 pl-16">
+            <div className="flex-[2] flex flex-col gap-6 pl-16">
               <Link
                 href={"/contact-us"}
-                className="flex justify-between border border-line w-full px-8 py-8"
+                className="flex justify-between border border-line w-full px-8 py-6"
               >
-                <p>Email us</p>
+                <p className="res-text-21">Email us</p>
                 <NorthEastIcon sx={{ color: "white" }} />
               </Link>
               <Link
                 href={""}
-                className="flex justify-between border border-line w-full px-8 py-8"
+                className="flex justify-between border border-line w-full px-8 py-6"
               >
-                <p>Book a schedule</p>
+                <p className="res-text-21">Schedule a call</p>
                 <NorthEastIcon sx={{ color: "white" }} />
               </Link>
             </div>

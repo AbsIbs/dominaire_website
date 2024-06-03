@@ -11,7 +11,7 @@ const Navbar = () => {
       <p
         className={`${nunito_sans.className} absolute top-8 left-6 font-bold res-text-21`}
       >
-        dominaire
+        RegalLion Studios
       </p>
     </>
   );
