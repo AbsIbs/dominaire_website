@@ -28,37 +28,19 @@ const Home = async () => {
         <div className="h-[320px] bg-surface w-full md:h-[640px] lg:h-[1280px]"></div>
       </section>
       <section className="h-screen flex items-center justify-center">
-        <div className="flex flex-col gap-16 w-[1280px] xpadding items-center text-center">
-          <div className="flex flex-col gap-1">
-            <p className="res-text-21 text-text-normal-70">NICE TO MEET YOU</p>
-            <TextReveal
-              className="res-text-38"
-              text={
-                "We're a passionate team of experts, collaborating to craft winning digital strategies that go above and beyond."
-              }
-            />
-          </div>
-          <MagneticButton>
-            <Link href={""} className="~sm/lg:~py-3/6 ~sm/lg:~px-12/40">
-              <p className="res-text-28">How we work</p>
-            </Link>
-          </MagneticButton>
+        <div className="flex w-[1280px] xpadding justify-center">
+          <TextReveal
+            className="font-light res-text-50"
+            text={
+              "We're a passionate team of experts, collaborating to craft winning digital strategies that go above and beyond. Our mission is to empower you to thrive online, and we achieve this by continuously refining our craft, staying ahead of industry trends, and delivering results that shatter expectations."
+            }
+          />
         </div>
       </section>
       <section
         id="expertise"
-        className="pt-48 flex flex-col gap-24 items-center bg-surface"
+        className="pb-48 flex flex-col gap-24 items-center"
       >
-        <div className="flex flex-col gap-2 w-full max-w-[1280px] xpadding">
-          <TextReveal
-            text="Our"
-            className="text-white font-extralight res-text-140 leading-none"
-          />
-          <TextReveal
-            text="Expertise"
-            className="text-white font-extralight res-text-140 leading-none"
-          />
-        </div>
         <div className="w-full">
           <ExpertiseSection />
         </div>
