@@ -45,27 +45,8 @@ const Home = async () => {
         </div>
       </section>
       <section className="flex ypadding justify-center">
-        <div className="xpadding w-[1280px] flex flex-col ~sm/lg:~gap-6/24">
-          <div className="flex flex-col gap-2 w-full max-w-[1280px] xpadding">
-            <TextReveal
-              text="Our"
-              className="font-extralight res-text-140 leading-none"
-            />
-            <TextReveal
-              text="Work"
-              className="font-extralight res-text-140 leading-none"
-            />
-          </div>
-          <div className="grid grid-cols-2 gap-20">
-            <div className="space-y-20 col-span-1">
-              <WorkPreview date="2024" image={work3} title={"Pulse Poetry"} />
-              <WorkPreview date="2024" image={work2} title={"TDM Masjid"} />
-            </div>
-            <div className="space-y-20 col-span-1 pt-[50%]">
-              <WorkPreview date="2024" image={work3} title={"Qurencia"} />
-              <WorkPreview date="2023" image={work1} title={"DishDelve"} />
-            </div>
-          </div>
+        <div className="w-full">
+          <WorkPreview />
         </div>
       </section>
       <section className="bg-black justify-center xpadding ypadding flex">
