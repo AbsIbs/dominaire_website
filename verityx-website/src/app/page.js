@@ -20,9 +20,6 @@ const Home = async () => {
           <Hero />
         </div>
       </section>
-      <section>
-        <div className="h-[320px] bg-green-900 w-full md:h-[640px] lg:h-[1280px]"></div>
-      </section>
       <section
         id="expertise"
         className="py-48 flex justify-center bg-surface"
@@ -33,7 +30,7 @@ const Home = async () => {
         <WorkPreview />
       </section>
       <section className="bg-black justify-center xpadding ypadding flex">
-        <div className="defaultWidth flex flex-col ~sm/lg:~gap-4/24">
+        <div className="defaultWidth flex flex-col ~sm/lg:~gap-4/32">
           <div className="flex flex-col gap-2 w-full max-w-[1280px]">
             <TextReveal
               text="Our"
@@ -47,7 +44,7 @@ const Home = async () => {
           <ReviewCards />
         </div>
       </section>
-      <section className="items-center ypadding flex flex-col gap-24">
+      <section className="items-center ypadding flex flex-col gap-32">
         <div className="w-full">
           <TextSlider height={"h-[300px]"}>
             <span className={"font-extralight text-[240px]"}>
@@ -55,11 +52,11 @@ const Home = async () => {
             </span>
           </TextSlider>
         </div>
-        <div className="xpadding w-full max-w-[1920px] flex flex-col gap-4 lg:gap-24">
+        <div className="xpadding w-full max-w-[1920px] flex flex-col gap-4 lg:gap-32">
           <FAQs />
         </div>
       </section>
-      <section className="bg-black ypadding flex flex-col gap-24 items-center">
+      <section className="bg-black ypadding flex flex-col gap-32 items-center">
         <div className="w-full">
           <TextSlider height={"h-[320px]"}>
             <span className={"text-white font-extralight text-[240px]"}>

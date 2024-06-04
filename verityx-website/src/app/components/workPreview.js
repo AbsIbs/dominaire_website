@@ -98,7 +98,7 @@ const WorkPreview = () => {
   };
 
   return (
-    <div className="xpadding flex flex-col items-center gap-24 defaultWidth">
+    <div className="xpadding flex flex-col items-center gap-32 defaultWidth">
       <div className="flex flex-col gap-2 w-full">
         <TextReveal
           text="Our"
@@ -109,7 +109,7 @@ const WorkPreview = () => {
           className="font-extralight res-text-140 leading-none"
         />
       </div>
-      <div className="flex flex-col gap-24 w-full">
+      <div className="flex flex-col gap-32 w-full">
         {data.map((item, index) => (
           <div key={index}>
             <Content
