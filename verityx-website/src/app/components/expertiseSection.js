@@ -14,38 +14,38 @@ const ExpertiseSection = () => {
     {
       title: "Web design",
       icon: "design",
-      tags: ["Desktop", "Mobile"],
-      desc: desc,
+      tags: ["UI Design", "UX Research"],
+      desc: "We create modern and visually stunning websites that perfectly suit your needs.",
     },
     {
       title: "Web development",
       icon: "development",
-      tags: ["Corporate site", "Blogs", "E-commerce", "Bespoke apps"],
-      desc: desc,
+      tags: ["Corporate site", "Blogs", "E-commerce", "Bespoke apps", "No-code"],
+      desc: "We build websites tailored to your business, ensuring they are fast, secure, and easy to use.",
     },
     {
       title: "Branding",
       icon: "branding",
       tags: ["Logos", "Mockups", "Color palette", "Typography", "Style guide"],
-      desc: desc,
+      desc: "We create a unique identity for your brand, helping to set you apart from the competition.",
     },
     {
       title: "Online marketing",
       icon: "marketing",
       tags: ["Social Media", "Facebook", "Google Ads"],
-      desc: desc,
+      desc: "We use proven strategies to help your business reach a wider audience and drive more conversions.",
     },
     {
       title: "SEO",
       icon: "seo",
       tags: ["On-page", "Off-page", "Technical", "Audits"],
-      desc: desc,
+      desc: "We help your website rank higher in search engine results, improving visibility and driving more traffic.",
     },
     {
       title: "A.I. & analytics",
       icon: "analytics",
       tags: ["Data analytics", "Predictive modelling", "Bespoke ML Models"],
-      desc: desc,
+      desc: "We use advanced technologies to gain valuable insights from your data, helping you make data-driven decisions.",
     },
   ];
 
@@ -66,18 +66,18 @@ const ExpertiseSection = () => {
           <AccordionItem
             key={index}
             aria-label={item.title}
-            title={item.title}
+            title={item.title.toUpperCase()}
             classNames={{
-              title: "text-[1.75rem] text-white",
+              title: "text-[2.5rem] text-white",
             }}
           >
             <div className="flex justify-between gap-16 text-white pb-4">
               <div className="flex-1 flex flex-col gap-8">
-                <p className="res-text-28 text-[rgba(255,255,255,0.90)]">
+                <p className="res-text-28 text-[rgba(255,255,255,0.80)]">
                   {item.desc}
                 </p>
                 <div className="flex gap-4 items-center">
-                  <p className="res-text-16 underline">Get in touch</p>
+                  <p className="res-text-21 underline">Get in touch</p>
                   <Link
                     href={""}
                     className={`
@@ -102,14 +102,14 @@ const ExpertiseSection = () => {
                   {item.tags.map((tag, index) => (
                     <div
                       key={index}
-                      className={`flex gap-6 items-center py-6 border-b ${
+                      className={`flex gap-6 items-center py-6 border-t ${
                         index == 0 ? "border-t border-t-[#333]" : ""
                       } border-y-[#333]`}
                     >
-                      <p className="text-[#333] res-text-21">{`0${
+                      <p className="text-[rgba(255,255,255,0.30)] res-text-28">{`0${
                         index + 1
                       }`}</p>
-                      <p className="res-text-21">{tag}</p>
+                      <p className="res-text-28">{tag}</p>
                     </div>
                   ))}
                 </div>

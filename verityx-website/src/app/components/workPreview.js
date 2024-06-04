@@ -33,7 +33,7 @@ const WorkPreview = () => {
 
   const Content = (props) => {
     return (
-      <div className="flex items-center flex-col gap-24 ">
+      <div className="flex items-center flex-col">
         <div className="xpadding flex flex-col gap-12">
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-end">
@@ -98,18 +98,30 @@ const WorkPreview = () => {
   };
 
   return (
-    <div className="flex flex-col w-full defaultWidth gap-[260px]">
-      {data.map((item, index) => (
-        <div key={index}>
-          <Content
-            title={item.title}
-            image={item.image}
-            desc={item.desc}
-            services={item.services}
-            commenced={item.commenced}
-          />
-        </div>
-      ))}
+    <div className="xpadding flex flex-col items-center gap-24 defaultWidth">
+      <div className="flex flex-col gap-2 w-full">
+        <TextReveal
+          text="Our"
+          className="font-extralight res-text-140 leading-none"
+        />
+        <TextReveal
+          text="Work"
+          className="font-extralight res-text-140 leading-none"
+        />
+      </div>
+      <div className="flex flex-col gap-24 w-full">
+        {data.map((item, index) => (
+          <div key={index}>
+            <Content
+              title={item.title}
+              image={item.image}
+              desc={item.desc}
+              services={item.services}
+              commenced={item.commenced}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
