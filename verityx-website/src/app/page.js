@@ -2,7 +2,6 @@
 import Link from "next/link";
 // Components
 import Hero from "./components/hero";
-import MagneticButton from "../app/components/magneticButton/magneticButton";
 import TextReveal from "./components/textReveal";
 import ExpertiseSection from "./components/expertiseSection";
 import WorkPreview from "./components/workPreview";

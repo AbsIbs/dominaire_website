@@ -1,6 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 // Components
 import TextReveal from "./textReveal";
+import FadeIn from "./fadeIn";
+// Material UI
+import NorthEastIcon from "@mui/icons-material/NorthEast";
 
 const ExpertiseSection = () => {
   const data = [
@@ -57,18 +61,36 @@ const ExpertiseSection = () => {
             className={"font-extralight res-text-64 leading-none"}
             text={props.desc}
           />
-
-          <div className="flex flex-col gap-3">
-            <p className="res-text-21">Services</p>
-            <div>
-              {props.services.map((item, index) => (
-                <div key={index}>
-                  <TextReveal
-                    className="res-text-38"
-                    text={item.toUpperCase()}
-                  />
-                </div>
-              ))}
+          <div className="flex justify-between">
+            <div className="flex flex-col gap-3">
+              <p className="font-light res-text-28">Services</p>
+              <div>
+                {props.services.map((item, index) => (
+                  <div key={index}>
+                    <TextReveal
+                      className="res-text-38"
+                      text={item.toUpperCase()}
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="flex">
+              <FadeIn
+                variants={{
+                  offscreen: { opacity: 0, x: -50 },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { duration: 0.8, ease: "easeOut" },
+                  },
+                }}
+              >
+                <Link href={""} className="flex items-center gap-2">
+                  <p className="res-text-28">Learn more</p>
+                  <NorthEastIcon fontSize="large" sx={{ color: "#333" }} />
+                </Link>
+              </FadeIn>
             </div>
           </div>
         </div>

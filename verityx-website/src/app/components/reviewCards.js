@@ -1,6 +1,5 @@
 "use client";
 // Material UI
-import FormatQuoteRoundedIcon from "@mui/icons-material/FormatQuoteRounded";
 import DesignServicesIcon from "@mui/icons-material/DesignServices";
 import CodeIcon from "@mui/icons-material/Code";
 import BrushIcon from "@mui/icons-material/Brush";
