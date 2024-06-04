@@ -34,23 +34,23 @@ const WorkPreview = () => {
   const Content = (props) => {
     return (
       <div className="flex items-center flex-col gap-24 ">
-        <div className="xpadding w-[1280px] flex flex-col gap-12">
+        <div className="xpadding flex flex-col gap-12">
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-end">
               <TextReveal
                 text={props.title}
-                className="font-light res-text-80 leading-none"
+                className="font-light res-text-64 leading-none"
               />
               <TextReveal
                 text={`${props.commenced}`}
                 className="font-light res-text-28 leading-none"
               />
             </div>
-            <div className="relative w-full h-[500px] rounded-lg">
+            <div className="relative w-full h-[800px] rounded-sm">
               <Image
                 src={`/${props.image}`}
                 fill
-                style={{ objectFit: "cover", borderRadius: "8px" }}
+                style={{ objectFit: "cover", borderRadius: "2px" }}
               />
             </div>
           </div>
@@ -98,7 +98,7 @@ const WorkPreview = () => {
   };
 
   return (
-    <div className="flex flex-col gap-[260px]">
+    <div className="flex flex-col w-full defaultWidth gap-[260px]">
       {data.map((item, index) => (
         <div key={index}>
           <Content

@@ -53,6 +53,10 @@
   @apply ~sm/lg:~py-12/48
 }
 
+.defaultWidth {
+  @apply w-[1920px]
+}
+
 @tailwind utilities;
 
 html {
@@ -171,4 +175,8 @@ html {
 
 .staggered-grid > :nth-child(2n) {
   margin-top: 50%; /* Adjust this value as needed to achieve the desired staggered effect */
+}
+
+hr[role="separator"] {
+  background-color: #333;
 }
