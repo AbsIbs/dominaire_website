@@ -10,7 +10,7 @@ const Hero = () => {
         <FadeIn>
           <div className="flex flex-col gap-8">
             <p
-              className={`w-full text-zinc-400 leading-tight res-text-64 lg:w-[75%]`}
+              className={`text-zinc-400 font-light leading-tight res-text-80 2xl:w-[75%]`}
             >
               Solving your <span className="text-black">pain points</span>{" "}
               through innovative <span className="text-black">solutions</span>{" "}

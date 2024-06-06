@@ -12,7 +12,7 @@ const ExpertiseSection = () => {
       title: "A.I. & Automation",
       icon: "analytics",
       tags: ["Automation Apps", "Data analytics", "ML Models"],
-      desc: "We use advanced technologies to gain valuable insights from your data, helping you make data-driven decisions.",
+      desc: "We help your business automate processes, saving time and money.",
     },
     {
       title: "Web design",
@@ -71,11 +71,11 @@ const ExpertiseSection = () => {
             aria-label={item.title}
             title={item.title.toUpperCase()}
             classNames={{
-              title: "text-[1rem] md:text-[2.375rem] text-white",
+              title: "text-[1.5rem] md:text-[2.375rem] text-white",
             }}
           >
-            <div className="flex justify-between gap-16 text-white pb-4">
-              <div className="flex-1 flex flex-col gap-8">
+            <div className="flex flex-col justify-between ~sm/lg:~gap-8/16 text-white pb-4 md:flex-row">
+              <div className="flex-1 flex flex-col ~sm/lg:~gap-4/8">
                 <p className="res-text-28 text-[rgba(255,255,255,0.80)]">
                   {item.desc}
                 </p>
@@ -105,7 +105,7 @@ const ExpertiseSection = () => {
                   {item.tags.map((tag, index) => (
                     <div
                       key={index}
-                      className={`flex gap-6 items-center py-6 border-t ${
+                      className={`flex gap-6 items-center ~sm/lg:~py-3/6 border-t ${
                         index == 0 ? "border-t border-t-[#333]" : ""
                       } border-y-[#333]`}
                     >
