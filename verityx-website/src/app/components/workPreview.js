@@ -34,7 +34,7 @@ const WorkPreview = () => {
   const Content = (props) => {
     return (
       <div className="flex items-center flex-col">
-        <div className="xpadding flex flex-col gap-12">
+        <div className="flex flex-col ~sm/lg:~gap-4/12">
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-end">
               <TextReveal
@@ -46,7 +46,7 @@ const WorkPreview = () => {
                 className="font-light res-text-28 leading-none"
               />
             </div>
-            <div className="relative w-full h-[800px] rounded-sm">
+            <div className="relative w-full h-[500px] rounded-sm md:h-[600px] lg:h-[800px]">
               <Image
                 src={`/${props.image}`}
                 fill
@@ -54,19 +54,19 @@ const WorkPreview = () => {
               />
             </div>
           </div>
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col ~sm/lg:~gap-4/12">
             <TextReveal
-              className={"font-light res-text-38"}
+              className={"font-light res-text-28"}
               text={props.desc}
             />
             <div className="flex justify-between">
-              <div className="flex flex-col gap-3">
+              <div className="flex flex-col ~sm/lg:~gap-1/3">
                 <p className="font-light res-text-21">Services</p>
                 <div>
                   {props.services.map((item, index) => (
                     <div key={index}>
                       <TextReveal
-                        className="res-text-28"
+                        className="res-text-21"
                         text={item.toUpperCase()}
                       />
                     </div>
@@ -98,7 +98,7 @@ const WorkPreview = () => {
   };
 
   return (
-    <div className="xpadding flex flex-col items-center gap-32 defaultWidth">
+    <div className="xpadding flex flex-col items-center ~sm/lg:~gap-12/24 defaultWidth">
       <div className="flex flex-col gap-2 w-full">
         <TextReveal
           text="Our"
@@ -109,7 +109,7 @@ const WorkPreview = () => {
           className="font-extralight res-text-140 leading-none"
         />
       </div>
-      <div className="flex flex-col gap-32 w-full">
+      <div className="flex flex-col ~sm/lg:~gap-12/24 w-full">
         {data.map((item, index) => (
           <div key={index}>
             <Content

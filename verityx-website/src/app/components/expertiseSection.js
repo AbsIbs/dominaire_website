@@ -53,7 +53,7 @@ const ExpertiseSection = () => {
   ];
 
   return (
-    <div className="flex flex-col ~sm/lg:~gap-8/24 defaultWidth xpadding">
+    <div className="flex flex-col ~sm/lg:~gap-12/24 defaultWidth xpadding">
       <div className="flex flex-col gap-2">
         <TextReveal
           className="text-white font-extralight res-text-140 leading-none"
