@@ -18,7 +18,10 @@ const Home = async () => {
       <section>
         <Hero />
       </section>
-      <section id="expertise" className="py-48 flex justify-center bg-surface">
+      <section
+        id="expertise"
+        className="ypadding flex justify-center bg-surface"
+      >
         <ExpertiseSection />
       </section>
       <section className="flex ypadding justify-center">

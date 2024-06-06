@@ -53,7 +53,7 @@ const ExpertiseSection = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-24 defaultWidth xpadding">
+    <div className="flex flex-col ~sm/lg:~gap-8/24 defaultWidth xpadding">
       <div className="flex flex-col gap-2">
         <TextReveal
           className="text-white font-extralight res-text-140 leading-none"
@@ -71,7 +71,7 @@ const ExpertiseSection = () => {
             aria-label={item.title}
             title={item.title.toUpperCase()}
             classNames={{
-              title: "text-[2.5rem] text-white",
+              title: "text-[1rem] md:text-[2.375rem] text-white",
             }}
           >
             <div className="flex justify-between gap-16 text-white pb-4">

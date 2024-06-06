@@ -1,6 +1,5 @@
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
-import AnimatedCursor from "react-animated-cursor";
 
 // Font
 const dm_sans = DM_Sans({ subsets: ["latin"] });
