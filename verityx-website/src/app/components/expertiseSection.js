@@ -7,10 +7,13 @@ import { Accordion, AccordionItem } from "@nextui-org/react";
 import EastIcon from "@mui/icons-material/East";
 const ExpertiseSection = () => {
 
-  const desc =
-    "Lorem ipsum dolor sit amet consectetur. Neque metus varius orci mattis eu nunc pellentesque. Nulla diam non nullam ut. Rhoncus id mattis mauris malesuada. Ut pulvinar urna lacus pharetra. ";
-
   const data = [
+    {
+      title: "A.I. & Automation",
+      icon: "analytics",
+      tags: ["Automation Apps", "Data analytics", "ML Models"],
+      desc: "We use advanced technologies to gain valuable insights from your data, helping you make data-driven decisions.",
+    },
     {
       title: "Web design",
       icon: "design",
@@ -20,7 +23,13 @@ const ExpertiseSection = () => {
     {
       title: "Web development",
       icon: "development",
-      tags: ["Corporate site", "Blogs", "E-commerce", "Bespoke apps", "No-code"],
+      tags: [
+        "Corporate site",
+        "Blogs",
+        "E-commerce",
+        "Bespoke apps",
+        "No-code",
+      ],
       desc: "We build websites tailored to your business, ensuring they are fast, secure, and easy to use.",
     },
     {
@@ -40,12 +49,6 @@ const ExpertiseSection = () => {
       icon: "seo",
       tags: ["On-page", "Off-page", "Technical", "Audits"],
       desc: "We help your website rank higher in search engine results, improving visibility and driving more traffic.",
-    },
-    {
-      title: "A.I. & analytics",
-      icon: "analytics",
-      tags: ["Data analytics", "Predictive modelling", "Bespoke ML Models"],
-      desc: "We use advanced technologies to gain valuable insights from your data, helping you make data-driven decisions.",
     },
   ];
 

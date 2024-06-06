@@ -35,8 +35,7 @@ const ContactForm = () => {
     "Branding",
     "Online marketing",
     "SEO",
-    "A.I. & analytics",
-    "Consulting",
+    "A.I. & Automation",
   ];
 
   const maxLength = 1000;

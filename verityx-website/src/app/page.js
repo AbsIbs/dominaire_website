@@ -15,15 +15,10 @@ import NorthEastIcon from "@mui/icons-material/NorthEast";
 const Home = async () => {
   return (
     <>
-      <section className="flex justify-center">
-        <div className=" w-full">
-          <Hero />
-        </div>
+      <section>
+        <Hero />
       </section>
-      <section
-        id="expertise"
-        className="py-48 flex justify-center bg-surface"
-      >
+      <section id="expertise" className="py-48 flex justify-center bg-surface">
         <ExpertiseSection />
       </section>
       <section className="flex ypadding justify-center">
@@ -56,7 +51,10 @@ const Home = async () => {
           <FAQs />
         </div>
       </section>
-      <section className="bg-black ypadding flex flex-col gap-32 items-center">
+      <section
+        id="contact"
+        className="bg-black ypadding flex flex-col gap-32 items-center"
+      >
         <div className="w-full">
           <TextSlider height={"h-[320px]"}>
             <span className={"text-white font-extralight text-[240px]"}>
