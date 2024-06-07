@@ -28,7 +28,7 @@ const Home = async () => {
         <WorkPreview />
       </section>
       <section className="bg-black justify-center xpadding ypadding flex">
-        <div className="defaultWidth flex flex-col ~sm/lg:~gap-4/32">
+        <div className="defaultWidth flex flex-col ~sm/lg:~gap-12/24">
           <div className="flex flex-col gap-2 w-full max-w-[1280px]">
             <TextReveal
               text="Our"

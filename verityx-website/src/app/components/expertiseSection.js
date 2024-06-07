@@ -39,12 +39,6 @@ const ExpertiseSection = () => {
       desc: "We create a unique identity for your brand, helping to set you apart from the competition.",
     },
     {
-      title: "Online marketing",
-      icon: "marketing",
-      tags: ["Social Media", "Facebook", "Google Ads"],
-      desc: "We use proven strategies to help your business reach a wider audience and drive more conversions.",
-    },
-    {
       title: "SEO",
       icon: "seo",
       tags: ["On-page", "Off-page", "Technical", "Audits"],
