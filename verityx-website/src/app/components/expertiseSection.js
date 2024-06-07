@@ -65,7 +65,7 @@ const ExpertiseSection = () => {
             aria-label={item.title}
             title={item.title.toUpperCase()}
             classNames={{
-              title: "text-[1.5rem] md:text-[2.375rem] text-white",
+              title: "text-[1.25rem] md:text-[2.375rem] text-white",
             }}
           >
             <div className="flex flex-col justify-between ~sm/lg:~gap-8/16 text-white pb-4 md:flex-row">
