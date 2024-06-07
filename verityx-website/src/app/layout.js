@@ -8,7 +8,7 @@ const dm_sans = DM_Sans({ subsets: ["latin"] });
 import Providers from "./providers";
 
 // Components
-import Navbar from "./components/navbar";
+import NavbarComponent from "./components/navbar";
 
 export const metadata = {
   title: "Dominaire Studios",
@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${dm_sans.className} text-text-normal`}>
         <Providers>
-          <Navbar />
+          <NavbarComponent />
           {children}
         </Providers>
       </body>

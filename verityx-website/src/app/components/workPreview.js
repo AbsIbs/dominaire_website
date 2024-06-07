@@ -33,8 +33,8 @@ const WorkPreview = () => {
 
   const Content = (props) => {
     return (
-      <div className="flex items-center flex-col">
-        <div className="flex flex-col ~sm/lg:~gap-4/12">
+      <div className="flex items-center flex-col ">
+        <div className="flex flex-col ~sm/lg:~gap-4/12 w-full">
           <div className="flex flex-col gap-2">
             <div className="flex justify-between items-end">
               <TextReveal
@@ -109,7 +109,7 @@ const WorkPreview = () => {
           className="font-extralight res-text-140 leading-none"
         />
       </div>
-      <div className="flex flex-col ~sm/lg:~gap-12/24 w-full">
+      <div className="flex flex-col ~sm/lg:~gap-12/24 w-full ">
         {data.map((item, index) => (
           <div key={index}>
             <Content

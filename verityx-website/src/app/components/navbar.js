@@ -1,20 +1,26 @@
+"use client";
 import CallIcon from "@mui/icons-material/Call";
 import Link from "next/link";
+// NextUI
+import { Navbar, NavbarContent } from "@nextui-org/navbar";
 // Font
 import { Nunito_Sans } from "next/font/google";
 
 const nunito_sans = Nunito_Sans({ subsets: ["latin"] });
 
-const Navbar = () => {
+const NavbarComponent = () => {
   return (
-    <div className="flex items-center justify-between sticky top-0 py-3 px-3">
-      <p
-        className={`${nunito_sans.className} top-8 left-6 font-bold res-text-21`}
-      >
-        Dominaire Studios
-      </p>
-    </div>
+    <Navbar className="bg-surface" shouldHideOnScroll maxWidth="full">
+      {/* Left side */}
+      <NavbarContent>
+        <p
+          className={`${nunito_sans.className} text-white res-text-21 font-medium`}
+        >
+          Dominaire Studios
+        </p>
+      </NavbarContent>
+    </Navbar>
   );
 };
 
-export default Navbar;
+export default NavbarComponent;
