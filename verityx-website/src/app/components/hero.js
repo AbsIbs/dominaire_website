@@ -1,30 +1,31 @@
 import FadeIn from "./fadeIn";
 import Link from "next/link";
-// Material UI
-import EastIcon from "@mui/icons-material/East";
 
 const Hero = () => {
   return (
     <div className="h-[80vh] flex items-center justify-center w-full lg:h-screen">
-      <div className="flex defaultWidth items-center h-full xpadding">
+      <div className="defaultWidth flex flex-col gap-16">
         <FadeIn>
-          <div className="flex flex-col gap-8">
-            <p
-              className={`text-zinc-400 font-light leading-tight res-text-80 2xl:w-[75%]`}
-            >
-              Solving your <span className="text-black">pain points</span>{" "}
-              through innovative <span className="text-black">solutions</span>{" "}
-              one step at a time.
+          <div>
+            <p className="font-bold res-text-hero leading-none">
+              Dominaire<span className="text-primary">.</span>
             </p>
-            <Link
-              href={"/expertise"}
-              className="flex items-center gap-2 w-fit py-4 px-8 bg-surface rounded-sm"
-            >
-              <p className="text-white res-text-21">What we do</p>
-              <EastIcon sx={{ color: "white" }} />
-            </Link>
+            <p className="res-text-28 font-light">
+              We <span className="text-primary font-bold">Design</span>{" "}
+              cutting-edge apps,{" "}
+              <span className="text-primary font-bold">Develop</span> robust
+              solutions, and{" "}
+              <span className="text-primary font-bold">Market</span> to solve
+              your toughest conversion challenges.
+            </p>
           </div>
         </FadeIn>
+        <Link
+          href={"/#expertise"}
+          className="flex gap-2 w-fit py-4 px-8 bg-[#F76C85]"
+        >
+          <p className="res-text-21 text-white">Learn more</p>
+        </Link>
       </div>
     </div>
   );

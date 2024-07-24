@@ -15,7 +15,7 @@ import NorthEastIcon from "@mui/icons-material/NorthEast";
 const Home = async () => {
   return (
     <>
-      <section>
+      <section className="xpadding">
         <Hero />
       </section>
       <section

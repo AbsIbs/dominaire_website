@@ -16,7 +16,7 @@ const NavbarComponent = () => {
         <p
           className={`${nunito_sans.className} text-white res-text-21 font-medium`}
         >
-          Dominaire Studios
+          Dominaire
         </p>
       </NavbarContent>
     </Navbar>
