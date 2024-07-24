@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Hero = () => {
   return (
-    <div className="h-[80vh] flex items-center justify-center w-full lg:h-screen">
+    <div className="h-[80vh] flex items-center justify-center w-full lg:h-[calc(100vh-64px)]">
       <div className="defaultWidth flex flex-col gap-16">
         <FadeIn>
           <div>
@@ -11,21 +11,15 @@ const Hero = () => {
               Dominaire<span className="text-primary">.</span>
             </p>
             <p className="res-text-28 font-light">
-              We <span className="text-primary font-bold">Design</span>{" "}
+              We <span className="text-primary font-bold">design</span>{" "}
               cutting-edge apps,{" "}
-              <span className="text-primary font-bold">Develop</span> robust
+              <span className="text-primary font-bold">develop</span> robust
               solutions, and{" "}
-              <span className="text-primary font-bold">Market</span> to solve
+              <span className="text-primary font-bold">market</span> to solve
               your toughest conversion challenges.
             </p>
           </div>
         </FadeIn>
-        <Link
-          href={"/#expertise"}
-          className="flex gap-2 w-fit py-4 px-8 bg-[#F76C85]"
-        >
-          <p className="res-text-21 text-white">Learn more</p>
-        </Link>
       </div>
     </div>
   );
