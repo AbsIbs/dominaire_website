@@ -43,18 +43,11 @@ const Home = async () => {
         </div>
       </section>
       <section className="items-center ypadding flex flex-col ~sm/lg:~gap-12/24">
-        <div className="w-full">
-          <TextSlider height={"h-[100px] md:h-[200px] lg:h-[300px]"}>
-            <span
-              className={
-                "font-extralight ~sm/lg:~mr-6/12 text-[80px] md:text-[180px] lg:text-[240px]"
-              }
-            >
-              Frequently Asked Questions<span className="text-primary">.</span>
-            </span>
-          </TextSlider>
-        </div>
-        <div className="xpadding w-full max-w-[1920px]">
+        <div className="xpadding w-full max-w-[1920px] flex flex-col ~sm/lg:~gap-12/24">
+          <TextReveal
+            text="FAQs"
+            className="font-extralight res-text-140 leading-none"
+          />
           <FAQs />
         </div>
       </section>
@@ -82,15 +75,19 @@ const Home = async () => {
                 className="text-white font-extralight res-text-80 leading-none tracking-wider"
               />
               <p className="res-text-21">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                sit amet risus viverra, lobortis sem ut, tempus eros.
+                Looking to elevate your company to the next level? Reach out to
+                us today to discuss how our services can help you achieve your
+                goals. Whether you need a new website, a mobile app, or a custom
+                software solution, we're here to help.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 ~sm/lg:~gap-4/8">
                 <div className="flex flex-col ~sm/lg:~gap-0/2">
                   <p className="res-text-21 text-[rgba(255,255,255,0.50)] font-light tracking-widest">
                     EMAIL
                   </p>
-                  <p className="res-text-21 underline">support@dominare.com</p>
+                  <p className="res-text-21 underline">
+                    abass.ibrahim@dominare.com
+                  </p>
                 </div>
                 <div className="flex flex-col ~sm/lg:~gap-0/2">
                   <p className="res-text-21 text-[rgba(255,255,255,0.50)] font-light tracking-widest">
@@ -108,7 +105,13 @@ const Home = async () => {
                   <p className="res-text-21 text-[rgba(255,255,255,0.50)] font-light tracking-widest">
                     INSTAGRAM
                   </p>
-                  <p className="res-text-21 underline">support@dominare.com</p>
+                  <Link
+                    href={"https://dominare.dev"}
+                    target="_blank"
+                    className="res-text-21 underline"
+                  >
+                    dominaire.dev
+                  </Link>
                 </div>
               </div>
             </div>

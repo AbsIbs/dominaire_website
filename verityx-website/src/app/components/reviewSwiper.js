@@ -20,7 +20,7 @@ const ReviewSwiper = ({ data }) => {
   }, [emblaApi]);
 
   return (
-    <div className="flex flex-col gap-4">
+    <div className="flex flex-col gap-8">
       <div className="embla">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
@@ -39,7 +39,7 @@ const ReviewSwiper = ({ data }) => {
         </div>
       </div>
       <div className="flex justify-end">
-        <div className="flex gap-4">
+        <div className="flex gap-2">
           <button
             className="rounded-full border border-white p-4"
             onClick={scrollPrev}

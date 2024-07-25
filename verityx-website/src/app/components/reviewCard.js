@@ -1,5 +1,3 @@
-// Components
-import FadeIn from "./fadeIn";
 // Material UI
 import DesignServicesIcon from "@mui/icons-material/DesignServices";
 import CodeIcon from "@mui/icons-material/Code";

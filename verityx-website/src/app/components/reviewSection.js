@@ -10,7 +10,7 @@ const ReviewSection = () => {
     {
       company: "TDM Masjid",
       desc: desc,
-      name: "Name",
+      name: "Ryan",
       role: "CEO",
       jobs: [
         { name: "UI Design", icon: "design" },
@@ -21,7 +21,7 @@ const ReviewSection = () => {
     {
       company: "Pulse Poetry",
       desc: desc,
-      name: "Name",
+      name: "Jason",
       role: "CEO",
       jobs: [
         { name: "UI Design", icon: "design" },
@@ -32,7 +32,7 @@ const ReviewSection = () => {
     {
       company: "Querentia",
       desc: desc,
-      name: "Name",
+      name: "Patrick",
       role: "CEO",
       jobs: [
         { name: "UI Design", icon: "design" },
