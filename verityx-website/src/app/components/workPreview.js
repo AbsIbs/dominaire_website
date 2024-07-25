@@ -31,22 +31,22 @@ const WorkPreview = () => {
     },
   ];
 
-  const Content = (props) => {
+  const Card = (props) => {
     return (
-      <div className="flex items-center flex-col ">
+      <div className="flex items-center flex-col">
         <div className="flex flex-col ~sm/lg:~gap-4/12 w-full">
           <div className="flex flex-col gap-2">
-            <div className="flex justify-between items-end">
+            <div className="flex flex-col gap-2">
               <TextReveal
                 text={props.title}
-                className="font-light res-text-64 leading-none"
+                className="font-light res-text-38 leading-none"
               />
               <TextReveal
                 text={`${props.commenced}`}
-                className="font-light res-text-28 leading-none"
+                className="font-light res-text-21 leading-none"
               />
             </div>
-            <div className="relative w-full h-[500px] rounded-sm md:h-[600px] lg:h-[800px]">
+            <div className="relative w-full h-[600px] rounded-sm ">
               <Image
                 src={`/${props.image}`}
                 fill
@@ -55,10 +55,6 @@ const WorkPreview = () => {
             </div>
           </div>
           <div className="flex flex-col ~sm/lg:~gap-4/12">
-            <TextReveal
-              className={"font-light res-text-28"}
-              text={props.desc}
-            />
             <div className="flex justify-between">
               <div className="flex flex-col ~sm/lg:~gap-1/3">
                 <p className="font-light res-text-21">Services</p>
@@ -73,23 +69,16 @@ const WorkPreview = () => {
                   ))}
                 </div>
               </div>
-              <div className="flex">
-                <FadeIn
-                  variants={{
-                    offscreen: { opacity: 0, x: -25 },
-                    visible: {
-                      opacity: 1,
-                      x: 0,
-                      transition: { duration: 0.8, ease: "easeOut" },
-                    },
-                  }}
-                >
-                  <Link href={""} className="flex items-center gap-2">
-                    <p className="res-text-21">Learn more</p>
-                    <NorthEastIcon sx={{ color: "#333" }} />
-                  </Link>
-                </FadeIn>
-              </div>
+              <FadeIn
+                variants={{
+                  offscreen: { opacity: 0, x: -25 },
+                  visible: {
+                    opacity: 1,
+                    x: 0,
+                    transition: { duration: 0.8, ease: "easeOut" },
+                  },
+                }}
+              ></FadeIn>
             </div>
           </div>
         </div>
@@ -105,21 +94,21 @@ const WorkPreview = () => {
           className="font-extralight res-text-140 leading-none"
         />
         <TextReveal
-          text="Work"
+          text="Projects"
           className="font-extralight res-text-140 leading-none"
         />
       </div>
-      <div className="flex flex-col ~sm/lg:~gap-12/24 w-full ">
+      <div className="flex justify-between gap-8 w-full">
         {data.map((item, index) => (
-          <div key={index}>
-            <Content
+          <Link href={""} key={index} className="flex-1">
+            <Card
               title={item.title}
               image={item.image}
               desc={item.desc}
               services={item.services}
               commenced={item.commenced}
             />
-          </div>
+          </Link>
         ))}
       </div>
     </div>
