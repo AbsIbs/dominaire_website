@@ -1,12 +1,8 @@
 "use client";
-import CallIcon from "@mui/icons-material/Call";
+import EastIcon from "@mui/icons-material/East";
 import Link from "next/link";
 // NextUI
 import { Navbar, NavbarContent } from "@nextui-org/navbar";
-// Font
-import { Nunito_Sans } from "next/font/google";
-
-const nunito_sans = Nunito_Sans({ subsets: ["latin"] });
 
 const NavbarComponent = () => {
   return (
@@ -23,24 +19,24 @@ const NavbarComponent = () => {
               </li>
               <li>
                 <Link href="/" className="hover:text-primary">
+                  EXPERTISE
+                </Link>
+              </li>
+              <li>
+                <Link href="/" className="hover:text-primary">
                   PROJECTS
                 </Link>
               </li>
             </ul>
-            <div className="flex gap-4">
-              <Link
-                href={"https://calendly.com/abass-ibrahim-dominaire/30min"}
-                target="_blank"
-                className="flex gap-2 justify-center py-3 px-8 bg-primary rounded-sm"
-              >
-                <p className="text-white res-text-base">Call us</p>
-                <CallIcon className="text-white" />
-              </Link>
+            <div className="flex items-center justify-center gap-4">
               <Link
                 href={"/#contact"}
-                className="flex justify-center border border-surface py-3 px-8 rounded-sm hover:bg-surface hover:text-white"
+                className="flex gap-2 justify-center py-2 px-6 bg-primary rounded"
               >
-                <p className="res-text-base">Contact us</p>
+                <p className="text-white res-text-base font-medium">
+                  Let&rsquo;s talk
+                </p>
+                <EastIcon sx={{ color: "white" }} />
               </Link>
             </div>
           </div>

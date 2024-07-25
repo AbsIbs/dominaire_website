@@ -115,17 +115,18 @@ const Home = async () => {
             <div className="flex-[2] flex flex-col gap-6 lg:pl-16">
               <Link
                 href={"/contact-us"}
-                className="flex justify-between border border-line w-full py-6 px-4 lg:px-8"
+                className="flex justify-between border border-line w-full py-6 px-4 lg:px-8 hover:bg-white hover:text-black"
               >
                 <p className="res-text-21">Email us</p>
-                <NorthEastIcon sx={{ color: "white" }} />
+                <NorthEastIcon />
               </Link>
               <Link
-                href={""}
-                className="flex justify-between border border-line w-full py-6 px-4 lg:px-8"
+                href={"https://calendly.com/abass-ibrahim-dominaire/30min"}
+                target="_blank"
+                className="flex justify-between border border-line w-full py-6 px-4 lg:px-8 hover:bg-white hover:text-black"
               >
                 <p className="res-text-21">Schedule a call</p>
-                <NorthEastIcon sx={{ color: "white" }} />
+                <NorthEastIcon />
               </Link>
             </div>
           </div>

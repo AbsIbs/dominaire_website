@@ -101,7 +101,7 @@ const WorkPreview = () => {
     <div className="xpadding flex flex-col items-center ~sm/lg:~gap-12/24 defaultWidth">
       <div className="flex flex-col gap-2 w-full">
         <TextReveal
-          text="Our"
+          text="Latest"
           className="font-extralight res-text-140 leading-none"
         />
         <TextReveal
