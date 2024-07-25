@@ -111,6 +111,11 @@ const WorkPreview = () => {
           </Link>
         ))}
       </div>
+      <div className="flex items-center justify-center">
+        <Link href={""} className="rounded-full bg-surface py-2 px-8">
+          <p className="res-text-16 text-white">See more</p>
+        </Link>
+      </div>
     </div>
   );
 };

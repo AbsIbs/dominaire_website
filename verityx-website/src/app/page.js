@@ -5,7 +5,7 @@ import Hero from "./components/hero";
 import TextReveal from "./components/textReveal";
 import ExpertiseSection from "./components/expertiseSection";
 import WorkPreview from "./components/workPreview";
-import ReviewCards from "./components/reviewCards";
+import ReviewSection from "./components/reviewSection";
 import FAQs from "./components/faqs";
 import TextSlider from "./components/textSlider/textSlider";
 
@@ -39,7 +39,7 @@ const Home = async () => {
               className="text-white font-extralight res-text-140 leading-none"
             />
           </div>
-          <ReviewCards />
+          <ReviewSection />
         </div>
       </section>
       <section className="items-center ypadding flex flex-col ~sm/lg:~gap-12/24">
