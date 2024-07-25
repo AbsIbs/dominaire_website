@@ -78,7 +78,7 @@ const Home = async () => {
                 Looking to elevate your company to the next level? Reach out to
                 us today to discuss how our services can help you achieve your
                 goals. Whether you need a new website, a mobile app, or a custom
-                software solution, we're here to help.
+                software solution, we&apos;re here to help.
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 ~sm/lg:~gap-4/8">
                 <div className="flex flex-col ~sm/lg:~gap-0/2">
