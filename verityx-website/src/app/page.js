@@ -51,10 +51,7 @@ const Home = async () => {
           <FAQs />
         </div>
       </section>
-      <section
-        id="contact"
-        className="bg-black ypadding flex flex-col ~sm/lg:~gap-12/24 items-center"
-      >
+      <section className="bg-black ypadding flex flex-col ~sm/lg:~gap-12/24 items-center">
         <div className="w-full">
           <TextSlider height={"h-[100px] md:h-[200px] lg:h-[300px]"}>
             <span
@@ -69,7 +66,10 @@ const Home = async () => {
         </div>
         <div className="w-full flex justify-center xpadding">
           <div className="defaultWidth flex flex-col gap-8 text-white lg:flex-row lg:gap-0">
-            <div className="flex-[3] flex flex-col ~sm/lg:~gap-4/16 border-r border-r-[rgba(255,255,255,0.50)] pr-16">
+            <div
+              id="contact"
+              className="flex-[3] flex flex-col ~sm/lg:~gap-4/16 border-r border-r-[rgba(255,255,255,0.50)] pr-16"
+            >
               <TextReveal
                 text="Contact us"
                 className="text-white font-extralight res-text-80 leading-none tracking-wider"
@@ -91,22 +91,10 @@ const Home = async () => {
                 </div>
                 <div className="flex flex-col ~sm/lg:~gap-0/2">
                   <p className="res-text-21 text-[rgba(255,255,255,0.50)] font-light tracking-widest">
-                    PHONE
-                  </p>
-                  <p className="res-text-21 underline">123456789</p>
-                </div>
-                <div className="flex flex-col ~sm/lg:~gap-0/2">
-                  <p className="res-text-21 text-[rgba(255,255,255,0.50)] font-light tracking-widest">
-                    LINKEDIN
-                  </p>
-                  <p className="res-text-21 underline">support@dominare.com</p>
-                </div>
-                <div className="flex flex-col ~sm/lg:~gap-0/2">
-                  <p className="res-text-21 text-[rgba(255,255,255,0.50)] font-light tracking-widest">
                     INSTAGRAM
                   </p>
                   <Link
-                    href={"https://dominare.dev"}
+                    href={"https://www.instagram.com/dominaire.dev/"}
                     target="_blank"
                     className="res-text-21 underline"
                   >
@@ -120,7 +108,7 @@ const Home = async () => {
                 href={"/contact-us"}
                 className="flex justify-between border border-line w-full py-6 px-4 lg:px-8 hover:bg-white hover:text-black"
               >
-                <p className="res-text-21">Email us</p>
+                <p className="res-text-21">Message us</p>
                 <NorthEastIcon />
               </Link>
               <Link

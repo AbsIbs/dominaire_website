@@ -1,4 +1,5 @@
 "use client";
+import LocalPhoneRoundedIcon from "@mui/icons-material/LocalPhoneRounded";
 import EastIcon from "@mui/icons-material/East";
 import Link from "next/link";
 // NextUI
@@ -36,7 +37,7 @@ const NavbarComponent = () => {
                 <p className="text-white res-text-base font-medium">
                   Let&rsquo;s talk
                 </p>
-                <EastIcon sx={{ color: "white" }} />
+                <LocalPhoneRoundedIcon sx={{ color: "white" }} />
               </Link>
             </div>
           </div>
