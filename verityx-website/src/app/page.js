@@ -5,8 +5,6 @@ import Hero from "./components/hero";
 import TextReveal from "./components/textReveal";
 import ExpertiseSection from "./components/expertiseSection";
 import WorkPreview from "./components/workPreview";
-import ReviewSection from "./components/reviewSection";
-import FAQs from "./components/faqs";
 import TextSlider from "./components/textSlider/textSlider";
 
 // Material UI
@@ -26,30 +24,6 @@ const Home = async () => {
       </section>
       <section className="flex ypadding justify-center">
         <WorkPreview />
-      </section>
-      <section className="bg-black justify-center xpadding ypadding flex">
-        <div className="defaultWidth flex flex-col ~sm/lg:~gap-12/24">
-          <div className="flex flex-col gap-2 w-full max-w-[1280px]">
-            <TextReveal
-              text="Our"
-              className="text-white font-extralight res-text-140 leading-none"
-            />
-            <TextReveal
-              text="Reviews"
-              className="text-white font-extralight res-text-140 leading-none"
-            />
-          </div>
-          <ReviewSection />
-        </div>
-      </section>
-      <section className="items-center ypadding flex flex-col ~sm/lg:~gap-12/24">
-        <div className="xpadding w-full max-w-[1920px] flex flex-col ~sm/lg:~gap-12/24">
-          <TextReveal
-            text="FAQs"
-            className="font-extralight res-text-140 leading-none"
-          />
-          <FAQs />
-        </div>
       </section>
       <section className="bg-black ypadding flex flex-col ~sm/lg:~gap-12/24 items-center">
         <div className="w-full">
