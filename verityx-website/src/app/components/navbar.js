@@ -29,6 +29,16 @@ const NavbarComponent = () => {
     },
   ];
 
+  const MenuButton = () => (
+    <button
+      className="md:hidden rounded-full flex flex-col gap-1 items-center justify-center bg-surface h-12 w-12"
+      onClick={() => toggleDrawer(true)}
+    >
+      <div className="rounded-full bg-line h-[0.5px] w-6"></div>
+      <div className="rounded-full bg-line h-[0.5px] w-6"></div>
+    </button>
+  );
+
   const DrawerList = () => {
     return (
       <Box
@@ -51,7 +61,7 @@ const NavbarComponent = () => {
           <div className="flex flex-col gap-2">
             {menuItems.map((item, index) => (
               <Link key={index} href={item.link}>
-                <p className="res-text-50 text-white font-extralight">
+                <p className="res-text-64 text-white font-extralight">
                   {item.label}
                 </p>
               </Link>
@@ -65,27 +75,26 @@ const NavbarComponent = () => {
     );
   };
 
-  const MenuButton = () => (
-    <button
-      className="rounded-full flex flex-col gap-1 items-center justify-center bg-surface h-12 w-12"
-      onClick={() => toggleDrawer(true)}
-    >
-      <div className="rounded-full bg-line h-[0.5px] w-6"></div>
-      <div className="rounded-full bg-line h-[0.5px] w-6"></div>
-    </button>
-  );
-
   return (
     <>
       <Navbar className="bg-white" shouldHideOnScroll maxWidth="full">
         <NavbarContent>
           <div className="flex justify-center w-full h-full">
             <div className="h-full max-w-[1920px] w-full flex items-center justify-between">
+              <div className="hidden md:block">
+                <ul className="flex gap-6">
+                  {menuItems.map((items, index) => (
+                    <Link href={items.link} className="nav" key={index}>
+                      <p className="res-text-21">{items.label.toUpperCase()}</p>
+                    </Link>
+                  ))}
+                </ul>
+              </div>
               <MenuButton />
               <div className="flex items-center justify-center gap-4">
                 <Link
                   href={"/#contact"}
-                  className="flex gap-2 justify-center py-2 px-6 bg-primary rounded"
+                  className="flex gap-2 justify-center items-center py-2 px-6 bg-primary rounded"
                 >
                   <p className="text-white res-text-base font-medium">
                     Let&rsquo;s talk

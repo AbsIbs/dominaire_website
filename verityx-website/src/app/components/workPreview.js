@@ -98,7 +98,7 @@ const WorkPreview = () => {
           className="font-extralight res-text-140 leading-none"
         />
       </div>
-      <div className="flex justify-between gap-8 w-full">
+      <div className="flex flex-col xl:flex-row justify-between xl:gap-8 gap-16 w-full">
         {data.map((item, index) => (
           <Link href={""} key={index} className="flex-1">
             <Card

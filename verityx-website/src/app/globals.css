@@ -62,6 +62,7 @@
 html {
   overflow: scroll;
   overflow-x: hidden;
+  background-color: #F4F4F4;
 }
 
 /* Lenis scroll */
@@ -85,11 +86,16 @@ html {
   width: 0;  /* Remove scrollbar space */
 }
 
-html {
-  background-color: #F4F4F4;
-}
-
 @layer utilities {
+  .nav{
+    @apply relative
+  }
+  .nav::after{
+    @apply content-[''] bg-surface h-[2px] w-[0%] left-0 -bottom-[5px] rounded-xl absolute duration-300
+  }
+  .nav:hover::after{
+    @apply w-full
+  }
 
 }
 
