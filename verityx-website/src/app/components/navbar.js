@@ -5,7 +5,7 @@ import Link from "next/link";
 // NextUI
 import { Navbar, NavbarContent } from "@nextui-org/navbar";
 // MaterialUI
-import { Drawer, Box } from "@mui/material";
+import { Drawer } from "@mui/material";
 
 const NavbarComponent = () => {
   const [open, setOpen] = useState(false);
@@ -41,19 +41,7 @@ const NavbarComponent = () => {
 
   const DrawerList = () => {
     return (
-      <Box
-        sx={{
-          paddingLeft: "3rem",
-          paddingRight: "6rem",
-          paddingTop: "6rem",
-          paddingBottom: "3rem",
-          width: 450,
-          backgroundColor: "#121212",
-          height: "100%",
-        }}
-        role="presentation"
-        onClick={toggleDrawer}
-      >
+      <div className="bg-surface pl-12 pr-24 pt-12 h-full w-[60vw]">
         <div className="flex flex-col gap-16 h-full">
           <p className="res-text-base text-[#ffffff70] font-light pb-4 border-b border-b-[#ffffff70]">
             NAVIGATION
@@ -71,7 +59,7 @@ const NavbarComponent = () => {
             <Link href={"/"}>L</Link>
           </div>
         </div>
-      </Box>
+      </div>
     );
   };
 

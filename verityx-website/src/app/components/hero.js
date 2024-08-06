@@ -11,7 +11,7 @@ const Hero = () => {
             Dominaire<span className="text-primary">.</span>
           </p>
           <div className="flex flex-col gap-8">
-            <p className="res-text-28 font-light w-[70%]">
+            <p className="res-text-28 font-light lg:w-[70%]">
               At Dominaire, we{" "}
               <span className="text-primary font-medium">design</span>{" "}
               cutting-edge apps to captivate users,{" "}
