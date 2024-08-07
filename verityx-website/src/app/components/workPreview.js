@@ -9,7 +9,7 @@ import NorthEastIcon from "@mui/icons-material/NorthEast";
 const WorkPreview = () => {
   const data = [
     {
-      title: "Querentia",
+      title: "Querencia",
       commenced: "2024",
       image: "work1.png",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet risus viverra, lobortis sem ut, tempus eros.",

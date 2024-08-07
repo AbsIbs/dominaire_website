@@ -3,6 +3,11 @@ const Header = ({ data }) => {
     return <p className="res-text-21 text-gray-400 tracking-widest">{text}</p>;
   };
 
+  const formatYear = (date) => {
+    const year = new Date(date).getFullYear();
+    return year;
+  };
+
   return (
     <div className="flex flex-col gap-2">
       <Subheader text={"CASE STUDY"} />
@@ -21,14 +26,14 @@ const Header = ({ data }) => {
           </div>
           <div className="flex flex-col gap-1">
             <Subheader text={"CLIENT"} />
-            <p className="res-text-21 font-medium">{data.client}</p>
+            <p className="res-text-21 font-medium">{data.client.name}</p>
           </div>
           <div className="flex flex-col gap-1">
             <Subheader text={"YEAR"} />
-            <p className="res-text-21 font-medium">{data.year}</p>
+            <p className="res-text-21 font-medium">{formatYear(data.commence_date)}</p>
           </div>
         </div>
-        <p className="flex-1 res-text-21 leading-relaxed">{data.desc}</p>
+        <p className="flex-1 res-text-21 leading-relaxed">{data.description}</p>
       </div>
     </div>
   );

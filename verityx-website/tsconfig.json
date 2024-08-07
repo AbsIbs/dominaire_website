@@ -27,7 +27,7 @@
     ".next/types/**/*.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "utils/supabase/client.ts", "utils/supabase/server.ts"  ],
   "exclude": [
     "node_modules"
   ]
