@@ -70,10 +70,10 @@ const NavbarComponent = () => {
           <div className="flex justify-center w-full h-full">
             <div className="h-full max-w-[1920px] w-full flex items-center justify-between">
               <div className="hidden md:block">
-                <ul className="flex gap-6">
+                <ul className="flex gap-10">
                   {menuItems.map((items, index) => (
                     <Link href={items.link} className="nav" key={index}>
-                      <p className="res-text-21">{items.label.toUpperCase()}</p>
+                      <p className="res-text-21">{items.label}</p>
                     </Link>
                   ))}
                 </ul>
@@ -82,7 +82,7 @@ const NavbarComponent = () => {
               <div className="flex items-center justify-center gap-4">
                 <Link
                   href={"/#contact"}
-                  className="flex gap-2 justify-center items-center py-2 px-6 bg-primary rounded"
+                  className="flex gap-2 justify-center items-center py-2 px-6 bg-primary rounded-full"
                 >
                   <p className="text-white res-text-base font-medium">
                     Let&rsquo;s talk

@@ -14,7 +14,6 @@ const WorkPreview = () => {
       image: "work1.png",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet risus viverra, lobortis sem ut, tempus eros.",
       services: ["Logo Design", "Branding", "UI Design"],
-      mainService: "Design",
     },
     {
       title: "TDM Masjid",
@@ -22,7 +21,6 @@ const WorkPreview = () => {
       image: "work3.png",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet risus viverra, lobortis sem ut, tempus eros.",
       services: ["UX Research", "Branding", "Web Development"],
-      mainService: "Development",
     },
     {
       title: "Pulse Poetry",
@@ -30,7 +28,6 @@ const WorkPreview = () => {
       image: "work2.png",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet risus viverra, lobortis sem ut, tempus eros.",
       services: ["UX Research", "Branding", "Web Development", "SEO"],
-      mainService: "Development",
     },
   ];
 
@@ -104,7 +101,7 @@ const WorkPreview = () => {
       <div className="flex flex-col xl:flex-row justify-between xl:gap-8 gap-16 w-full">
         {data.map((item, index) => (
           <Link
-            href={`/projects/${item.title.toLowerCase()}/${item.mainService.toLocaleLowerCase()}`}
+            href={`/projects/${item.title.toLowerCase()}`}
             key={index}
             className="flex-1"
           >
