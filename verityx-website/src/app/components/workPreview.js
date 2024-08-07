@@ -13,7 +13,8 @@ const WorkPreview = () => {
       commenced: "2024",
       image: "work1.png",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet risus viverra, lobortis sem ut, tempus eros.",
-      services: ["Branding", "UI Design", "Web Development"],
+      services: ["Logo Design", "Branding", "UI Design"],
+      mainService: "Design",
     },
     {
       title: "TDM Masjid",
@@ -21,6 +22,7 @@ const WorkPreview = () => {
       image: "work3.png",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet risus viverra, lobortis sem ut, tempus eros.",
       services: ["UX Research", "Branding", "Web Development"],
+      mainService: "Development",
     },
     {
       title: "Pulse Poetry",
@@ -28,6 +30,7 @@ const WorkPreview = () => {
       image: "work2.png",
       desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet risus viverra, lobortis sem ut, tempus eros.",
       services: ["UX Research", "Branding", "Web Development", "SEO"],
+      mainService: "Development",
     },
   ];
 
@@ -100,7 +103,11 @@ const WorkPreview = () => {
       </div>
       <div className="flex flex-col xl:flex-row justify-between xl:gap-8 gap-16 w-full">
         {data.map((item, index) => (
-          <Link href={""} key={index} className="flex-1">
+          <Link
+            href={`/projects/${item.title.toLowerCase()}/${item.mainService.toLocaleLowerCase()}`}
+            key={index}
+            className="flex-1"
+          >
             <Card
               title={item.title}
               image={item.image}
