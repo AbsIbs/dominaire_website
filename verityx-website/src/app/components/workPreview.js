@@ -3,11 +3,21 @@ import Link from "next/link";
 // Components
 import TextReveal from "./textReveal";
 import FadeIn from "./fadeIn";
-// Material UI
-import NorthEastIcon from "@mui/icons-material/NorthEast";
+// Supabase
+import { createClient } from "../../../utils/supabase/server";
 
-const WorkPreview = () => {
-  const data = [
+const WorkPreview = async() => {
+  // Fetch Data
+  const supabase = createClient();
+  const { data, error } = await supabase
+    .from("project")
+    .select(`*, client!inner(name, id)`)
+    .order("commence_date", { ascending: false })
+    .limit(3);
+
+  console.log(data)
+
+  const data2 = [
     {
       title: "Querencia",
       commenced: "2024",
@@ -48,7 +58,7 @@ const WorkPreview = () => {
             </div>
             <div className="relative w-full h-[600px] rounded-sm ">
               <Image
-                src={`/${props.image}`}
+                src={props.image}
                 fill
                 style={{ objectFit: "cover", borderRadius: "2px" }}
               />
@@ -101,16 +111,16 @@ const WorkPreview = () => {
       <div className="flex flex-col xl:flex-row justify-between xl:gap-8 gap-16 w-full">
         {data.map((item, index) => (
           <Link
-            href={`/projects/${item.title.toLowerCase()}`}
+            href={`/projects/${item.client.name.toLowerCase()}`}
             key={index}
             className="flex-1"
           >
             <Card
-              title={item.title}
-              image={item.image}
+              title={item.client.name}
+              image={item.coverImage}
               desc={item.desc}
               services={item.services}
-              commenced={item.commenced}
+              commenced={item.commence_date}
             />
           </Link>
         ))}

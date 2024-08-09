@@ -9,14 +9,16 @@ import formatClientTitle from "./logic/formatClientTitle";
 const Page = async ({ params }) => {
   const supabase = createClient();
 
+  console.log(formatClientTitle(params.name));
+
   // Get data
   const { data, error } = await supabase
     .from("project")
     .select(`*, client!inner(name, id)`)
-    .eq('client.name', formatClientTitle(params.name))
-    .single()
+    .eq("client.name", formatClientTitle(params.name))
+    .single();
 
-    console.log(data)
+  console.log(data);
 
   // Fetch summary
   const res = await fetch(
