@@ -6,7 +6,7 @@ import FadeIn from "./fadeIn";
 // Supabase
 import { createClient } from "../../../utils/supabase/server";
 
-const WorkPreview = async() => {
+const WorkPreview = async () => {
   // Fetch Data
   const supabase = createClient();
   const { data, error } = await supabase
@@ -15,31 +15,10 @@ const WorkPreview = async() => {
     .order("commence_date", { ascending: false })
     .limit(3);
 
-  console.log(data)
-
-  const data2 = [
-    {
-      title: "Querencia",
-      commenced: "2024",
-      image: "work1.png",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet risus viverra, lobortis sem ut, tempus eros.",
-      services: ["Logo Design", "Branding", "UI Design"],
-    },
-    {
-      title: "TDM Masjid",
-      commenced: "2024",
-      image: "work3.png",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet risus viverra, lobortis sem ut, tempus eros.",
-      services: ["UX Research", "Branding", "Web Development"],
-    },
-    {
-      title: "Pulse Poetry",
-      commenced: "2023",
-      image: "work2.png",
-      desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam sit amet risus viverra, lobortis sem ut, tempus eros.",
-      services: ["UX Research", "Branding", "Web Development", "SEO"],
-    },
-  ];
+  const formatYear = (date) => {
+    const year = new Date(date).getFullYear();
+    return year;
+  };
 
   const Card = (props) => {
     return (
@@ -52,7 +31,7 @@ const WorkPreview = async() => {
                 className="font-light res-text-38 leading-none"
               />
               <TextReveal
-                text={`${props.commenced}`}
+                text={`${formatYear(props.commenced)}`}
                 className="font-light res-text-21 leading-none"
               />
             </div>

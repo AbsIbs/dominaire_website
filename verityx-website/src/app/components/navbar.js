@@ -25,7 +25,7 @@ const NavbarComponent = () => {
     },
     {
       label: "Projects",
-      link: "/#projects",
+      link: "/projects",
     },
   ];
 
