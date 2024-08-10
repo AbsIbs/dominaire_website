@@ -2,7 +2,7 @@ const capitalize = (str) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
 
-const formatClientTitle = (title) => {
+export const matchBackendFormat = (title) => {
   // Format the client title from the URL to match the title on the backend
   const splitTitle = title.split("-");
 
@@ -13,4 +13,8 @@ const formatClientTitle = (title) => {
   }
 };
 
-export default formatClientTitle;
+export const matchURLFormat = (title) => {
+  // Change the client title from the backend to be suitable for the URL
+  const splitTitle = title.split(" ");
+  return splitTitle.map((word) => word.toLowerCase()).join("-");
+};

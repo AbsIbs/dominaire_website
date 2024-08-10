@@ -4,18 +4,16 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 // Supabase
 import { createClient } from "../../../../utils/supabase/server.ts";
 // Logic
-import formatClientTitle from "./logic/formatClientTitle";
+import { matchBackendFormat } from "../../logic/formatClientTitle";
 
 const Page = async ({ params }) => {
   const supabase = createClient();
-
-  console.log(formatClientTitle(params.name));
 
   // Get data
   const { data, error } = await supabase
     .from("project")
     .select(`*, client!inner(name, id)`)
-    .eq("client.name", formatClientTitle(params.name))
+    .eq("client.name", matchBackendFormat(params.name))
     .single();
 
   console.log(data);
