@@ -26,8 +26,8 @@ const ProjectCards = ({
         <p className="res-text-38">{clientName.toUpperCase()}</p>
         <hr className="w-full border border-line" />
         <div className="flex justify-between w-full">
-          <p className="res-text-base font-medium">{mainService.join(" & ")}</p>
-          <p className="res-text-base">
+          <p className="res-text-21">{mainService.join(" & ")}</p>
+          <p className="res-text-21">
             {new Date(commenceDate).getFullYear()}
           </p>
         </div>

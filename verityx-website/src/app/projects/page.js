@@ -1,3 +1,5 @@
+// NextJS
+import Link from "next/link";
 // Components
 import FilterComponent from "./components/filterComponent";
 import ProjectCard from "./components/projectCard";
@@ -34,6 +36,14 @@ const Page = async ({ searchParams }) => {
                 />
               </div>
             ))}
+          </div>
+          <div className="flex justify-center items-center">
+            <Link
+              href="/archive"
+              className="bg-surface py-4 px-10 rounded-full"
+            >
+              <p className="res-text-21 text-white">Archive</p>
+            </Link>
           </div>
         </div>
       </section>

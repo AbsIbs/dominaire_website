@@ -6,15 +6,15 @@ const FilterComponent = ({ searchParams }) => {
   const FilterButton = ({ name }) => (
     <Link
       href={`?filter=${name}`}
-      className={`rounded-full border py-6 px-12 ${
+      className={`rounded-full border py-4 px-10 ${
         !searchParams.filter && name === "All"
           ? "bg-surface border-transparent text-white"
           : searchParams.filter === name
           ? "bg-surface border-transparent text-white"
-          : "border-line"
+          : "border-[rgba(136,136,136)]"
       }`}
     >
-      <p className="res-text-base">{name}</p>
+      <p className="res-text-28">{name}</p>
     </Link>
   );
 
