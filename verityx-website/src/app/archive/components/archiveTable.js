@@ -1,7 +1,7 @@
 const ArchiveTable = ({ data }) => {
   const Row = ({ client, location, mainService, commenceDate }) => (
     <li className="flex py-8 border-b border-b-line items-center justify-center">
-      <p className="flex-[2] res-text-28">{client}</p>
+      <p className="flex-[2] res-text-38">{client}</p>
       <p className="flex-1 font-medium">{location}</p>
       <p className="flex-1 font-medium">{mainService}</p>
       <p className="flex-1 font-medium">{commenceDate}</p>

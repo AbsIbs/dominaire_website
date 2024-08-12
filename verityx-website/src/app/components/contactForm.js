@@ -3,7 +3,8 @@
 import { useState, useRef } from "react";
 // Components
 import SelectButton from "../components/magneticButton/selectButton";
-
+// Logic
+import { EmailHandler } from "../logic/emailHandler";
 const ContactForm = () => {
   // States
   const [categoriesData, setCategoriesData] = useState([]);
@@ -40,19 +41,20 @@ const ContactForm = () => {
 
   const maxLength = 1000;
 
-  const submitHandler = () => {
-    console.log({
+  const submitHandler = async () => {
+    const data = {
       name: nameRef.current.value,
       email: emailRef.current.value,
       organisation: organisationRef.current.value,
       website: websiteRef.current.value,
       categories: categoriesData,
       message: message,
-    });
+    };
+    const res = await EmailHandler(data);
   };
 
   return (
-    <form className="flex flex-col ~sm/lg:~gap-8/24">
+    <form className="flex flex-col ~sm/lg:~gap-8/24" action={submitHandler}>
       <div className="flex flex-col gap-4">
         {/* Categories input */}
         <label htmlFor="">
@@ -163,7 +165,7 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
-      <button type="button" onClick={submitHandler} className="w-fit">
+      <button /* type="button" onClick={submitHandler} */ className="w-fit">
         <SelectButton>
           <p className="res-text-28 px-12">SEND</p>
         </SelectButton>
