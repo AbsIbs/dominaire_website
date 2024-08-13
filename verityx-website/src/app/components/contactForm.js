@@ -3,6 +3,7 @@
 import { useState, useRef } from "react";
 // Components
 import SelectButton from "../components/magneticButton/selectButton";
+import SuccessModal from "../contact-us/components/successModal";
 // Logic
 import { EmailHandler } from "../logic/emailHandler";
 const ContactForm = () => {
@@ -24,6 +25,9 @@ const ContactForm = () => {
   const [organisationError, setOrganisationError] = useState(false);
   const [websiteError, setWebsiteError] = useState(false);
   const [messageError, setMessageError] = useState(false);
+
+  // Success Modla
+  const [successModal, setSuccessModal] = useState(true);
 
   const categoryHandler = (name) => {
     setCategoriesData((prev) => {
@@ -90,6 +94,9 @@ const ContactForm = () => {
         setMessageError(true);
         break;
     }
+    if (res.error === false) {
+      setSuccessModal(true);
+    }
   };
 
   const preventEnterSubmit = (e) => {
@@ -99,222 +106,225 @@ const ContactForm = () => {
   };
 
   return (
-    <form
-      className="flex flex-col ~sm/lg:~gap-8/24"
-      action={submitHandler}
-      onKeyDown={preventEnterSubmit}
-    >
-      <div className="flex flex-col gap-4">
-        {/* Categories input */}
-        <label>
-          <p
-            className={`${
-              categoriesError ? "text-red-900" : "text-text-normal"
-            } res-text-38 font-light`}
-          >
-            I&apos;m interested in...
-          </p>
-        </label>
-        <div className="flex gap-5 flex-wrap">
-          {categories.map((item, index) => (
-            <button
-              value={categories[index]}
-              key={index}
-              type="button"
-              onClick={(e) => categoryHandler(e.currentTarget.value)}
+    <>
+      <SuccessModal open={successModal} setOpen={setSuccessModal} />
+      <form
+        className="flex flex-col ~sm/lg:~gap-8/24"
+        action={submitHandler}
+        onKeyDown={preventEnterSubmit}
+      >
+        <div className="flex flex-col gap-4">
+          {/* Categories input */}
+          <label>
+            <p
+              className={`${
+                categoriesError ? "text-red-900" : "text-text-normal"
+              } res-text-38 font-light`}
             >
-              <SelectButton>
-                <p
-                  className={`res-text-28 ${
-                    categoriesData.includes(item)
-                      ? "text-white"
-                      : "text-text-normal"
-                  }`}
-                >
-                  {item}
-                </p>
-              </SelectButton>
-            </button>
-          ))}
-        </div>
-      </div>
-      {/* Name input */}
-      <div className="flex gap-6">
-        <div className="h-full">
-          <p
-            className={`res-text-21 ${
-              nameError ? "text-red-900" : "text-normal-70"
-            } font-medium`}
-          >
-            01
-          </p>
-        </div>
-        <div className="flex-1 flex-col gap-2">
-          <label
-            className={`res-text-28 ${
-              nameError ? "text-red-900" : "text-text-normal"
-            }`}
-          >
-            What is your name?
-          </label>
-          <input
-            className={`transition-border w-full res-text-38 ${
-              nameError ? "text-red-900" : "text-text-normal"
-            } bottom-4 pb-4 border-b-2 ${
-              nameError ? "border-b-red" : "border-b-line"
-            } focus:outline-none ${
-              nameError ? "focus:border-b-red-900" : "focus:border-b-black"
-            }`}
-            type={"text"}
-            placeholder={"John Doe"}
-            ref={nameRef}
-          />
-        </div>
-      </div>
-      {/* Email input */}
-      <div className="flex gap-6">
-        <div className="h-full">
-          <p
-            className={`res-text-21 ${
-              emailError ? "text-red-900" : "text-normal-70"
-            } font-medium`}
-          >
-            02
-          </p>
-        </div>
-        <div className="flex-1 flex-col gap-2">
-          <label
-            className={`res-text-28 ${
-              emailError ? "text-red-900" : "text-text-normal"
-            }`}
-          >
-            What is your email?
-          </label>
-          <input
-            className={`transition-border w-full res-text-38 ${
-              emailError ? "text-red-900" : "text-text-normal"
-            } bottom-4 pb-4 border-b-2 ${
-              emailError ? "border-b-red" : "border-b-line"
-            } focus:outline-none ${
-              emailError ? "focus:border-b-red-900" : "focus:border-b-black"
-            }`}
-            type={"text"}
-            placeholder={"johndoe@gmail.com"}
-            ref={emailRef}
-          />
-        </div>
-      </div>
-      {/* Organisation input */}
-      <div className="flex gap-6">
-        <div className="h-full">
-          <p
-            className={`res-text-21 ${
-              organisationError ? "text-red-900" : "text-normal-70"
-            } font-medium`}
-          >
-            03
-          </p>
-        </div>
-        <div className="flex-1 flex-col gap-2">
-          <label
-            className={`res-text-28 ${
-              organisationError ? "text-red-900" : "text-text-normal"
-            }`}
-          >
-            What is your organisation?
-          </label>
-          <input
-            className={`transition-border w-full res-text-38 ${
-              organisationError ? "text-red-900" : "text-text-normal"
-            } bottom-4 pb-4 border-b-2 ${
-              organisationError ? "border-b-red" : "border-b-line"
-            } focus:outline-none ${
-              organisationError
-                ? "focus:border-b-red-900"
-                : "focus:border-b-black"
-            }`}
-            type={"text"}
-            placeholder={"John & Doe"}
-            ref={organisationRef}
-          />
-        </div>
-      </div>
-      {/* Website input */}
-      <div className="flex gap-6">
-        <div className="h-full">
-          <p
-            className={`res-text-21 ${
-              websiteError ? "text-red-900" : "text-normal-70"
-            } font-medium`}
-          >
-            04
-          </p>
-        </div>
-        <div className="flex-1 flex-col gap-2">
-          <label
-            className={`res-text-28 ${
-              websiteError ? "text-red-900" : "text-text-normal"
-            }`}
-          >
-            What is your website url? (optional)
-          </label>
-          <input
-            className={`transition-border w-full res-text-38 ${
-              websiteError ? "text-red-900" : "text-text-normal"
-            } bottom-4 pb-4 border-b-2 ${
-              websiteError ? "border-b-red" : "border-b-line"
-            } focus:outline-none ${
-              websiteError ? "focus:border-b-red-900" : "focus:border-b-black"
-            }`}
-            type={"text"}
-            placeholder={"www.johnDoe.com"}
-            ref={websiteRef}
-          />
-        </div>
-      </div>
-      {/* Message input */}
-      <div className="flex gap-6">
-        <div className="h-full">
-          <p
-            className={`res-text-21 ${
-              messageError ? "text-red-900" : "text-normal-70"
-            } font-medium`}
-          >
-            05
-          </p>
-        </div>
-        <div className="flex-1 flex-col gap-2">
-          <label
-            className={`res-text-28 ${
-              messageError ? "text-red-900" : "text-text-normal"
-            }`}
-          >
-            Message
-          </label>
-          <textarea
-            className={`transition-border w-full res-text-38 ${
-              messageError ? "text-red-900" : "text-text-normal"
-            } bottom-4 pb-4 border-b-2 ${
-              messageError ? "border-b-red" : "border-b-line"
-            } focus:outline-none ${
-              messageError ? "focus:border-b-red-900" : "focus:border-b-black"
-            }`}
-            placeholder="Hi, I would like help with..."
-            maxLength={maxLength}
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          ></textarea>
-          <div className="flex justify-end w-full">
-            <p className="res-text-28 text-text-normal-70">
-              {message.length}/{maxLength}
+              I&apos;m interested in...
             </p>
+          </label>
+          <div className="flex gap-5 flex-wrap">
+            {categories.map((item, index) => (
+              <button
+                value={categories[index]}
+                key={index}
+                type="button"
+                onClick={(e) => categoryHandler(e.currentTarget.value)}
+              >
+                <SelectButton>
+                  <p
+                    className={`res-text-28 ${
+                      categoriesData.includes(item)
+                        ? "text-white"
+                        : "text-text-normal"
+                    }`}
+                  >
+                    {item}
+                  </p>
+                </SelectButton>
+              </button>
+            ))}
           </div>
         </div>
-      </div>
-      <button className="bg-primary rounded-full py-4 px-10 w-fit">
-        <p className="text-white res-text-28 px-12">SEND</p>
-      </button>
-    </form>
+        {/* Name input */}
+        <div className="flex gap-6">
+          <div className="h-full">
+            <p
+              className={`res-text-21 ${
+                nameError ? "text-red-900" : "text-normal-70"
+              } font-medium`}
+            >
+              01
+            </p>
+          </div>
+          <div className="flex-1 flex-col gap-2">
+            <label
+              className={`res-text-28 ${
+                nameError ? "text-red-900" : "text-text-normal"
+              }`}
+            >
+              What is your name?
+            </label>
+            <input
+              className={`transition-border w-full res-text-38 ${
+                nameError ? "text-red-900" : "text-text-normal"
+              } bottom-4 pb-4 border-b-2 ${
+                nameError ? "border-b-red" : "border-b-line"
+              } focus:outline-none ${
+                nameError ? "focus:border-b-red-900" : "focus:border-b-black"
+              }`}
+              type={"text"}
+              placeholder={"John Doe"}
+              ref={nameRef}
+            />
+          </div>
+        </div>
+        {/* Email input */}
+        <div className="flex gap-6">
+          <div className="h-full">
+            <p
+              className={`res-text-21 ${
+                emailError ? "text-red-900" : "text-normal-70"
+              } font-medium`}
+            >
+              02
+            </p>
+          </div>
+          <div className="flex-1 flex-col gap-2">
+            <label
+              className={`res-text-28 ${
+                emailError ? "text-red-900" : "text-text-normal"
+              }`}
+            >
+              What is your email?
+            </label>
+            <input
+              className={`transition-border w-full res-text-38 ${
+                emailError ? "text-red-900" : "text-text-normal"
+              } bottom-4 pb-4 border-b-2 ${
+                emailError ? "border-b-red" : "border-b-line"
+              } focus:outline-none ${
+                emailError ? "focus:border-b-red-900" : "focus:border-b-black"
+              }`}
+              type={"text"}
+              placeholder={"johndoe@gmail.com"}
+              ref={emailRef}
+            />
+          </div>
+        </div>
+        {/* Organisation input */}
+        <div className="flex gap-6">
+          <div className="h-full">
+            <p
+              className={`res-text-21 ${
+                organisationError ? "text-red-900" : "text-normal-70"
+              } font-medium`}
+            >
+              03
+            </p>
+          </div>
+          <div className="flex-1 flex-col gap-2">
+            <label
+              className={`res-text-28 ${
+                organisationError ? "text-red-900" : "text-text-normal"
+              }`}
+            >
+              What is your organisation?
+            </label>
+            <input
+              className={`transition-border w-full res-text-38 ${
+                organisationError ? "text-red-900" : "text-text-normal"
+              } bottom-4 pb-4 border-b-2 ${
+                organisationError ? "border-b-red" : "border-b-line"
+              } focus:outline-none ${
+                organisationError
+                  ? "focus:border-b-red-900"
+                  : "focus:border-b-black"
+              }`}
+              type={"text"}
+              placeholder={"John & Doe"}
+              ref={organisationRef}
+            />
+          </div>
+        </div>
+        {/* Website input */}
+        <div className="flex gap-6">
+          <div className="h-full">
+            <p
+              className={`res-text-21 ${
+                websiteError ? "text-red-900" : "text-normal-70"
+              } font-medium`}
+            >
+              04
+            </p>
+          </div>
+          <div className="flex-1 flex-col gap-2">
+            <label
+              className={`res-text-28 ${
+                websiteError ? "text-red-900" : "text-text-normal"
+              }`}
+            >
+              What is your website url? (optional)
+            </label>
+            <input
+              className={`transition-border w-full res-text-38 ${
+                websiteError ? "text-red-900" : "text-text-normal"
+              } bottom-4 pb-4 border-b-2 ${
+                websiteError ? "border-b-red" : "border-b-line"
+              } focus:outline-none ${
+                websiteError ? "focus:border-b-red-900" : "focus:border-b-black"
+              }`}
+              type={"text"}
+              placeholder={"www.johnDoe.com"}
+              ref={websiteRef}
+            />
+          </div>
+        </div>
+        {/* Message input */}
+        <div className="flex gap-6">
+          <div className="h-full">
+            <p
+              className={`res-text-21 ${
+                messageError ? "text-red-900" : "text-normal-70"
+              } font-medium`}
+            >
+              05
+            </p>
+          </div>
+          <div className="flex-1 flex-col gap-2">
+            <label
+              className={`res-text-28 ${
+                messageError ? "text-red-900" : "text-text-normal"
+              }`}
+            >
+              Message
+            </label>
+            <textarea
+              className={`transition-border w-full res-text-38 ${
+                messageError ? "text-red-900" : "text-text-normal"
+              } bottom-4 pb-4 border-b-2 ${
+                messageError ? "border-b-red" : "border-b-line"
+              } focus:outline-none ${
+                messageError ? "focus:border-b-red-900" : "focus:border-b-black"
+              }`}
+              placeholder="Hi, I would like help with..."
+              maxLength={maxLength}
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            ></textarea>
+            <div className="flex justify-end w-full">
+              <p className="res-text-28 text-text-normal-70">
+                {message.length}/{maxLength}
+              </p>
+            </div>
+          </div>
+        </div>
+        <button className="bg-primary rounded-full py-4 px-10 w-fit">
+          <p className="text-white res-text-28 px-12">SEND</p>
+        </button>
+      </form>
+    </>
   );
 };
 
