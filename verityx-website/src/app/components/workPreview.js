@@ -35,7 +35,7 @@ const WorkPreview = async () => {
                 className="font-light res-text-21 leading-none"
               />
             </div>
-            <div className="relative w-full h-[600px] rounded-sm ">
+            <div className="relative w-full h-[400px] md:h-[600px] rounded-sm ">
               <Image
                 src={props.image}
                 fill

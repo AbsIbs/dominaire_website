@@ -48,7 +48,7 @@ const NavbarComponent = () => {
           </p>
           <div className="flex flex-col gap-2">
             {menuItems.map((item, index) => (
-              <Link key={index} href={item.link}>
+              <Link key={index} href={item.link} onClick={toggleDrawer}>
                 <p className="res-text-64 text-white font-extralight">
                   {item.label}
                 </p>

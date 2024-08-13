@@ -25,7 +25,7 @@ const Page = async ({ searchParams }) => {
             What we&apos;ve achieved
           </p>
           <FilterComponent searchParams={searchParams} />
-          <div className="grid gap-x-16 gap-y-48 grid-cols-2">
+          <div className="grid gap-x-16 gap-y-12 md:gap-y-24 lg:gap-y-48 grid-cols-1 md:grid-cols-2">
             {data.map((project, index) => (
               <div key={index}>
                 <ProjectCard

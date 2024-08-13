@@ -13,16 +13,16 @@ const ProjectCards = ({
   return (
     <Link
       href={`/projects/${matchURLFormat(clientName)}`}
-      className="flex flex-col gap-12"
+      className="flex flex-col gap-4 md:gap-12"
     >
-      <div className="relative w-full h-[600px] rounded-sm ">
+      <div className="relative w-full h-[400px] md:h-[600px] rounded-sm ">
         <Image
           src={coverImage}
           fill
           style={{ objectFit: "cover", borderRadius: "2px" }}
         />
       </div>
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-2 md:gap-6">
         <p className="res-text-38">{clientName.toUpperCase()}</p>
         <hr className="w-full border border-line" />
         <div className="flex justify-between w-full">
