@@ -97,7 +97,7 @@ const sendEmail = async (data) => {
   const resend = new Resend(process.env.RESEND_API);
   try {
     const response = await resend.emails.send({
-      from: "onboarding@resend.dev",
+      from: "support@dominaire.com",
       to: "abass.ibrahim@dominaire.com",
       subject: "Interest in services",
       react: <EmailTemplate {...data} />,

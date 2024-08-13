@@ -6,7 +6,6 @@ import { Accordion, AccordionItem } from "@nextui-org/react";
 // Material UI
 import EastIcon from "@mui/icons-material/East";
 const ExpertiseSection = () => {
-
   const data = [
     {
       title: "A.I. & Automation",
@@ -76,7 +75,7 @@ const ExpertiseSection = () => {
                 <div className="flex gap-4 items-center">
                   <p className="res-text-21 underline">Get in touch</p>
                   <Link
-                    href={""}
+                    href={"/#contact"}
                     className={`
                       rounded-full
                       bg-primary

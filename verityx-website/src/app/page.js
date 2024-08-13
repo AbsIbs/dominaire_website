@@ -60,7 +60,7 @@ const Home = async () => {
                     EMAIL
                   </p>
                   <p className="res-text-21 underline">
-                    abass.ibrahim@dominaire.com
+                    support@dominaire.com
                   </p>
                 </div>
                 <div className="flex flex-col ~sm/lg:~gap-0/2">
