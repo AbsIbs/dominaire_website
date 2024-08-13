@@ -17,6 +17,14 @@ const ContactForm = () => {
   const organisationRef = useRef();
   const websiteRef = useRef();
 
+  // Error States
+  const [categoriesError, setCategoriesError] = useState(false);
+  const [nameError, setNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [organisationError, setOrganisationError] = useState(false);
+  const [websiteError, setWebsiteError] = useState(false);
+  const [messageError, setMessageError] = useState(false);
+
   const categoryHandler = (name) => {
     setCategoriesData((prev) => {
       // Check if the category is already in the array
@@ -42,6 +50,14 @@ const ContactForm = () => {
   const maxLength = 1000;
 
   const submitHandler = async () => {
+    // reset states
+    setCategoriesError(false);
+    setNameError(false);
+    setEmailError(false);
+    setOrganisationError(false);
+    setWebsiteError(false);
+    setMessageError(false);
+
     const data = {
       name: nameRef.current.value,
       email: emailRef.current.value,
@@ -51,7 +67,29 @@ const ContactForm = () => {
       message: message,
     };
     const res = await EmailHandler(data);
-    console.log(res)
+
+    // Toggle Error states
+    switch (res.error) {
+      case "categories":
+        setCategoriesError(true);
+        break;
+      case "name":
+        setNameError(true);
+        break;
+      case "email":
+        setEmailError(true);
+        console.log("email error");
+        break;
+      case "organisation":
+        setOrganisationError(true);
+        break;
+      case "website":
+        setWebsiteError(true);
+        break;
+      case "message":
+        setMessageError(true);
+        break;
+    }
   };
 
   const preventEnterSubmit = (e) => {
@@ -69,7 +107,13 @@ const ContactForm = () => {
       <div className="flex flex-col gap-4">
         {/* Categories input */}
         <label>
-          <p className="res-text-38 font-light">I&apos;m interested in...</p>
+          <p
+            className={`${
+              categoriesError ? "text-red-900" : "text-text-normal"
+            } res-text-38 font-light`}
+          >
+            I&apos;m interested in...
+          </p>
         </label>
         <div className="flex gap-5 flex-wrap">
           {categories.map((item, index) => (
@@ -97,12 +141,30 @@ const ContactForm = () => {
       {/* Name input */}
       <div className="flex gap-6">
         <div className="h-full">
-          <p className="res-text-21 text-normal-70 font-medium">01</p>
+          <p
+            className={`res-text-21 ${
+              nameError ? "text-red-900" : "text-normal-70"
+            } font-medium`}
+          >
+            01
+          </p>
         </div>
         <div className="flex-1 flex-col gap-2">
-          <label className="res-text-28">What is your name?</label>
+          <label
+            className={`res-text-28 ${
+              nameError ? "text-red-900" : "text-text-normal"
+            }`}
+          >
+            What is your name?
+          </label>
           <input
-            className="transition-border w-full res-text-38 text-text-normal bottom-4 pb-4 border-b-2 border-b-line focus:outline-none focus:border-b-black"
+            className={`transition-border w-full res-text-38 ${
+              nameError ? "text-red-900" : "text-text-normal"
+            } bottom-4 pb-4 border-b-2 ${
+              nameError ? "border-b-red" : "border-b-line"
+            } focus:outline-none ${
+              nameError ? "focus:border-b-red-900" : "focus:border-b-black"
+            }`}
             type={"text"}
             placeholder={"John Doe"}
             ref={nameRef}
@@ -112,12 +174,30 @@ const ContactForm = () => {
       {/* Email input */}
       <div className="flex gap-6">
         <div className="h-full">
-          <p className="res-text-21 text-normal-70 font-medium">02</p>
+          <p
+            className={`res-text-21 ${
+              emailError ? "text-red-900" : "text-normal-70"
+            } font-medium`}
+          >
+            02
+          </p>
         </div>
         <div className="flex-1 flex-col gap-2">
-          <label className="res-text-28">What is your email?</label>
+          <label
+            className={`res-text-28 ${
+              emailError ? "text-red-900" : "text-text-normal"
+            }`}
+          >
+            What is your email?
+          </label>
           <input
-            className="transition-border w-full res-text-38 text-text-normal bottom-4 pb-4 border-b-2 border-b-line focus:outline-none focus:border-b-black"
+            className={`transition-border w-full res-text-38 ${
+              emailError ? "text-red-900" : "text-text-normal"
+            } bottom-4 pb-4 border-b-2 ${
+              emailError ? "border-b-red" : "border-b-line"
+            } focus:outline-none ${
+              emailError ? "focus:border-b-red-900" : "focus:border-b-black"
+            }`}
             type={"text"}
             placeholder={"johndoe@gmail.com"}
             ref={emailRef}
@@ -127,27 +207,65 @@ const ContactForm = () => {
       {/* Organisation input */}
       <div className="flex gap-6">
         <div className="h-full">
-          <p className="res-text-21 text-normal-70 font-medium">03</p>
+          <p
+            className={`res-text-21 ${
+              organisationError ? "text-red-900" : "text-normal-70"
+            } font-medium`}
+          >
+            03
+          </p>
         </div>
         <div className="flex-1 flex-col gap-2">
-          <label className="res-text-28">What is your organisation?</label>
+          <label
+            className={`res-text-28 ${
+              organisationError ? "text-red-900" : "text-text-normal"
+            }`}
+          >
+            What is your organisation?
+          </label>
           <input
-            className="transition-border w-full res-text-38 text-text-normal bottom-4 pb-4 border-b-2 border-b-line focus:outline-none focus:border-b-black"
+            className={`transition-border w-full res-text-38 ${
+              organisationError ? "text-red-900" : "text-text-normal"
+            } bottom-4 pb-4 border-b-2 ${
+              organisationError ? "border-b-red" : "border-b-line"
+            } focus:outline-none ${
+              organisationError
+                ? "focus:border-b-red-900"
+                : "focus:border-b-black"
+            }`}
             type={"text"}
             placeholder={"John & Doe"}
             ref={organisationRef}
           />
         </div>
       </div>
-      {/* Organisation input */}
+      {/* Website input */}
       <div className="flex gap-6">
         <div className="h-full">
-          <p className="res-text-21 text-normal-70 font-medium">04</p>
+          <p
+            className={`res-text-21 ${
+              websiteError ? "text-red-900" : "text-normal-70"
+            } font-medium`}
+          >
+            04
+          </p>
         </div>
         <div className="flex-1 flex-col gap-2">
-          <label className="res-text-28">What is your website url?</label>
+          <label
+            className={`res-text-28 ${
+              websiteError ? "text-red-900" : "text-text-normal"
+            }`}
+          >
+            What is your website url? (optional)
+          </label>
           <input
-            className="transition-border w-full res-text-38 text-text-normal bottom-4 pb-4 border-b-2 border-b-line focus:outline-none focus:border-b-black"
+            className={`transition-border w-full res-text-38 ${
+              websiteError ? "text-red-900" : "text-text-normal"
+            } bottom-4 pb-4 border-b-2 ${
+              websiteError ? "border-b-red" : "border-b-line"
+            } focus:outline-none ${
+              websiteError ? "focus:border-b-red-900" : "focus:border-b-black"
+            }`}
             type={"text"}
             placeholder={"www.johnDoe.com"}
             ref={websiteRef}
@@ -157,12 +275,30 @@ const ContactForm = () => {
       {/* Message input */}
       <div className="flex gap-6">
         <div className="h-full">
-          <p className="res-text-21 text-normal-70 font-medium">05</p>
+          <p
+            className={`res-text-21 ${
+              messageError ? "text-red-900" : "text-normal-70"
+            } font-medium`}
+          >
+            05
+          </p>
         </div>
         <div className="flex-1 flex-col gap-2">
-          <label className="res-text-28">Message</label>
+          <label
+            className={`res-text-28 ${
+              messageError ? "text-red-900" : "text-text-normal"
+            }`}
+          >
+            Message
+          </label>
           <textarea
-            className="transition-border w-full res-text-38 text-text-normal bottom-4 pb-4 border-b-2 border-b-line focus:outline-none focus:border-b-black"
+            className={`transition-border w-full res-text-38 ${
+              messageError ? "text-red-900" : "text-text-normal"
+            } bottom-4 pb-4 border-b-2 ${
+              messageError ? "border-b-red" : "border-b-line"
+            } focus:outline-none ${
+              messageError ? "focus:border-b-red-900" : "focus:border-b-black"
+            }`}
             placeholder="Hi, I would like help with..."
             maxLength={maxLength}
             value={message}
@@ -175,10 +311,8 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
-      <button className="w-fit">
-        <SelectButton>
-          <p className="res-text-28 px-12">SEND</p>
-        </SelectButton>
+      <button className="bg-primary rounded-full py-4 px-10 w-fit">
+        <p className="text-white res-text-28 px-12">SEND</p>
       </button>
     </form>
   );
