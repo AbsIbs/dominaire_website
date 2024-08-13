@@ -51,13 +51,24 @@ const ContactForm = () => {
       message: message,
     };
     const res = await EmailHandler(data);
+    console.log(res)
+  };
+
+  const preventEnterSubmit = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+    }
   };
 
   return (
-    <form className="flex flex-col ~sm/lg:~gap-8/24" action={submitHandler}>
+    <form
+      className="flex flex-col ~sm/lg:~gap-8/24"
+      action={submitHandler}
+      onKeyDown={preventEnterSubmit}
+    >
       <div className="flex flex-col gap-4">
         {/* Categories input */}
-        <label htmlFor="">
+        <label>
           <p className="res-text-38 font-light">I&apos;m interested in...</p>
         </label>
         <div className="flex gap-5 flex-wrap">
@@ -150,14 +161,13 @@ const ContactForm = () => {
         </div>
         <div className="flex-1 flex-col gap-2">
           <label className="res-text-28">Message</label>
-          <input
+          <textarea
             className="transition-border w-full res-text-38 text-text-normal bottom-4 pb-4 border-b-2 border-b-line focus:outline-none focus:border-b-black"
-            type={"text"}
-            placeholder={"Hi, I would like help with..."}
+            placeholder="Hi, I would like help with..."
+            maxLength={maxLength}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-            maxLength={maxLength}
-          />
+          ></textarea>
           <div className="flex justify-end w-full">
             <p className="res-text-28 text-text-normal-70">
               {message.length}/{maxLength}
@@ -165,7 +175,7 @@ const ContactForm = () => {
           </div>
         </div>
       </div>
-      <button /* type="button" onClick={submitHandler} */ className="w-fit">
+      <button className="w-fit">
         <SelectButton>
           <p className="res-text-28 px-12">SEND</p>
         </SelectButton>
