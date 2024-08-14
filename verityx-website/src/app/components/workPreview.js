@@ -105,7 +105,10 @@ const WorkPreview = async () => {
         ))}
       </div>
       <div className="flex items-center justify-center">
-        <Link href={""} className="rounded-full bg-surface py-2 px-8">
+        <Link
+          href={"/projects"}
+          className="rounded-full bg-surface py-4 px-10 flex justify-center items-center"
+        >
           <p className="res-text-16 text-white">See more</p>
         </Link>
       </div>

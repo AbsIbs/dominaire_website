@@ -56,7 +56,7 @@ const NavbarComponent = () => {
             ))}
           </div>
           <div className="h-full flex items-end">
-            <Link href={"/"}>L</Link>
+            <Link href={"/"}></Link>
           </div>
         </div>
       </div>
