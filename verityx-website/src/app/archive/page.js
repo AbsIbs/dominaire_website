@@ -8,11 +8,11 @@ const Page = async () => {
 
   const { data, error } = await supabase
     .from("project")
-    .select(`main_service, commence_date, client!inner(name, location)`)
+    .select(
+      `main_service, commence_date, project_name, client!inner(name, location)`
+    )
     .order("commence_date", { ascending: false })
     .limit(10);
-
-  console.log(data);
 
   return (
     <>
