@@ -13,8 +13,10 @@ const Page = async ({ params }) => {
   const { data, error } = await supabase
     .from("project")
     .select(`*, client!inner(name, id)`)
-    .eq("client.name", matchBackendFormat(params.name))
+    .eq("project_name", matchBackendFormat(params.name))
     .single();
+
+  console.log(data);
 
   // Fetch summary
   const res = await fetch(data.summary_mdx);

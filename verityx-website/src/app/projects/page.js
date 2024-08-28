@@ -17,8 +17,6 @@ const Page = async ({ searchParams }) => {
     .order("commence_date", { ascending: false })
     .limit(10);
 
-  console.log(data);
-
   return (
     <>
       <section className="flex ypadding justify-center">
