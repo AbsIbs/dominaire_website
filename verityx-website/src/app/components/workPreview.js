@@ -29,7 +29,7 @@ const WorkPreview = async () => {
           <div className="flex flex-col gap-2">
             <div className="flex flex-col gap-2">
               <TextReveal
-                text={props.title}
+                text={props.project_name}
                 className="font-light res-text-38 leading-none"
               />
               <TextReveal
@@ -92,12 +92,12 @@ const WorkPreview = async () => {
       <div className="flex flex-col xl:flex-row justify-between xl:gap-8 gap-16 w-full">
         {data.map((item, index) => (
           <Link
-            href={`/projects/${matchURLFormat(item.client.name)}`}
+            href={`/projects/${matchURLFormat(item.project_name)}`}
             key={index}
             className="flex-1"
           >
             <Card
-              title={item.client.name}
+              project_name={item.project_name}
               image={item.coverImage}
               desc={item.desc}
               services={item.services}

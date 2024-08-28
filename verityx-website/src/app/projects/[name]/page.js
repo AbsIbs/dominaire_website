@@ -16,12 +16,8 @@ const Page = async ({ params }) => {
     .eq("client.name", matchBackendFormat(params.name))
     .single();
 
-  console.log(params.name);
-
   // Fetch summary
-  const res = await fetch(
-    `https://woyxacfrzfhkyahgfwpw.supabase.co/storage/v1/object/public/summaries/${params.name}/summary.mdx`
-  );
+  const res = await fetch(data.summary_mdx);
   const mdxText = await res.text();
 
   return (

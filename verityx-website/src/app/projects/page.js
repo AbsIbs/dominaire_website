@@ -11,7 +11,9 @@ const Page = async ({ searchParams }) => {
 
   const { data, error } = await supabase
     .from("project")
-    .select(`coverImage, main_service, commence_date, client!inner(name)`)
+    .select(
+      `coverImage, main_service, commence_date, project_name, client!inner(name)`
+    )
     .order("commence_date", { ascending: false })
     .limit(10);
 
@@ -30,7 +32,7 @@ const Page = async ({ searchParams }) => {
               <div key={index}>
                 <ProjectCard
                   coverImage={project.coverImage}
-                  clientName={project.client.name}
+                  projectName={project.project_name}
                   mainService={project.main_service}
                   commenceDate={project.commence_date}
                 />
