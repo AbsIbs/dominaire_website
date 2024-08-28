@@ -3,6 +3,8 @@ import Link from "next/link";
 // Components
 import TextReveal from "./textReveal";
 import FadeIn from "./fadeIn";
+// Logic
+import { matchURLFormat } from "../logic/formatClientTitle";
 // Supabase
 import { createClient } from "../../../utils/supabase/server";
 
@@ -90,7 +92,7 @@ const WorkPreview = async () => {
       <div className="flex flex-col xl:flex-row justify-between xl:gap-8 gap-16 w-full">
         {data.map((item, index) => (
           <Link
-            href={`/projects/${item.client.name.toLowerCase()}`}
+            href={`/projects/${matchURLFormat(item.client.name)}`}
             key={index}
             className="flex-1"
           >

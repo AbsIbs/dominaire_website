@@ -16,7 +16,7 @@ const Page = async ({ params }) => {
     .eq("client.name", matchBackendFormat(params.name))
     .single();
 
-  console.log(data);
+  console.log(params.name);
 
   // Fetch summary
   const res = await fetch(
