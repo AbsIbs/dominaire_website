@@ -1,5 +1,5 @@
 import FadeIn from "./fadeIn";
-import EastIcon from "@mui/icons-material/East";
+import ArrowDownwardRoundedIcon from "@mui/icons-material/ArrowDownwardRounded";
 import Link from "next/link";
 
 const Hero = () => {
@@ -7,29 +7,28 @@ const Hero = () => {
     <div className="h-[80vh] flex items-center justify-center w-full lg:h-[calc(100vh-64px)]">
       <div className="defaultWidth">
         <FadeIn>
-          <p className="font-bold res-text-hero leading-none">
-            Dominaire<span className="text-primary">.</span>
-          </p>
-          <div className="flex flex-col gap-8">
-            <p className="res-text-28 font-light lg:w-[70%]">
-              At Dominaire, we{" "}
-              <span className="text-primary font-medium">design</span>{" "}
-              cutting-edge apps to captivate users,{" "}
-              <span className="text-primary font-medium">develop</span> robust
-              solutions that ensure reliability, and{" "}
-              <span className="text-primary font-medium">market</span>{" "}
-              strategically to solve your toughest conversion challenges,
-              empowering your business to dominate the market.
+          <div className="flex flex-col gap-12 items-center justify-center">
+            <div className="flex res-text-21 gap-3 py-4 px-8 bg-[#2A2A2A] rounded-full items-center justify-center">
+              <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+              <p className="text-[#7a7a7a]">
+                Here to help you <span className="text-white">dominate</span>{" "}
+                your market
+              </p>
+            </div>
+            <p className="res-text-hero leading-none text-center max-w-[1400px] text-onSurface font-medium">
+              We <span className="text-bg">Design, Develop, and Market </span>
+              Your Products.
+            </p>
+            <p className="res-text-28 text-onSurface text-center ">
+              The All-In-One Solution to{" "}
+              <span className="text-bg">Grow Your Business Online</span>.
             </p>
             <Link
-              href={"https://calendly.com/abass-ibrahim-dominaire/30min"}
-              target="_blank"
-              className="flex gap-2 justify-center items-center py-3 px-8 bg-primary rounded w-fit"
+              href={"/#expertise"}
+              className="flex items-center gap-2 bg-white py-4 px-8 rounded-full font-medium"
             >
-              <p className="text-white res-text-21 font-medium">
-                Schedule a 30min call
-              </p>
-              <EastIcon sx={{ color: "white" }} />
+              <p>Get Started</p>
+              <ArrowDownwardRoundedIcon />
             </Link>
           </div>
         </FadeIn>

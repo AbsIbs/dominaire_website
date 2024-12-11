@@ -18,14 +18,14 @@ const Home = async () => {
       </section>
       <section
         id="expertise"
-        className="ypadding flex justify-center bg-surface"
+        className="ypadding flex justify-center"
       >
         <ExpertiseSection />
       </section>
       <section className="flex ypadding justify-center">
         <WorkPreview />
       </section>
-      <section className="bg-black ypadding flex flex-col ~sm/lg:~gap-12/24 items-center">
+      <section className="ypadding flex flex-col ~sm/lg:~gap-12/24 items-center">
         <div className="w-full">
           <TextSlider height={"h-[100px] md:h-[200px] lg:h-[300px]"}>
             <span
