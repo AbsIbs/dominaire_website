@@ -18,7 +18,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${dm_sans.className} text-text-normal bg-surface`}>
+      <body className={`${dm_sans.className} text-white bg-surface`}>
         <Providers>
           <NavbarComponent />
           {children}

@@ -40,9 +40,9 @@ const Page = async ({ searchParams }) => {
           <div className="flex justify-center items-center">
             <Link
               href="/archive"
-              className="bg-surface py-4 px-10 rounded-full"
+              className="bg-white py-4 px-10 rounded-full"
             >
-              <p className="res-text-21 text-white">Archive</p>
+              <p className="res-text-21 text-text-normal">Archive</p>
             </Link>
           </div>
         </div>

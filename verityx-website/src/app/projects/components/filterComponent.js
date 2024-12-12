@@ -8,9 +8,9 @@ const FilterComponent = ({ searchParams }) => {
       href={`?filter=${name}`}
       className={`rounded-full border py-4 px-10 ${
         !searchParams.filter && name === "All"
-          ? "bg-surface border-transparent text-white"
+          ? "border-transparent bg-white text-text-normal"
           : searchParams.filter === name
-          ? "bg-surface border-transparent text-white"
+          ? "border-transparent bg-white text-text-normal"
           : "border-[rgba(136,136,136)]"
       }`}
     >
