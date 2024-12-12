@@ -37,7 +37,7 @@ const WorkPreview = async () => {
                 className="font-light res-text-21 leading-none"
               />
             </div>
-            <div className="relative w-full h-[400px] md:h-[600px] rounded-sm ">
+            <div className="relative w-full h-[400px] md:h-[700px] rounded-sm ">
               <Image
                 src={props.image}
                 fill
@@ -60,16 +60,6 @@ const WorkPreview = async () => {
                   ))}
                 </div>
               </div>
-              <FadeIn
-                variants={{
-                  offscreen: { opacity: 0, x: -25 },
-                  visible: {
-                    opacity: 1,
-                    x: 0,
-                    transition: { duration: 0.8, ease: "easeOut" },
-                  },
-                }}
-              ></FadeIn>
             </div>
           </div>
         </div>
@@ -89,7 +79,7 @@ const WorkPreview = async () => {
           className="font-extralight res-text-140 leading-none"
         />
       </div>
-      <div className="flex flex-col xl:flex-row justify-between xl:gap-8 gap-16 w-full">
+      <div className="flex flex-col justify-between gap-32 w-full">
         {data.map((item, index) => (
           <Link
             href={`/projects/${matchURLFormat(item.project_name)}`}
