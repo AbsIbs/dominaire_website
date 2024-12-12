@@ -82,7 +82,7 @@ const NavbarComponent = () => {
               <div className="flex items-center justify-center gap-4">
                 <Link
                   href={"/#contact"}
-                  className="flex gap-2 justify-center items-center py-2 px-6 bg-primary rounded-full"
+                  className="flex gap-2 justify-center items-center py-2 px-6 bgGradientToRight rounded-full"
                 >
                   <p className="text-white res-text-base font-medium">
                     Let&rsquo;s talk

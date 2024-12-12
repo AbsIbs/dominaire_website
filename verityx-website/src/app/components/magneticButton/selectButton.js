@@ -92,7 +92,7 @@ export default function SelectButton({
         {children}
         <div
           ref={circle}
-          style={{ backgroundColor }}
+          style={{backgroundImage: "linear-gradient(to right, #FD025C, #FB50FD)"}}
           className={styles.circle}
         ></div>
       </div>

@@ -118,7 +118,7 @@ const ContactForm = () => {
           <label>
             <p
               className={`${
-                categoriesError ? "text-red-900" : "text-text-normal"
+                categoriesError ? "text-red-900" : "text-[#7a7a7a]"
               } res-text-38 font-light`}
             >
               I&apos;m interested in...
@@ -137,7 +137,7 @@ const ContactForm = () => {
                     className={`res-text-28 ${
                       categoriesData.includes(item)
                         ? "text-white"
-                        : "text-text-normal"
+                        : "text-[#7a7a7a]"
                     }`}
                   >
                     {item}
@@ -152,7 +152,7 @@ const ContactForm = () => {
           <div className="h-full">
             <p
               className={`res-text-21 ${
-                nameError ? "text-red-900" : "text-normal-70"
+                nameError ? "text-red-900" : "text-[#7a7a7a]"
               } font-medium`}
             >
               01
@@ -161,13 +161,13 @@ const ContactForm = () => {
           <div className="flex-1 flex-col gap-2">
             <label
               className={`res-text-28 ${
-                nameError ? "text-red-900" : "text-text-normal"
+                nameError ? "text-red-900" : ""
               }`}
             >
               What is your name?
             </label>
             <input
-              className={`transition-border w-full res-text-38 ${
+              className={`transition-border bg-transparent w-full res-text-38 focus:border-b-white ${
                 nameError ? "text-red-900" : "text-text-normal"
               } bottom-4 pb-4 border-b-2 ${
                 nameError ? "border-b-red" : "border-b-line"
@@ -185,7 +185,7 @@ const ContactForm = () => {
           <div className="h-full">
             <p
               className={`res-text-21 ${
-                emailError ? "text-red-900" : "text-normal-70"
+                emailError ? "text-red-900" : "text-[#7a7a7a]"
               } font-medium`}
             >
               02
@@ -194,13 +194,13 @@ const ContactForm = () => {
           <div className="flex-1 flex-col gap-2">
             <label
               className={`res-text-28 ${
-                emailError ? "text-red-900" : "text-text-normal"
+                emailError ? "text-red-900" : ""
               }`}
             >
               What is your email?
             </label>
             <input
-              className={`transition-border w-full res-text-38 ${
+              className={`transition-border w-full res-text-38 bg-transparent focus:border-b-white ${
                 emailError ? "text-red-900" : "text-text-normal"
               } bottom-4 pb-4 border-b-2 ${
                 emailError ? "border-b-red" : "border-b-line"
@@ -218,7 +218,7 @@ const ContactForm = () => {
           <div className="h-full">
             <p
               className={`res-text-21 ${
-                organisationError ? "text-red-900" : "text-normal-70"
+                organisationError ? "text-red-900" : "text-[#7a7a7a]"
               } font-medium`}
             >
               03
@@ -227,13 +227,13 @@ const ContactForm = () => {
           <div className="flex-1 flex-col gap-2">
             <label
               className={`res-text-28 ${
-                organisationError ? "text-red-900" : "text-text-normal"
+                organisationError ? "text-red-900" : "text-white"
               }`}
             >
               What is your organisation?
             </label>
             <input
-              className={`transition-border w-full res-text-38 ${
+              className={`transition-border w-full res-text-38 bg-transparent focus:border-b-white ${
                 organisationError ? "text-red-900" : "text-text-normal"
               } bottom-4 pb-4 border-b-2 ${
                 organisationError ? "border-b-red" : "border-b-line"
@@ -253,7 +253,7 @@ const ContactForm = () => {
           <div className="h-full">
             <p
               className={`res-text-21 ${
-                websiteError ? "text-red-900" : "text-normal-70"
+                websiteError ? "text-red-900" : "text-[#7a7a7a]"
               } font-medium`}
             >
               04
@@ -262,13 +262,13 @@ const ContactForm = () => {
           <div className="flex-1 flex-col gap-2">
             <label
               className={`res-text-28 ${
-                websiteError ? "text-red-900" : "text-text-normal"
+                websiteError ? "text-red-900" : ""
               }`}
             >
               What is your website url? (optional)
             </label>
             <input
-              className={`transition-border w-full res-text-38 ${
+              className={`transition-border w-full res-text-38 bg-transparent focus:border-b-white ${
                 websiteError ? "text-red-900" : "text-text-normal"
               } bottom-4 pb-4 border-b-2 ${
                 websiteError ? "border-b-red" : "border-b-line"
@@ -286,7 +286,7 @@ const ContactForm = () => {
           <div className="h-full">
             <p
               className={`res-text-21 ${
-                messageError ? "text-red-900" : "text-normal-70"
+                messageError ? "text-red-900" : "text-[#7a7a7a]"
               } font-medium`}
             >
               05
@@ -295,13 +295,13 @@ const ContactForm = () => {
           <div className="flex-1 flex-col gap-2">
             <label
               className={`res-text-28 ${
-                messageError ? "text-red-900" : "text-text-normal"
+                messageError ? "text-red-900" : ""
               }`}
             >
               Message
             </label>
             <textarea
-              className={`transition-border w-full res-text-38 ${
+              className={`transition-border w-full res-text-38 bg-transparent focus:border-b-white ${
                 messageError ? "text-red-900" : "text-text-normal"
               } bottom-4 pb-4 border-b-2 ${
                 messageError ? "border-b-red" : "border-b-line"
@@ -320,7 +320,7 @@ const ContactForm = () => {
             </div>
           </div>
         </div>
-        <button className="bg-primary rounded-full py-4 px-10 w-fit">
+        <button className="bgGradientToRight rounded-full py-4 px-10 w-fit">
           <p className="text-white res-text-28 px-12">SEND</p>
         </button>
       </form>

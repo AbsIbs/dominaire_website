@@ -20,7 +20,7 @@ const Hero = () => {
           </p>
           <p className="res-text-28 text-onSurface text-center ">
             The All-In-One Solution to{" "}
-            <span className="textBgGradient">Grow Your Business Online</span>.
+            <span className="textBgGradient">Grow Your Business Online</span>
           </p>
           <Link
             href={"/#expertise"}
