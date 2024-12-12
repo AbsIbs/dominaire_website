@@ -78,7 +78,7 @@ const WorkPreview = async () => {
   };
 
   return (
-    <div className="xpadding flex flex-col items-center ~sm/lg:~gap-12/24 defaultWidth">
+    <div className="xpadding flex flex-col items-center ~sm/lg:~gap-12/24 defaultWidth text-white">
       <div className="flex flex-col gap-2 w-full">
         <TextReveal
           text="Latest"
@@ -109,9 +109,9 @@ const WorkPreview = async () => {
       <div className="flex items-center justify-center">
         <Link
           href={"/projects"}
-          className="rounded-full bg-surface py-4 px-10 flex justify-center items-center"
+          className="rounded-full bg-white py-4 px-10 flex justify-center items-center"
         >
-          <p className="res-text-16 text-white">See more</p>
+          <p className="res-text-16 text-[#333]">See more</p>
         </Link>
       </div>
     </div>

@@ -16,10 +16,7 @@ const Home = async () => {
       <section className="xpadding">
         <Hero />
       </section>
-      <section
-        id="expertise"
-        className="ypadding flex justify-center"
-      >
+      <section id="expertise" className="ypadding flex justify-center">
         <ExpertiseSection />
       </section>
       <section className="flex ypadding justify-center">
@@ -34,7 +31,7 @@ const Home = async () => {
               }
             >
               Ready to elevate your company
-              <span className="text-primary">?</span>
+              <span className="textBgGradient">?</span>
             </span>
           </TextSlider>
         </div>
@@ -59,9 +56,7 @@ const Home = async () => {
                   <p className="res-text-21 text-[rgba(255,255,255,0.50)] font-light tracking-widest">
                     EMAIL
                   </p>
-                  <p className="res-text-21 underline">
-                    support@dominaire.com
-                  </p>
+                  <p className="res-text-21 underline">support@dominaire.com</p>
                 </div>
                 <div className="flex flex-col ~sm/lg:~gap-0/2">
                   <p className="res-text-21 text-[rgba(255,255,255,0.50)] font-light tracking-widest">

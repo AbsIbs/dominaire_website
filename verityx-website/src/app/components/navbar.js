@@ -65,7 +65,7 @@ const NavbarComponent = () => {
 
   return (
     <>
-      <Navbar className="bg-white" shouldHideOnScroll maxWidth="full">
+      <Navbar className="bg-surface text-white" shouldHideOnScroll maxWidth="full">
         <NavbarContent>
           <div className="flex justify-center w-full h-full">
             <div className="h-full max-w-[1920px] w-full flex items-center justify-between">

@@ -37,6 +37,10 @@
   @apply ~lg/sm:~text-100/mobile-100
 }
 
+.res-text-120{
+  @apply ~lg/sm:~text-120/mobile-120
+}
+
 .res-text-140{
   @apply ~lg/sm:~text-140/mobile-140
 }
@@ -55,6 +59,14 @@
 
 .defaultWidth {
   @apply w-[1920px]
+}
+
+.bgGradientToRight {
+  @apply bg-gradient-to-r from-[#FD025C] to-[#FB50FD]
+}
+
+.textBgGradient {
+  @apply bg-gradient-to-r from-[#FD025C] to-[#FB50FD] inline-block text-transparent bg-clip-text
 }
 
 @tailwind utilities;
