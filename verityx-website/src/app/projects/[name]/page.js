@@ -9,14 +9,14 @@ import { matchBackendFormat } from "../../logic/formatClientTitle";
 const Page = async ({ params }) => {
   const supabase = createClient();
 
+  console.log(params.name)
+
   // Get data
   const { data, error } = await supabase
     .from("project")
     .select(`*, client!inner(name, id)`)
-    .eq("project_name", matchBackendFormat(params.name))
+    .eq("slug", params.name)
     .single();
-
-  console.log(data);
 
   // Fetch summary
   const res = await fetch(data.summary_mdx);

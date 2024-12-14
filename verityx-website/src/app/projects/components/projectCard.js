@@ -5,6 +5,7 @@ import Image from "next/image";
 import { matchURLFormat } from "../../logic/formatClientTitle";
 
 const ProjectCards = ({
+  slug,
   projectName,
   coverImage,
   mainService,
@@ -12,7 +13,7 @@ const ProjectCards = ({
 }) => {
   return (
     <Link
-      href={`/projects/${matchURLFormat(projectName)}`}
+      href={`/projects/${slug}`}
       className="flex flex-col gap-4 md:gap-12"
     >
       <div className="relative w-full h-[400px] md:h-[600px] rounded-sm ">

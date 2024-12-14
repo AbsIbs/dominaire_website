@@ -12,7 +12,7 @@ const Page = async ({ searchParams }) => {
   const { data, error } = await supabase
     .from("project")
     .select(
-      `coverImage, main_service, commence_date, project_name, client!inner(name)`
+      `coverImage, main_service, commence_date, project_name, client!inner(name), slug`
     )
     .order("commence_date", { ascending: false })
     .limit(10);
@@ -29,6 +29,7 @@ const Page = async ({ searchParams }) => {
             {data.map((project, index) => (
               <div key={index}>
                 <ProjectCard
+                  slug={project.slug}
                   coverImage={project.coverImage}
                   projectName={project.project_name}
                   mainService={project.main_service}
@@ -38,10 +39,7 @@ const Page = async ({ searchParams }) => {
             ))}
           </div>
           <div className="flex justify-center items-center">
-            <Link
-              href="/archive"
-              className="bg-white py-4 px-10 rounded-full"
-            >
+            <Link href="/archive" className="bg-white py-4 px-10 rounded-full">
               <p className="res-text-21 text-text-normal">Archive</p>
             </Link>
           </div>
