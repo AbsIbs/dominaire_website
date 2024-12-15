@@ -35,7 +35,7 @@ const Header = ({ data }) => {
             </p>
           </div>
         </div>
-        <p className="flex-1 res-text-21 leading-relaxed">{data.description}</p>
+        <p className="flex-1 res-text-21 leading-relaxed whitespace-break-spaces">{data.description}</p>
       </div>
     </div>
   );

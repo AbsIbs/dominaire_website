@@ -3,13 +3,9 @@ import Header from "./components/header";
 import { MDXRemote } from "next-mdx-remote/rsc";
 // Supabase
 import { createClient } from "../../../../utils/supabase/server.ts";
-// Logic
-import { matchBackendFormat } from "../../logic/formatClientTitle";
 
 const Page = async ({ params }) => {
   const supabase = createClient();
-
-  console.log(params.name)
 
   // Get data
   const { data, error } = await supabase

@@ -9,10 +9,9 @@ const Page = async () => {
   const { data, error } = await supabase
     .from("project")
     .select(
-      `main_service, commence_date, project_name, client!inner(name, location)`
+      `main_service, commence_date, project_name, slug, client!inner(name, location)`
     )
     .order("commence_date", { ascending: false })
-    .limit(10);
 
   return (
     <>
