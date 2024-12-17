@@ -1,8 +1,6 @@
 // NextJS
 import Link from "next/link";
 import Image from "next/image";
-// Logic
-import { matchURLFormat } from "../../logic/formatClientTitle";
 
 const ProjectCards = ({
   slug,
