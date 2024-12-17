@@ -1,12 +1,8 @@
-// NextJS
-import Link from "next/link";
-// Components
-import FilterComponent from "./components/filterComponent";
 import ProjectCard from "./components/projectCard";
 // Supabase
 import { createClient } from "../../../utils/supabase/server";
 
-const Page = async ({ searchParams }) => {
+const Page = async () => {
   const supabase = createClient();
 
   const { data, error } = await supabase

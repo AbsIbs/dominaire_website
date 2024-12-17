@@ -3,8 +3,6 @@ import Link from "next/link";
 // Components
 import TextReveal from "./textReveal";
 import FadeIn from "./fadeIn";
-// Logic
-import { matchURLFormat } from "../logic/formatClientTitle";
 // Supabase
 import { createClient } from "../../../utils/supabase/server";
 
@@ -15,6 +13,7 @@ const WorkPreview = async () => {
     .from("project")
     .select(`*, client!inner(name, id)`)
     .order("commence_date", { ascending: false })
+    .eq("featured", true)
     .limit(3);
 
   const formatYear = (date) => {
@@ -31,10 +30,6 @@ const WorkPreview = async () => {
               <TextReveal
                 text={props.project_name}
                 className="font-light res-text-38 leading-none"
-              />
-              <TextReveal
-                text={`${formatYear(props.commenced)}`}
-                className="font-light res-text-21 leading-none"
               />
             </div>
             <div className="relative w-full h-[400px] md:h-[600px] rounded-sm ">

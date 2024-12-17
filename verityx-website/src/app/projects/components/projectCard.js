@@ -9,7 +9,6 @@ const ProjectCards = ({
   projectName,
   coverImage,
   mainService,
-  commenceDate,
 }) => {
   return (
     <Link
@@ -28,9 +27,6 @@ const ProjectCards = ({
         <hr className="w-full border border-line" />
         <div className="flex justify-between w-full">
           <p className="res-text-21">{mainService.join(" & ")}</p>
-          <p className="res-text-21">
-            {new Date(commenceDate).getFullYear()}
-          </p>
         </div>
       </div>
     </Link>
