@@ -15,16 +15,15 @@ const Page = async ({ searchParams }) => {
       `coverImage, main_service, commence_date, project_name, client!inner(name), slug`
     )
     .order("commence_date", { ascending: false })
-    .limit(10);
+    .eq("featured", true)
 
   return (
     <>
       <section className="flex ypadding justify-center">
         <div className="w-[1440px] xpadding flex flex-col ~sm/lg:~gap-8/24">
           <p className="res-text-80 font-light leading-tight">
-            What we&apos;ve achieved
+            Our highlights
           </p>
-          <FilterComponent searchParams={searchParams} />
           <div className="grid gap-x-16 gap-y-12 md:gap-y-24 lg:gap-y-48 grid-cols-1 md:grid-cols-2">
             {data.map((project, index) => (
               <div key={index}>
@@ -37,11 +36,6 @@ const Page = async ({ searchParams }) => {
                 />
               </div>
             ))}
-          </div>
-          <div className="flex justify-center items-center">
-            <Link href="/archive" className="bg-white py-4 px-10 rounded-full">
-              <p className="res-text-21 text-text-normal">Archive</p>
-            </Link>
           </div>
         </div>
       </section>
