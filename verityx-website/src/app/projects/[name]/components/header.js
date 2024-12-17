@@ -28,12 +28,6 @@ const Header = ({ data }) => {
             <Subheader text={"CLIENT"} />
             <p className="res-text-21 font-medium">{data.client.name}</p>
           </div>
-          <div className="flex flex-col gap-1">
-            <Subheader text={"YEAR"} />
-            <p className="res-text-21 font-medium">
-              {formatYear(data.commence_date)}
-            </p>
-          </div>
         </div>
         <p className="flex-1 res-text-21 leading-relaxed whitespace-break-spaces">{data.description}</p>
       </div>
