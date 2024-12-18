@@ -1,11 +1,8 @@
+import Link from "next/link";
+
 const Header = ({ data }) => {
   const Subheader = ({ text }) => {
     return <p className="res-text-21 text-gray-400 tracking-widest">{text}</p>;
-  };
-
-  const formatYear = (date) => {
-    const year = new Date(date).getFullYear();
-    return year;
   };
 
   return (
@@ -28,8 +25,22 @@ const Header = ({ data }) => {
             <Subheader text={"CLIENT"} />
             <p className="res-text-21 font-medium">{data.client.name}</p>
           </div>
+          {data.site_url && (
+            <Link
+              href={data.site_url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="flex items-center gap-2 res-text-21 tracking-widest rounded bg-gray-800 py-2 px-6">
+                <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                <p>Visit site</p>
+              </button>
+            </Link>
+          )}
         </div>
-        <p className="flex-1 res-text-21 leading-relaxed whitespace-break-spaces">{data.description}</p>
+        <p className="flex-1 res-text-21 leading-relaxed whitespace-break-spaces">
+          {data.description}
+        </p>
       </div>
     </div>
   );
