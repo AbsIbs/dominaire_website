@@ -42,7 +42,7 @@ module.exports = {
         "mobile-120": ["2.75rem"],
         "mobile-140": ["3rem"],
         "mobile-180": ["4rem"],
-        "mobile-hero": ["3.5rem"],
+        "mobile-hero": ["2.5rem"],
       },
     },
   },
