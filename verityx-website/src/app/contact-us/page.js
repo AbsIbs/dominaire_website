@@ -1,6 +1,11 @@
 // Components
 import ContactForm from "../components/contactForm"
 
+export const metadata = {
+  title: "Get in touch",
+  description: "Let's build something great together",
+};
+
 const Page = async () => {
   return (
     <>

@@ -4,6 +4,15 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 // Supabase
 import { createClient } from "../../../../utils/supabase/server.ts";
 
+export const generateMetadata = async ({ params }) => {
+  const title = params;
+
+  return {
+    title: `${title} | Dominaire`,
+    description: `Our project with ${title}.`,
+  };
+};
+
 const Page = async ({ params }) => {
   const supabase = createClient();
 

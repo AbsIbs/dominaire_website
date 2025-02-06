@@ -2,6 +2,11 @@ import ProjectCard from "./components/projectCard";
 // Supabase
 import { createClient } from "../../../utils/supabase/server";
 
+export const metadata = {
+  title: "Our projects",
+  description: "What we've done.",
+};
+
 const Page = async () => {
   const supabase = createClient();
 

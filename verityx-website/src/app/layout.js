@@ -12,7 +12,7 @@ import NavbarComponent from "./components/navbar";
 
 export const metadata = {
   title: "Dominaire",
-  description: "Apps that solve your pain points.",
+  description: "Building brands and solving your pain points",
 };
 
 export default function RootLayout({ children }) {

@@ -56,18 +56,18 @@ const Home = async () => {
                   <p className="res-text-21 text-[rgba(255,255,255,0.50)] font-light tracking-widest">
                     EMAIL
                   </p>
-                  <p className="res-text-21 underline">support@dominaire.com</p>
+                  <p className="res-text-21">hello@dominaire.com</p>
                 </div>
                 <div className="flex flex-col ~sm/lg:~gap-0/2">
                   <p className="res-text-21 text-[rgba(255,255,255,0.50)] font-light tracking-widest">
                     INSTAGRAM
                   </p>
                   <Link
-                    href={"https://www.instagram.com/dominaire.dev/"}
+                    href={"https://www.instagram.com/dominaire.edge/"}
                     target="_blank"
-                    className="res-text-21 underline"
+                    className="res-text-21"
                   >
-                    dominaire.dev
+                    dominaire.edge
                   </Link>
                 </div>
               </div>
