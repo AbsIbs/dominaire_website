@@ -8,8 +8,8 @@ export const generateMetadata = async ({ params }) => {
   const title = params;
 
   return {
-    title: `${title} | Dominaire`,
-    description: `Our project with ${title}.`,
+    title: `${title.name} | Dominaire`,
+    description: `Our project with ${title.name}.`,
   };
 };
 
