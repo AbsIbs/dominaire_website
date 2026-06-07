@@ -67,7 +67,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="sticky top-0 w-full flex justify-center items-center bg-background border-b border-b-border">
+      <div className="sticky z-800 top-0 w-full flex justify-center items-center bg-background border-b border-b-border">
         <div className="flex justify-between items-center w-full h-full pl-2">
           {/* Left */}
           <div className="flex items-center gap-2">

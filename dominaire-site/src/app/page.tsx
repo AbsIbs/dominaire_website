@@ -1,15 +1,25 @@
-import Image from "next/image";
+// Sections
+import { Hero, ExpertiseSection } from "@/src/components/ui/sections";
 
-const Home = () => {
+// UI
+import { TextReveal } from "@/src/components/ui/text";
+
+const Home = async () => {
   return (
-    <div className="flex flex-col">
-      <div className="h-screen">
-        <p>Hello world</p>
-      </div>
-      <div className="h-screen">
-        <p>Hello world</p>
-      </div>
-    </div>
+    <>
+      <section>
+        <Hero />
+      </section>
+      <section className="flex w-full justify-center px-4">
+        <div className="max-w-480 flex flex-col gap-40 w-full">
+          <div>
+            <TextReveal text="Our" className="text-text text-9xl font-extralight" />
+            <TextReveal text="Expertise" className="text-text text-9xl font-extralight" />
+          </div>
+          <ExpertiseSection />
+        </div>
+      </section>
+    </>
   );
 };
 
