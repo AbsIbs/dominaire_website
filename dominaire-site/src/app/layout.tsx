@@ -7,7 +7,7 @@ import "./globals.css";
 import Providers from "@/src/app/providers";
 
 // UI
-import { Navbar } from "@/src/components/ui/display";
+import { Navbar } from "@/src/components/layout";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

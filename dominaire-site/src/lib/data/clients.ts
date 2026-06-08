@@ -1,0 +1,7 @@
+export const CLIENT_DATA = {
+  "fff78285-acab-44a9-9c1c-1996f33767df": {
+    id: "fff78285-acab-44a9-9c1c-1996f33767df",
+    name: "Pulse Poetry",
+    location: "UK, London",
+  },
+} as const;
