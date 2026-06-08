@@ -6,6 +6,8 @@
   --color-text: #fff;
   --color-textMuted: #555;
   --color-surface: #404040;
+  --color-lightSurface: #f4f4f4;
+  --color-text-on-lightSurface: #333;
   --color-border: #222;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);

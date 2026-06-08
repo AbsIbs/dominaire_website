@@ -4,6 +4,7 @@ import {
   ExpertiseSection,
   LatestProjects,
   GetInTouch,
+  OurProcesses,
 } from "@/src/components/sections";
 
 // UI
@@ -15,6 +16,7 @@ const Home = async () => {
       <section>
         <Hero />
       </section>
+
       <section className="flex w-full justify-center px-4 py-48">
         <div className="max-w-480 flex flex-col gap-40 w-full">
           <div>
@@ -30,6 +32,23 @@ const Home = async () => {
           <ExpertiseSection />
         </div>
       </section>
+
+      <section className="bg-lightSurface flex w-full items-center text-center justify-center px-4 py-48">
+        <div className="max-w-480 flex flex-col gap-40 w-full">
+          <div>
+            <TextReveal
+              text="Our"
+              className="text-text-on-lightSurface text-9xl font-extralight"
+            />
+            <TextReveal
+              text="Process"
+              className="text-text-on-lightSurface text-9xl font-extralight"
+            />
+          </div>
+          <OurProcesses />
+        </div>
+      </section>
+
       <section className="flex w-full justify-center px-4 py-48">
         <div className="max-w-480 flex flex-col gap-40 w-full">
           <div>
@@ -45,6 +64,7 @@ const Home = async () => {
           <LatestProjects />
         </div>
       </section>
+
       <section className="py-48">
         <GetInTouch />
       </section>
