@@ -1,6 +1,7 @@
 // Sections
 import {
   Hero,
+  IntroductionSection,
   ExpertiseSection,
   LatestProjects,
   GetInTouch,
@@ -13,8 +14,16 @@ import { TextReveal } from "@/src/components/ui/text";
 const Home = async () => {
   return (
     <>
-      <section>
-        <Hero />
+      <section className="flex w-full justify-center px-4 py-24">
+        <div className="max-w-480 flex flex-col gap-40 w-full">
+          <Hero />
+        </div>
+      </section>
+
+      <section className="flex w-full justify-center px-4 py-48">
+        <div className="max-w-240 flex flex-col gap-40 w-full">
+          <IntroductionSection />
+        </div>
       </section>
 
       <section className="flex w-full justify-center px-4 py-48">
@@ -33,7 +42,7 @@ const Home = async () => {
         </div>
       </section>
 
-      <section className="bg-lightSurface flex w-full items-center text-center justify-center px-4 py-48">
+      <section className="bg-lightSurface relative flex w-full items-center text-center justify-center px-4 py-48">
         <div className="max-w-480 flex flex-col gap-40 w-full">
           <div>
             <TextReveal

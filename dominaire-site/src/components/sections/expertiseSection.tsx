@@ -48,10 +48,10 @@ const AccordionItem = ({ description, tags }: AccordionItem) => {
             <div
               key={index}
               className={`flex gap-6 items-center py-6 border-t ${
-                index == 0 ? "border-t border-t-[#333]" : ""
-              } border-y-[#333]`}
+                index == 0 ? "border-t border-t-border" : ""
+              } border-y-border`}
             >
-              <p className="text-[rgba(255,255,255,0.30)] text-2xl">{`0${
+              <p className="text-textMuted text-2xl">{`0${
                 index + 1
               }`}</p>
               <p className="text-2xl">{tag}</p>
