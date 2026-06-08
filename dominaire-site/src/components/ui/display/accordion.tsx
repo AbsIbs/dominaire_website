@@ -31,7 +31,7 @@ const AccordionItem = ({
       >
         {title}
         <FaChevronLeft
-          className={`text-white text-lg ${open ? "-rotate-90" : "rotate-0"} transition-all duration-300`}
+          className={`text-text text-lg ${open ? "-rotate-90" : "rotate-0"} transition-all duration-300`}
         />
       </button>
       <div

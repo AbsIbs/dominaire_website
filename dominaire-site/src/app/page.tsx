@@ -3,6 +3,7 @@ import {
   Hero,
   ExpertiseSection,
   LatestProjects,
+  GetInTouch,
 } from "@/src/components/sections";
 
 // UI
@@ -43,6 +44,9 @@ const Home = async () => {
           </div>
           <LatestProjects />
         </div>
+      </section>
+      <section className="py-48">
+        <GetInTouch />
       </section>
     </>
   );

@@ -37,7 +37,7 @@ const Navbar = () => {
   // UI
   const MenuButton = () => (
     <button className="md:hidden" onClick={toggleDrawer}>
-      <IoMenu className="text-white text-2xl" />
+      <IoMenu className="text-text text-2xl" />
     </button>
   );
 
@@ -51,7 +51,7 @@ const Navbar = () => {
           <div className="flex flex-col gap-8">
             {menuItems.map((item, index) => (
               <Link key={index} href={item.link} onClick={toggleDrawer}>
-                <p className="text-3xl text-white font-extralight">
+                <p className="text-3xl text-text font-extralight">
                   {item.label}
                 </p>
               </Link>
@@ -90,8 +90,8 @@ const Navbar = () => {
                 href={"/#contact"}
                 className="flex gap-2 justify-center items-center py-4 px-8 bg-primary"
               >
-                <p className="text-white res-text-base font-bold">Contact</p>
-                <IoIosCall className="text-white text-2xl" />
+                <p className="text-text res-text-base font-bold">Contact</p>
+                <IoIosCall className="text-text text-2xl" />
               </Link>
             </div>
           </div>

@@ -4,4 +4,9 @@ export const CLIENT_DATA = {
     name: "Pulse Poetry",
     location: "UK, London",
   },
+  "6bfc93d7-c1c6-4b89-a6ff-2e3392f71205": {
+    id: "6bfc93d7-c1c6-4b89-a6ff-2e3392f71205",
+    name: "Everlum",
+    location: "UK, London",
+  },
 } as const;

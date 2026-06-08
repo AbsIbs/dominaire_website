@@ -68,7 +68,12 @@ const ExpertiseSection = () => {
   const data = [
     {
       title: "A.I. & Automation",
-      tags: ["Automation Apps", "Data analytics", "ML Models"],
+      tags: [
+        "Automation Apps",
+        "Data Analytics",
+        "Data Visualization",
+        "Bespoke ML Models",
+      ],
       desc: "We help your business automate processes, saving time and money.",
     },
     {
@@ -77,14 +82,8 @@ const ExpertiseSection = () => {
       desc: "We create modern and visually stunning websites that perfectly suit your needs.",
     },
     {
-      title: "Web development",
-      tags: [
-        "Corporate site",
-        "Blogs",
-        "E-commerce",
-        "Bespoke apps",
-        "No-code",
-      ],
+      title: "App development",
+      tags: ["SaaS", "Mobile Apps", "E-commerce"],
       desc: "We build websites tailored to your business, ensuring they are fast, secure, and easy to use.",
     },
   ];
