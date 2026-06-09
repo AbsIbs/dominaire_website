@@ -31,3 +31,15 @@ body {
   scrollbar-width: none;
   /* Firefox */
 }
+
+.res-text-38 {
+  @apply text-4xl
+}
+
+.res-text-30 {
+  @apply text-3xl
+}
+
+.res-text-21 {
+  @apply text-2xl
+}

@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <div className="flex flex-col gap-20">
       <div className="flex flex-col gap-20 items-center text-center">
-        <p className="text-7xl text-text leading-tightest tracking-tight">
+        <p className="text-8xl text-text leading-tightest font-light tracking-tight">
           We <span className="text-primary">Build</span> Digital Solutions{" "}
           <br /> To <span className="text-primary"> Solve</span> Your Problems
         </p>
