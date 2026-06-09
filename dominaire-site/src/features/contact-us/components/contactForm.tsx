@@ -1,6 +1,12 @@
 "use client";
 // React
-import { useState } from "react";
+import { useState, useActionState, useEffect } from "react";
+
+// UI
+import { Spinner } from "@/src/components/ui/feedback";
+
+// Actions
+import { sendEmail } from "@/src/features/contact-us/actions";
 
 // Icons
 import { IoSend } from "react-icons/io5";
@@ -8,15 +14,12 @@ import { IoSend } from "react-icons/io5";
 // Components
 import { AlertModal } from "@/src/components/ui/feedback";
 
-// Logic
-/* import { EmailHandler } from "../logic/emailHandler"; */
-
 // Types
 type InputField = {
   number: string;
   label: string;
-  error: boolean;
-  errorLabel: string;
+  error: string | undefined;
+  errorLabel: string | undefined;
   children: React.ReactNode;
   length: number;
   maxLength: number;
@@ -49,15 +52,15 @@ const InputField = ({
             {label}
           </label>
           {children}
+          <div className="flex justify-between w-full res-text-21">
+            <p className={` text-red-700 ${error ? "block" : "invisible"}`}>
+              {errorLabel}
+            </p>
+            <p className="res-text-21 text-text-normal-70">
+              {length}/{maxLength}
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="flex justify-between w-full res-text-21">
-        <p className={` text-red-700 ${error ? "block" : "invisible"}`}>
-          {errorLabel}
-        </p>
-        <p className="res-text-21 text-text-normal-70">
-          {length}/{maxLength}
-        </p>
       </div>
     </div>
   );
@@ -65,28 +68,42 @@ const InputField = ({
 
 const ContactForm = () => {
   // States
-  const [categoriesData, setCategoriesData] = useState<string[]>([]);
-  const [message, setMessage] = useState("");
-
+  const [categories, setCategories] = useState<string[]>([]);
   const [formObject, setFormObject] = useState({
     name: "",
     email: "",
     organisation: "",
-    website: "",
+    websiteUrl: "",
     message: "",
   });
+  const [successModal, setSuccessModal] = useState(false);
+  const [errorModal, setErrorModal] = useState(false);
 
-  const [categoriesError, setCategoriesError] = useState(false);
-  const [nameError, setNameError] = useState(false);
-  const [emailError, setEmailError] = useState(false);
-  const [organisationError, setOrganisationError] = useState(false);
-  const [websiteError, setWebsiteError] = useState(false);
-  const [messageError, setMessageError] = useState(false);
+  // Action States
+  const [state, formAction, isPending] = useActionState(sendEmail, {
+    success: false,
+    error: "",
+    errors: {
+      name: undefined,
+      email: undefined,
+      message: undefined,
+      categories: undefined,
+      organisation: undefined,
+      websiteUrl: undefined,
+    },
+  });
 
-  const [successModal, setSuccessModal] = useState(true);
+  const {
+    name: nameError,
+    email: emailError,
+    organisation: organisationError,
+    websiteUrl: websiteError,
+    message: messageError,
+    categories: categoriesError,
+  } = state.errors;
 
   // Variables
-  const categories = [
+  const categoriesArray = [
     "Web design",
     "Web development",
     "Branding",
@@ -95,11 +112,9 @@ const ContactForm = () => {
     "A.I. & Automation",
   ];
 
-  const maxLength = 1000;
-
   // Handlers
   const categoryHandler = (name: string) => {
-    setCategoriesData((prev) => {
+    setCategories((prev) => {
       // Check if the category is already in the array
       if (prev.includes(name)) {
         // Remove the category if it is already present
@@ -111,9 +126,47 @@ const ContactForm = () => {
     });
   };
 
+  const handleInputChange = (key: string, value: string) => {
+    setFormObject((prev) => {
+      return { ...prev, [key]: value };
+    });
+  };
+
+  useEffect(() => {
+    if (state.error) {
+      setErrorModal(true);
+    }
+
+    if (state.success) {
+      setSuccessModal(true);
+    }
+  }, [state]);
+
   return (
     <>
-      <form className="flex flex-col gap-24">
+      <AlertModal
+        open={successModal}
+        type="success"
+        setOpen={setSuccessModal}
+        title="We got your email!"
+        desc={
+          "Thanks for your email. Our team will be in touch soon for next steps."
+        }
+      />
+      <AlertModal
+        open={errorModal}
+        setOpen={setErrorModal}
+        title="Oops! Something went wrong"
+        desc={state.error}
+      />
+      <form action={formAction} className="flex flex-col gap-24">
+        <input
+          type="text"
+          hidden
+          value={JSON.stringify(categories)}
+          name="categories"
+          readOnly
+        />
         <div className="flex flex-col gap-4">
           <label>
             <p
@@ -125,12 +178,12 @@ const ContactForm = () => {
             </p>
           </label>
           <div className="flex gap-5 flex-wrap">
-            {categories.map((item, index) => {
-              const isSelected = categoriesData.includes(item);
+            {categoriesArray.map((item, index) => {
+              const isSelected = categories.includes(item);
 
               return (
                 <button
-                  value={categories[index]}
+                  value={categoriesArray[index]}
                   key={index}
                   type="button"
                   onClick={(e) => categoryHandler(e.currentTarget.value)}
@@ -148,7 +201,7 @@ const ContactForm = () => {
 
         <InputField
           error={nameError}
-          errorLabel="Please enter a valid name."
+          errorLabel={nameError}
           length={formObject.name.length}
           maxLength={100}
           number="01"
@@ -162,12 +215,15 @@ const ContactForm = () => {
             } bottom-4 pb-4 border-b-2 focus:outline-none`}
             type={"text"}
             placeholder={"John Doe"}
+            name="name"
+            value={formObject.name}
+            onChange={(e) => handleInputChange("name", e.target.value)}
           />
         </InputField>
 
         <InputField
           error={emailError}
-          errorLabel="Please enter a valid email."
+          errorLabel={emailError}
           length={formObject.email.length}
           maxLength={100}
           number="02"
@@ -181,12 +237,15 @@ const ContactForm = () => {
             } bottom-4 pb-4 border-b-2 focus:outline-none`}
             type="email"
             placeholder="johndoe@gmail.com"
+            name="email"
+            value={formObject.email}
+            onChange={(e) => handleInputChange("email", e.target.value)}
           />
         </InputField>
 
         <InputField
           error={organisationError}
-          errorLabel="Please enter a valid organisation name."
+          errorLabel={organisationError}
           length={formObject.organisation.length}
           maxLength={100}
           number="03"
@@ -200,13 +259,16 @@ const ContactForm = () => {
             } bottom-4 pb-4 border-b-2 focus:outline-none`}
             type="text"
             placeholder="John & Doe Ltd"
+            name="organisation"
+            value={formObject.organisation}
+            onChange={(e) => handleInputChange("organisation", e.target.value)}
           />
         </InputField>
 
         <InputField
           error={websiteError}
-          errorLabel="Please enter a valid website url."
-          length={formObject.website.length}
+          errorLabel={websiteError}
+          length={formObject.websiteUrl.length}
           maxLength={100}
           number="04"
           label="What is your website url? (optional)"
@@ -219,12 +281,15 @@ const ContactForm = () => {
             } bottom-4 pb-4 border-b-2 focus:outline-none`}
             type="url"
             placeholder="www.johndoe.com"
+            name="websiteUrl"
+            value={formObject.websiteUrl}
+            onChange={(e) => handleInputChange("websiteUrl", e.target.value)}
           />
         </InputField>
 
         <InputField
           error={messageError}
-          errorLabel="Please enter a valid message."
+          errorLabel={messageError}
           length={formObject.message.length}
           maxLength={1000}
           number="05"
@@ -238,12 +303,21 @@ const ContactForm = () => {
                 : "text-text-normal border-b-line focus:border-b-black"
             } bottom-4 pb-4 border-b-2 focus:outline-none`}
             placeholder="Hi, I'd like help with..."
+            name="message"
+            value={formObject.message}
+            onChange={(e) => handleInputChange("message", e.target.value)}
           />
         </InputField>
 
-        <button className="bg-primary flex justify-center items-center gap-4 rounded-full py-4 px-4 w-full">
-          <p className="text-white res-text-30">SEND</p>
-          <IoSend className="text-white res-text-30" />
+        <button className="bg-primary flex justify-center items-center gap-4 rounded-full h-20 px-4 w-full">
+          {isPending ? (
+            <Spinner spinnerColor="#fff" />
+          ) : (
+            <>
+              <p className="text-white res-text-21 font-bold">SEND</p>
+              <IoSend className="text-white res-text-21" />
+            </>
+          )}
         </button>
       </form>
     </>

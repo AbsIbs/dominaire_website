@@ -70,16 +70,16 @@ const AlertModal = ({
             className={`${colors[type].light} flex items-center justify-center p-6 rounded-full`}
           >
             {type === "error" && (
-              <IoAlertOutline className="text-red-800 res-text-6xl" />
+              <IoAlertOutline className="text-red-800 res-text-38" />
             )}
             {type == "success" && (
-              <IoCheckmark className="text-green-800 res-text-6xl" />
+              <IoCheckmark className="text-green-800 res-text-38" />
             )}
             {type == "pending" && (
-              <CgSandClock className="text-yellow-800 res-text-6xl" />
+              <CgSandClock className="text-yellow-800 res-text-38" />
             )}
           </div>
-          <p className="res-text-3xl font-medium">{title}</p>
+          <p className="res-text-30 text-text-on-lightSurface font-medium">{title}</p>
           <p className="text-gray-500">{desc}</p>
           {warning && (
             <div className="flex gap-2 py-2 px-6 bg-orange-400 text-white items-center rounded">
@@ -91,7 +91,7 @@ const AlertModal = ({
             onClick={handleClose}
             className={`w-full py-2 rounded-full flex items-center justify-center ${colors[type].dark}`}
           >
-            <p className="text-white res-text-lg font-medium">{confirmText}</p>
+            <p className="text-white text-lg font-medium">{confirmText}</p>
           </button>
         </motion.div>
       </AnimatePresence>
