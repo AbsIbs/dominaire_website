@@ -32,6 +32,10 @@ body {
   /* Firefox */
 }
 
+.res-text-60 {
+  @apply text-6xl
+}
+
 .res-text-38 {
   @apply text-4xl
 }

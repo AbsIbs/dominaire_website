@@ -2,6 +2,7 @@
 // React
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 // UI
 import { Drawer } from "@/src/components/ui/display";
@@ -72,7 +73,7 @@ const Navbar = () => {
           {/* Left */}
           <div className="flex items-center gap-2">
             <MenuButton />
-            <p className="font-bold">Dominaire</p>
+            <Image src={"/logos/logo_1.svg"} height={96} width={96} alt="" />
           </div>
           {/* Right */}
           <div className="h-full w-full flex items-center justify-end gap-16 text-sm">
