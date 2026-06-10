@@ -53,7 +53,7 @@ const Navbar = () => {
             {menuItems.map((item, index) => (
               <Link key={index} href={item.link} onClick={toggleDrawer}>
                 <p className="text-3xl text-text font-extralight">
-                  {item.label}
+                  {item.label.toUpperCase()}
                 </p>
               </Link>
             ))}
@@ -69,19 +69,19 @@ const Navbar = () => {
   return (
     <>
       <div className="sticky z-800 top-0 w-full flex justify-center items-center bg-background border-b border-b-border">
-        <div className="flex justify-between items-center w-full h-full pl-2">
+        <div className="flex justify-between items-center w-full h-full pl-4">
           {/* Left */}
           <div className="flex items-center gap-2">
             <MenuButton />
-            <Image src={"/logos/logo_1.svg"} height={96} width={96} alt="" />
+            <Image src={"/logos/logo_1.svg"} height={128} width={128} alt="" />
           </div>
           {/* Right */}
           <div className="h-full w-full flex items-center justify-end gap-16 text-sm">
             <div className="hidden md:block">
-              <ul className="flex gap-20">
+              <ul className="flex gap-12">
                 {menuItems.map((items, index) => (
-                  <Link href={items.link} className="nav" key={index}>
-                    <p>{items.label}</p>
+                  <Link href={items.link} className="nav font-barlow-condensed text-lg font-semibold" key={index}>
+                    <p>{items.label.toUpperCase()}</p>
                   </Link>
                 ))}
               </ul>

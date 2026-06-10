@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Barlow_Condensed } from "next/font/google";
 import "lenis/dist/lenis.css";
 import "./globals.css";
 
@@ -9,14 +9,10 @@ import Providers from "@/src/app/providers";
 // UI
 import { Navbar } from "@/src/components/layout";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const barlowFont = Barlow_Condensed({
+  weight: "400",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-barlow-condensed",
 });
 
 export const metadata: Metadata = {
@@ -30,11 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-    >
-      <body className="min-h-screen flex flex-col">
+    <html lang="en" className={`${barlowFont.variable} antialiased`}>
+      <body className="min-h-screen flex flex-col ">
         <Providers>
           <Navbar />
           {children}
