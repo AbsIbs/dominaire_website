@@ -5,12 +5,11 @@ const IntroductionSection = () => {
         Nice to meet you
       </p>
       <p className="text-text leading-[150%] text-4xl">
-        We're obsessed with unlocking your digital potential, and we refuse to
-        settle for mediocrity. We're a passionate team of experts, collaborating
-        to craft winning digital strategies that go above and beyond. Our
-        mission is to empower you to thrive online, and we achieve this by
-        continuously refining our craft, staying ahead of industry trends, and
-        delivering results that shatter expectations.
+        We partner with teams to understand how they work and what holds them
+        back. Our approach blends engineering, design and clear thinking to
+        create solutions that fit naturally into your operations. We focus on
+        the people behind the workflow so every tool feels intuitive, reduces
+        effort and supports real day to day work.
       </p>
     </div>
   );

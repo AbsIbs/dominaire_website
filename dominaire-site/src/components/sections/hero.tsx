@@ -17,9 +17,8 @@ const Hero = () => {
           <br /> To <span className="text-primary"> Solve</span> Your Problems
         </p>
         <p className="text-text text-xl max-w-1/2">
-          Decode your lorem ipsum DNA. Bring absolute clarity to your
-          organization's most critical assets with a platform designed for deep
-          focus.
+          We build practical systems that remove friction and make your work
+          easier. Everything we create is shaped around real people.
         </p>
         <Link
           href={"/"}

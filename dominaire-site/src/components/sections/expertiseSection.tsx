@@ -67,24 +67,45 @@ const ExpertiseSection = () => {
   // Variables
   const data = [
     {
-      title: "A.I. & Automation",
+      title: "Workflow Audit",
       tags: [
-        "Automation Apps",
-        "Data Analytics",
-        "Data Visualization",
-        "Bespoke ML Models",
+        "Workflow Review",
+        "Bottleneck Identification",
+        "Solution Recommendations",
+        "Technical Assessment",
       ],
-      desc: "We help your business automate processes, saving time and money.",
+      desc: "We analyse how your team works, uncover the real sources of friction and recommend the most effective path forward. Everything starts with understanding the people behind the workflow.",
     },
     {
-      title: "Web design",
-      tags: ["UI Design", "UX Research"],
-      desc: "We create modern and visually stunning websites that perfectly suit your needs.",
+      title: "Automation",
+      tags: ["Internal Tools", "Task Automation", "Workflow Automation"],
+      desc: "We create custom tools that automate the tasks slowing your team down. Everything is built around how your people actually work.",
     },
     {
-      title: "App development",
-      tags: ["SaaS", "Mobile Apps", "E-commerce"],
-      desc: "We build websites tailored to your business, ensuring they are fast, secure, and easy to use.",
+      title: "Artificial Intelligence",
+      tags: [
+        "Predictive Models",
+        "AI Assistants",
+        "Recommendation Systems",
+        "Generative AI",
+      ],
+      desc: "We design practical AI systems that support decision making and reduce manual cognitive load.",
+    },
+    {
+      title: "Data Insights",
+      tags: ["Data Analysis", "Data Visualization", "Interactive Dashboards"],
+      desc: "We help you understand your data and turn it into clear, actionable insights.",
+    },
+    {
+      title: "Product Development",
+      tags: [
+        "UX Research",
+        "UI Design",
+        "Human Centric Design",
+        "Web Applications",
+        "Mobile Applications",
+      ],
+      desc: "We design and build digital products that solve real problems. From concept to launch, we handle the full cycle.",
     },
   ];
 

@@ -10,32 +10,31 @@ type Card = {
 };
 
 // Images
-
 const OurPorcesses = () => {
   const data = [
     {
-      title: "Investigation",
-      subtitle: "Identifying pain points",
+      title: "Audit",
+      subtitle: "Review, Identify, Recommend",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Neque metus varius orci mattis eu nunc pellentesque.",
+        "We take a close look at how your team works today. We identify the real problems behind the symptoms. You get a clear picture of what needs to change and why.",
       image:
         "https://images.pexels.com/photos/9870232/pexels-photo-9870232.jpeg",
     },
     {
-      title: "Prototyping",
+      title: "Design",
       subtitle: "Explore, Iterate, Refine",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Neque metus varius orci mattis eu nunc pellentesque.",
+        "We shape the solution with you. We explore options, refine ideas and create a blueprint that fits your workflow. Every decision is practical and grounded in your goals.",
       image:
         "https://images.pexels.com/photos/7414019/pexels-photo-7414019.jpeg",
     },
     {
-      title: "Delivery",
-      subtitle: "ipsum",
+      title: "Deploy",
+      subtitle: "Build, Test, Deliver",
       description:
-        "Lorem ipsum dolor sit amet consectetur. Neque metus varius orci mattis eu nunc pellentesque.",
+        "We build the final system and integrate it into your operations. Everything is tested, refined and delivered with care. You get a tool that works from day one.",
       image:
-        "https://images.pexels.com/photos/29377236/pexels-photo-29377236.jpeg",
+        "https://images.pexels.com/photos/12899191/pexels-photo-12899191.jpeg",
     },
   ];
 
