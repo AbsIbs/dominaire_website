@@ -16,4 +16,16 @@ export type ProjectData = {
   site_url: string;
   slug: string;
   featured: boolean;
+  problem: {
+    description: string;
+    imageSrc: string;
+  };
+  solution: {
+    content: { title: string; description: string }[];
+    media: { type: "video" | "image"; src: string; caption: string }[];
+  };
+  impact: {
+    title: string;
+    description: string;
+  }[];
 };

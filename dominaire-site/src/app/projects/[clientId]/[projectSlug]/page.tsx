@@ -1,8 +1,15 @@
 // React
 import { notFound } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
 
 // UI
-import { ProjectHeader } from "@/src/features/projects/components";
+import {
+  ProjectHeader,
+  ProblemSection,
+  SolutionsSection,
+  ImpactSection,
+} from "@/src/features/projects/components";
 
 // Data
 import { CLIENT_DATA } from "@/src/lib/data/clients";
@@ -38,19 +45,115 @@ const Page = async ({ params }: Props) => {
   }
 
   return (
-    <section className="px-4 py-16">
-      <div className="flex gap-4 items-center justify-center">
-        <div className="flex flex-col ~sm/lg:~gap-12/24 w-360">
-          <ProjectHeader
-            clientName={clientData.name}
-            description={projectData.description}
-            main_services={projectData.main_services}
-            site_url={projectData.site_url}
-            title={projectData.title}
+    <div className="py-16">
+      <section className="pb-48">
+        <div className="flex gap-4 items-center justify-center">
+          <div className="flex flex-col gap-24 w-360">
+            <ProjectHeader
+              tech_stack={projectData.tech_stack}
+              clientName={clientData.name}
+              description={projectData.description}
+              main_services={projectData.main_services}
+              site_url={projectData.site_url}
+              title={projectData.title}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-48">
+        <div className="flex gap-4 items-center justify-center">
+          <div className="w-360">
+            <ProblemSection problem={projectData.problem.description} />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-48">
+        <div className="relative w-full">
+          <Image
+            src={projectData.problem.imageSrc}
+            alt=""
+            width={0}
+            height={0}
+            sizes="100vw"
+            className="w-full h-auto"
           />
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className="py-48">
+        <div className="flex gap-4 items-center justify-center">
+          <div className="w-360">
+            <SolutionsSection solutions={projectData.solution.content} />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-48 px-4">
+        <div className="flex justify-center">
+          <div className="flex flex-col gap-24">
+            {projectData.solution.media.map((item, index) => {
+              if (item.type == "image") {
+                return (
+                  <div
+                    key={index}
+                    className="relative rounded-lg overflow-hidden w-full"
+                  >
+                    <Image
+                      src={item.src}
+                      alt=""
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                );
+              }
+
+              if (item.type == "video") {
+                return (
+                  <div
+                    key={index}
+                    className="relative flex flex-col gap-2 overflow-hidden max-w-480"
+                  >
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      src={item.src}
+                      className="w-full h-full object-cover rounded-lg"
+                    />
+                    <p className="text-textMuted res-text-21">{item.caption}</p>
+                  </div>
+                );
+              }
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-48">
+        <div className="flex gap-4 items-center justify-center">
+          <div className="w-360">
+            <ImpactSection impact={projectData.impact} />
+          </div>
+        </div>
+      </section>
+
+      <section className="flex justify-center py-48">
+        <div className="flex items-center">
+          <Link
+            href={"/projects"}
+            className="hover:text-surface hover:bg-text duration-300 transition-all py-4 px-12 border border-text text-text rounded-full res-text-38"
+          >
+            All projects
+          </Link>
+        </div>
+      </section>
+    </div>
   );
 };
 

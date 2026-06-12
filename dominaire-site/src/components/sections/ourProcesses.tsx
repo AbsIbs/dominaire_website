@@ -44,7 +44,7 @@ const OurPorcesses = () => {
         <div className="relative h-150 rounded-sm w-full">
           <Image src={image} alt="" fill style={{ objectFit: "cover" }} />
           <div className="absolute bottom-0 flex flex-col gap-2 font-barlow-condensed w-3/4 pt-6 bg-lightSurface">
-            <p className=" text-3xl font-medium uppercase font-semibold">{title}</p>
+            <p className=" text-3xl uppercase font-semibold">{title}</p>
             <p className="uppercase tracking-widest text-lg">{subtitle}</p>
           </div>
         </div>
