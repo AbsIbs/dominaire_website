@@ -9,6 +9,7 @@ import {
   ProblemSection,
   SolutionsSection,
   ImpactSection,
+  EngineeringNotes,
 } from "@/src/features/projects/components";
 
 // Data
@@ -167,6 +168,18 @@ const Page = async ({ params }: Props) => {
           </div>
         </div>
       </section>
+
+      {projectData.engineering_notes && (
+        <section className="py-48">
+          <div className="flex gap-4 items-center justify-center">
+            <div className="w-360">
+              <EngineeringNotes
+                engineeringNotes={projectData.engineering_notes}
+              />
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="py-48">
         <div className="flex gap-4 items-center justify-center">

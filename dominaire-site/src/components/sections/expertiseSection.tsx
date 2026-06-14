@@ -8,6 +8,9 @@ import { Accordion } from "@/src/components/ui/display";
 // Icons
 import { FaChevronRight } from "react-icons/fa6";
 
+// Data
+import { EXPERTISE } from "@/src/lib/data/business";
+
 // Types
 type AccordionTitle = {
   label: string;
@@ -51,9 +54,7 @@ const AccordionItem = ({ description, tags }: AccordionItem) => {
                 index == 0 ? "border-t border-t-border" : ""
               } border-y-border`}
             >
-              <p className="text-textMuted text-2xl">{`0${
-                index + 1
-              }`}</p>
+              <p className="text-textMuted text-2xl">{`0${index + 1}`}</p>
               <p className="text-2xl">{tag}</p>
             </div>
           ))}
@@ -64,52 +65,7 @@ const AccordionItem = ({ description, tags }: AccordionItem) => {
 };
 
 const ExpertiseSection = () => {
-  // Variables
-  const data = [
-    {
-      title: "Workflow Audit",
-      tags: [
-        "Workflow Review",
-        "Bottleneck Identification",
-        "Solution Recommendations",
-        "Technical Assessment",
-      ],
-      desc: "We analyse how your team works, uncover the real sources of friction and recommend the most effective path forward. Everything starts with understanding the people behind the workflow.",
-    },
-    {
-      title: "Automation",
-      tags: ["Internal Tools", "Task Automation", "Workflow Automation"],
-      desc: "We create custom tools that automate the tasks slowing your team down. Everything is built around how your people actually work.",
-    },
-    {
-      title: "Artificial Intelligence",
-      tags: [
-        "Predictive Models",
-        "AI Assistants",
-        "Recommendation Systems",
-        "Generative AI",
-      ],
-      desc: "We design practical AI systems that support decision making and reduce manual cognitive load.",
-    },
-    {
-      title: "Data Insights",
-      tags: ["Data Analysis", "Data Visualization", "Interactive Dashboards"],
-      desc: "We help you understand your data and turn it into clear, actionable insights.",
-    },
-    {
-      title: "Product Development",
-      tags: [
-        "UX Research",
-        "UI Design",
-        "Human Centric Design",
-        "Web Applications",
-        "Mobile Applications",
-      ],
-      desc: "We design and build digital products that solve real problems. From concept to launch, we handle the full cycle.",
-    },
-  ];
-
-  const dataForAccordion = data.map((item) => ({
+  const dataForAccordion = EXPERTISE.map((item) => ({
     title: <AccordionTitle label={item.title} />,
     content: <AccordionItem description={item.desc} tags={item.tags} />,
   }));

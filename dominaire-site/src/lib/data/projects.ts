@@ -11,7 +11,11 @@ export const PROJECT_DATA: ProjectData[] = [
     description:
       "Pulse Poetry needed a dedicated home for spoken word events, something far beyond what Instagram could support. We built a full platform and admin system that brings the entire scene together. Audiences can browse upcoming shows, explore organisers and navigate directly to ticket links, while the Pulse team manages everything through a powerful internal dashboard. The platform is fast, intuitive and built for growth, with SEO, analytics and a search‑optimised structure that makes discovery effortless.",
     mainServices: ["Product Development"],
-    subServices: ["UX Research", "UI Design", "Web Applications"],
+    subServices: [
+      "UI/UX Design",
+      "Frontend Development",
+      "Backend Engineering",
+    ],
     coverImage: "/projects/pulse-poetry/coverImage.png",
     tech_stack: ["Figma", "Next.js", "PostgreSQL", "Supabase"],
     review: "",
@@ -101,12 +105,16 @@ This structure improves indexing, strengthens SEO and makes the platform feel fa
     description:
       "A high‑integrity spreadsheet‑to‑platform pipeline that let Pulse Poetry publish hundreds of shows in minutes instead of hours.",
     mainServices: ["Product Development", "Workflow Audit", "Automation"],
-    subServices: ["Workflow Analysis", "Automation", "Web Applications"],
+    subServices: [
+      "Workflow Analysis",
+      "Automation",
+      "Frontend Development",
+      "Backend Engineering",
+    ],
     coverImage: "/projects/pulse-poetry/coverImage.png",
     tech_stack: [
       "Google Sheets",
       "Python",
-      "Figma",
       "Next.js",
       "PostgreSQL",
       "Supabase",
@@ -190,7 +198,11 @@ This structure improves indexing, strengthens SEO and makes the platform feel fa
     description:
       "A memorial platform to celebrate life beautifully — built with cinematic motion, emotional storytelling, and a deeply engineered foundation.",
     mainServices: ["Product Development"],
-    subServices: ["UX Research", "UI Design", "Web Applications"],
+    subServices: [
+      "UI/UX Design",
+      "Frontend Development",
+      "Backend Engineering",
+    ],
     coverImage: "/projects/everlum/logo.png",
     tech_stack: ["Figma", "Next.js", "PostgreSQL", "Supabase"],
     review: "",
@@ -246,12 +258,12 @@ This structure improves indexing, strengthens SEO and makes the platform feel fa
         {
           type: "video",
           src: "/projects/everlum/everlum-tributes.webm",
-          caption: "Tributes"
+          caption: "Tributes",
         },
         {
           type: "video",
           src: "/projects/everlum/everlum-gallery.webm",
-          caption: "Gallery"
+          caption: "Gallery",
         },
       ],
     },
@@ -296,17 +308,12 @@ This structure improves indexing, strengthens SEO and makes the platform feel fa
       {
         title: "Motion Architecture with GSAP, Lenis, and Framer Motion",
         description:
-          "Cinematic motion required blending three animation systems. GSAP handles scroll‑triggered sequences, Lenis controls the global scroll feel, and Framer Motion manages component‑level transitions. Balancing these without jank — especially on older devices — required deep tuning.",
+          "Cinematic motion required blending three animation systems. GSAP handles scroll‑triggered sequences, Lenis controls the global scroll feel, and Framer Motion manages component‑level transitions.",
       },
       {
         title: "Error State Design for Older Users",
         description:
           "Because the audience includes older demographics, error states needed to be clear, gentle, and actionable. Upload failures, validation issues, and media processing delays are surfaced with simple language and calm UI patterns.",
-      },
-      {
-        title: "Silent Infinite Rerender Bug",
-        description:
-          "A subtle useEffect dependency issue caused silent infinite rerenders that only surfaced when Supabase usage hit 80%. Debugging and resolving this required a full audit of state and subscription lifecycles.",
       },
     ],
   },

@@ -4,3 +4,4 @@ export { default as ProjectHeader } from "./projectHeader";
 export { default as ProblemSection } from "./problemSection";
 export { default as SolutionsSection } from "./solutionsSection";
 export { default as ImpactSection } from "./impactSection";
+export { default as EngineeringNotes } from "./engineeringNotes";
