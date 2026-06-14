@@ -1,8 +1,5 @@
-// React
-
 // Data
 import { PROJECT_DATA } from "@/src/lib/data/projects";
-import { CLIENT_DATA } from "@/src/lib/data/clients";
 
 // Components
 import { ProjectCard } from "@/src/features/projects/components";
@@ -22,10 +19,11 @@ const Page = async () => {
             {PROJECT_DATA.map((project, index) => (
               <div key={index}>
                 <ProjectCard
-                  slug={`${project.client_id}/${project.slug}`}
+                  href={`/projects/${project.client_id}/${project.slug}`}
+                  commence_date={project.commence_date}
                   coverImage={project.coverImage}
                   projectName={project.project_name}
-                  mainServices={project.main_services}
+                  subServices={project.subServices}
                 />
               </div>
             ))}

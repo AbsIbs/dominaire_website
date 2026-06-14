@@ -7,22 +7,22 @@ export type ProjectData = {
   end_date: Date | null;
   title: string;
   description: string;
-  services: string[];
+  mainServices: string[];
   coverImage: string;
   tech_stack: string[];
   review: string;
-  main_services: string[];
+  subServices: string[];
   project_name: string;
   site_url: string;
   slug: string;
   featured: boolean;
   problem: {
     description: string;
-    imageSrc: string;
+    media: { type: "video" | "image"; src: string; caption?: string }[];
   };
   solution: {
     content: { title: string; description: string }[];
-    media: { type: "video" | "image"; src: string; caption: string }[];
+    media: { type: "video" | "image"; src: string; caption?: string }[];
   };
   impact: {
     title: string;

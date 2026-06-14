@@ -132,7 +132,7 @@ export const sendEmail = async (
     const response = await resend.emails.send({
       from: "support@dominaire.com",
       to: "abass.ibrahim@dominaire.com",
-      subject: "Interest in services",
+      subject: "Interest in subServices",
       html: html,
     });
 

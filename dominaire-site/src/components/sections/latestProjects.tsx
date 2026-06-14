@@ -11,7 +11,7 @@ const LatestProjects = () => {
         <LatestProjectCard
           key={index}
           projectName={project.project_name}
-          services={project.services}
+          subServices={project.subServices}
           image={project.coverImage}
         />
       ))}

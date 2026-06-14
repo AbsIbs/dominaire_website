@@ -53,9 +53,10 @@ const Page = async ({ params }: Props) => {
               tech_stack={projectData.tech_stack}
               clientName={clientData.name}
               description={projectData.description}
-              main_services={projectData.main_services}
+              subServices={projectData.subServices}
               site_url={projectData.site_url}
               title={projectData.title}
+              commence_date={projectData.commence_date}
             />
           </div>
         </div>
@@ -69,16 +70,48 @@ const Page = async ({ params }: Props) => {
         </div>
       </section>
 
-      <section className="py-48">
-        <div className="relative w-full">
-          <Image
-            src={projectData.problem.imageSrc}
-            alt=""
-            width={0}
-            height={0}
-            sizes="100vw"
-            className="w-full h-auto"
-          />
+      <section className="py-48 px-4">
+        <div className="flex justify-center">
+          <div className="flex flex-col gap-24">
+            {projectData.problem.media.map((item, index) => {
+              if (item.type == "image") {
+                return (
+                  <div
+                    key={index}
+                    className="relative rounded-lg overflow-hidden w-full"
+                  >
+                    <Image
+                      src={item.src}
+                      alt=""
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      className="w-full h-auto"
+                    />
+                  </div>
+                );
+              }
+
+              if (item.type == "video") {
+                return (
+                  <div
+                    key={index}
+                    className="relative flex flex-col gap-2 overflow-hidden max-w-480"
+                  >
+                    <video
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      src={item.src}
+                      className="w-full h-full object-cover rounded-lg"
+                    />
+                    <p className="text-textMuted res-text-21">{item.caption}</p>
+                  </div>
+                );
+              }
+            })}
+          </div>
         </div>
       </section>
 
@@ -147,7 +180,7 @@ const Page = async ({ params }: Props) => {
         <div className="flex items-center">
           <Link
             href={"/projects"}
-            className="hover:text-surface hover:bg-text duration-300 transition-all py-4 px-12 border border-text text-text rounded-full res-text-38"
+            className="hover:text-surface hover:bg-text duration-300 transition-all py-4 px-12 border border-text text-text rounded-full res-text-30"
           >
             All projects
           </Link>

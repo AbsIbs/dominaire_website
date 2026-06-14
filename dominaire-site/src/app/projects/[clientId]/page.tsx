@@ -36,10 +36,11 @@ const Page = async ({ params }: Props) => {
             {clientProjects.map((project, index) => (
               <div key={index}>
                 <ProjectCard
-                  slug={`${clientId}/${project.slug}`}
+                  href={`/projects/${clientId}/${project.slug}`}
+                  commence_date={project.commence_date}
                   coverImage={project.coverImage}
                   projectName={project.project_name}
-                  mainServices={project.main_services}
+                  subServices={project.subServices}
                 />
               </div>
             ))}

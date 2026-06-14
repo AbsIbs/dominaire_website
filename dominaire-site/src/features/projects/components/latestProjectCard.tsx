@@ -8,13 +8,13 @@ import { TextReveal } from "@/src/components/ui/text";
 type LatestProjectCardType = {
   projectName: string;
   image: string;
-  services: string[];
+  subServices: string[];
 };
 
 const LatestProjectCard = ({
   projectName,
   image,
-  services,
+  subServices,
 }: LatestProjectCardType) => {
   return (
     <div className="flex items-center flex-col">
@@ -39,7 +39,7 @@ const LatestProjectCard = ({
           <div className="flex flex-col gap-3">
             <p className="font-light text-xl">Services</p>
             <div>
-              {services.map((item, index) => (
+              {subServices.map((item, index) => (
                 <div key={index}>
                   <TextReveal className="text-xl" text={item.toUpperCase()} />
                 </div>

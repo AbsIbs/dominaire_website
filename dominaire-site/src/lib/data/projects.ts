@@ -5,22 +5,28 @@ export const PROJECT_DATA: ProjectData[] = [
   {
     id: "f972c271-5028-4e8d-ada7-afe405a1b0e2",
     client_id: "pulse-poetry",
-    commence_date: new Date("2023-10-01"),
+    commence_date: new Date("2024-05-01"),
     end_date: null,
     title: "Find Spoken-Word events all over London",
     description:
       "Pulse Poetry needed a dedicated home for spoken word events, something far beyond what Instagram could support. We built a full platform and admin system that brings the entire scene together. Audiences can browse upcoming shows, explore organisers and navigate directly to ticket links, while the Pulse team manages everything through a powerful internal dashboard. The platform is fast, intuitive and built for growth, with SEO, analytics and a search‑optimised structure that makes discovery effortless.",
-    services: ["Product Development"],
+    mainServices: ["Product Development"],
+    subServices: ["UX Research", "UI Design", "Web Applications"],
     coverImage: "/projects/pulse-poetry/coverImage.png",
-    tech_stack: ["Figma", "Next.js", "Tailwind CSS", "Supabase"],
+    tech_stack: ["Figma", "Next.js", "PostgreSQL", "Supabase"],
     review: "",
-    main_services: ["Design", "Development"],
     project_name: "Pulse Poetry",
     site_url: "https://www.pulsepoetry.com",
     slug: "show-finder-webapp",
     featured: true,
     problem: {
-      imageSrc: "/images/projects/pulse-poetry/pulse problem hd.png",
+      media: [
+        {
+          type: "image",
+          src: "/projects/pulse-poetry/pulse problem hd.png",
+          caption: "Searching for shows",
+        },
+      ],
       description:
         "Pulse Poetry had outgrown Instagram. Shows were curated manually, discovery depended on the algorithm and followers had no reliable way to browse events or buy tickets. The platform simply couldn’t support Pulse Poetry’s ambition to become the Eventbrite of spoken word. They needed a dedicated system that centralised events, streamlined submissions and created a clear path from discovery to ticket purchase.",
     },
@@ -87,88 +93,84 @@ This structure improves indexing, strengthens SEO and makes the platform feel fa
     ],
   },
   {
-    id: "f972c271-5028-4e8d-ada7-afe405a1b0e2",
+    id: "22904539-ee0e-4161-9ae7-a15d2986deef",
     client_id: "pulse-poetry",
-    commence_date: new Date("2023-10-01"),
+    commence_date: new Date("2025-12-01"),
     end_date: null,
-    title: "Find Spoken-Word events all over London",
+    title: "Bulk Show Uploader",
     description:
-      "Pulse Poetry is your sanctuary for all things poetic, where every word finds a place and every voice is celebrated. Join our vibrant community to share your work, discover new favourites, and immerse yourself in the art of poetry.\n\nDiscover a seamless experience with Pulse Poetry, where organising and attending spoken word events is effortless. Connect with talented poets, explore diverse performances, and be part of a thriving community dedicated to the art of spoken word.",
-    services: [
-      "Product Development",
-      "Workflow Audit",
-      "Automation",
-      "Artificial Intelligence",
-    ],
-    coverImage: "/images/projects/pulse-poetry/coverImage.png",
-    tech_stack: [
-      "Figma",
-      "ReactJS",
-      "NextJS",
-      "TailwindCSS",
-      "Material-UI",
-      "SQL",
-      "Supabase",
-    ],
+      "A high‑integrity spreadsheet‑to‑platform pipeline that let Pulse Poetry publish hundreds of shows in minutes instead of hours.",
+    mainServices: ["Product Development", "Workflow Audit", "Automation"],
+    subServices: ["Workflow Audit", "Automation"],
+    coverImage: "/projects/pulse-poetry/coverImage.png",
+    tech_stack: ["Google Sheets", "Next.js", "PostgreSQL", "Supabase"],
     review: "",
-    main_services: ["Design", "Development", "Marketing"],
     project_name: "Pulse Poetry",
     site_url: "https://www.pulsepoetry.com",
     slug: "show-upload-automation",
     featured: true,
     problem: {
-      imageSrc: "/images/projects/pulse-poetry/what is on.png",
+      media: [
+        {
+          type: "video",
+          src: "/projects/pulse-poetry/csv-automation-problem.webm",
+          caption: "Importing shows one at a time",
+        },
+      ],
       description:
         "Pulse Poetry had outgrown Instagram. Shows were curated manually, discovery depended on the algorithm and followers had no reliable way to browse events or buy tickets. The platform simply couldn’t support Pulse Poetry’s ambition to become the Eventbrite of spoken word. They needed a dedicated system that centralised events, streamlined submissions and created a clear path from discovery to ticket purchase.",
     },
     solution: {
       content: [
         {
-          title: "User-Facing Platform",
+          title: "Spreadsheet‑Aligned Data Model",
           description:
-            "We designed and built a fast, intuitive platform where audiences can browse upcoming spoken‑word shows with clarity. Each event page includes rich details, interactive maps, organiser profiles and direct ticket links, making discovery effortless. The interface is intentionally minimal, allowing the content — the shows, the venues, the artists — to take centre stage. The experience works seamlessly across devices, giving users a reliable place to explore the spoken‑word scene without relying on social media algorithms.",
+            "The uploader was designed around the client’s existing Google Sheets workflow. A structured CSV template mirrored their internal tracker, including complex JSON fields, helper tables, and built‑in functions for formatting. A custom Google Sheets function fetched latitude and longitude from addresses via a public geocoding API, ensuring location data was always valid.",
         },
         {
-          title: "Admin Panel & Access Control  ",
+          title: "Folder‑Based Upload Flow",
           description:
-            "We built a dedicated admin system that gives the Pulse team full control over their ecosystem. Staff can manage organisers, approve submissions, edit show details, upload media and assign different permission levels to team members. The dashboard is designed for speed and clarity, reducing the time spent on manual curation and giving the team a structured, reliable workflow for managing the entire platform.",
+            "Admins could upload a single folder containing the CSV and an optional images directory. Images were matched by filename, with support for default images when none were provided. The system validated folder structure before parsing any data, catching issues like missing CSVs or misnamed folders early.",
         },
         {
-          title: "Anonymous Organiser Submissions  ",
+          title: "Full Preview & Validation Table",
           description:
-            "To encourage growth and reduce friction, we created a submission flow that allows organisers to upload shows without creating an account. This was a strategic decision: removing the signup barrier increases the number of events on the platform and keeps the ecosystem active. Submissions enter a review queue in the admin panel, where the Pulse team can approve, edit or reject them with a single click.",
+            "A custom‑built preview table rendered every row and column with pixel‑level control. Zod powered deep validation across all fields, highlighting invalid cells in hard red with tooltips explaining the issue. Entire rows were lightly tinted to signal errors at a glance. Thumbnail previews ensured images matched correctly. Duplicate detection and organiser matching were built in.",
         },
         {
-          title: "SEO & Analytics Setup",
+          title: "Automatic Organiser Handling",
           description:
-            "We implemented technical SEO foundations to ensure the platform is discoverable from day one. This includes structured metadata, sitemap generation, clean markup and GA4 integration for tracking user behaviour. The goal was to give Pulse Poetry long‑term visibility and the ability to make data‑driven decisions as the platform grows.",
+            "Each show must belong to an organiser. If the CSV referenced an organiser that didn’t exist in the database, the system automatically created it before inserting the show — keeping the workflow frictionless for the client.",
         },
         {
-          title: "Search‑Optimised URL Structure",
-          description: `
-            We engineered an Eventbrite‑style URL system that mirrors real search intent. For example:
-/shows/london/shows--this-weekend/all-shows/  
-This structure improves indexing, strengthens SEO and makes the platform feel familiar to users who are used to large‑scale event platforms. It’s a small detail with a big impact on discoverability and long‑term growth.
-            `,
+          title: "Atomic, High‑Integrity Uploads",
+          description:
+            "Uploads were executed through a Supabase RPC to guarantee atomicity. If any show failed validation or insertion, the entire batch rolled back. A progress indicator (e.g., 1/87) kept the user informed throughout the process.",
         },
       ],
       media: [
         {
           type: "video",
-          src: "/projects/pulse-poetry/solution.webm",
-          caption: "Searching for shows",
-        },
-        {
-          type: "video",
-          src: "/projects/pulse-poetry/solution 2.webm",
-          caption: "Uploading shows",
+          src: "/projects/pulse-poetry/csv-automation-solution.webm",
+          caption: "Importing shows via csv",
         },
       ],
     },
     impact: [
       {
-        title: "",
-        description: "",
+        title: "Hours of Manual Work Eliminated",
+        description:
+          "Uploading shows one‑by‑one took ~4 minutes each. With the bulk uploader, the client could publish 100+ shows in a single batch — saving literal hours every week.",
+      },
+      {
+        title: "A Pipeline That Matches Real Workflow",
+        description:
+          "Because the uploader mirrored the client’s existing spreadsheet tracker, the majority of work happened where they were already comfortable. Transposing data became trivial instead of a bottleneck.",
+      },
+      {
+        title: "Instant Platform Scalability",
+        description:
+          "The site could jump from 20 shows to over 100 in minutes. The uploader unlocked a level of throughput that manual entry simply couldn’t match.",
       },
     ],
   },
