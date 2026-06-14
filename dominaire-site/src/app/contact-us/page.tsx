@@ -1,5 +1,8 @@
 // Components
-import { ContactForm } from "@/src/features/contact-us/components";
+import {
+  ContactForm,
+  ContactOptions,
+} from "@/src/features/contact-us/components";
 
 export const metadata = {
   title: "Get in touch",
@@ -14,7 +17,10 @@ const Page = async () => {
           <p className="text-8xl font-light leading-tight">
             Let&apos;s build something great together
           </p>
-          <ContactForm />
+          <ContactOptions />
+          <div id="contact">
+            <ContactForm />
+          </div>
         </div>
       </section>
     </>

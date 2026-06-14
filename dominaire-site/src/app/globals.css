@@ -39,6 +39,10 @@ body {
   @apply text-6xl
 }
 
+.res-text-48 {
+  @apply text-5xl
+}
+
 .res-text-38 {
   @apply text-4xl
 }

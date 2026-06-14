@@ -80,7 +80,11 @@ const Navbar = () => {
             <div className="hidden md:block">
               <ul className="flex gap-12">
                 {menuItems.map((items, index) => (
-                  <Link href={items.link} className="nav font-barlow-condensed text-lg font-semibold" key={index}>
+                  <Link
+                    href={items.link}
+                    className="nav font-barlow-condensed text-lg font-semibold"
+                    key={index}
+                  >
                     <p>{items.label.toUpperCase()}</p>
                   </Link>
                 ))}
@@ -88,10 +92,12 @@ const Navbar = () => {
             </div>
             <div className="flex items-center justify-center gap-4">
               <Link
-                href={"/#contact"}
+                href={"/contact-us"}
                 className="flex gap-2 justify-center items-center py-4 px-8 bg-primary"
               >
-                <p className="text-text res-text-base font-bold">Contact</p>
+                <p className="text-text res-text-base font-bold font-barlow-condensed uppercase text-lg">
+                  Let&apos;s talk
+                </p>
                 <IoIosCall className="text-text text-2xl" />
               </Link>
             </div>

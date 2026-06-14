@@ -211,7 +211,7 @@ const ContactForm = () => {
             className={`transition-all bg-transparent w-full res-text-38 focus:border-b-white ${
               nameError
                 ? "text-red-900 border-b-red focus:border-b-red-900"
-                : "text-text-normal border-b-line focus:border-b-black"
+                : "text-text-normal border-b-border focus:border-b-black"
             } bottom-4 pb-4 border-b-2 focus:outline-none`}
             type={"text"}
             placeholder={"John Doe"}
@@ -233,7 +233,7 @@ const ContactForm = () => {
             className={`transition-all bg-transparent w-full res-text-38 focus:border-b-white ${
               emailError
                 ? "text-red-900 border-b-red focus:border-b-red-900"
-                : "text-text-normal border-b-line focus:border-b-black"
+                : "text-text-normal border-b-border focus:border-b-black"
             } bottom-4 pb-4 border-b-2 focus:outline-none`}
             type="email"
             placeholder="johndoe@gmail.com"
@@ -255,7 +255,7 @@ const ContactForm = () => {
             className={`transition-all bg-transparent w-full res-text-38 focus:border-b-white ${
               organisationError
                 ? "text-red-900 border-b-red focus:border-b-red-900"
-                : "text-text-normal border-b-line focus:border-b-black"
+                : "text-text-normal border-b-border focus:border-b-black"
             } bottom-4 pb-4 border-b-2 focus:outline-none`}
             type="text"
             placeholder="John & Doe Ltd"
@@ -277,7 +277,7 @@ const ContactForm = () => {
             className={`transition-all bg-transparent w-full res-text-38 focus:border-b-white ${
               websiteError
                 ? "text-red-900 border-b-red focus:border-b-red-900"
-                : "text-text-normal border-b-line focus:border-b-black"
+                : "text-text-normal border-b-border focus:border-b-black"
             } bottom-4 pb-4 border-b-2 focus:outline-none`}
             type="url"
             placeholder="www.johndoe.com"
@@ -300,7 +300,7 @@ const ContactForm = () => {
             className={`transition-all bg-transparent w-full res-text-38 focus:border-b-white ${
               messageError
                 ? "text-red-900 border-b-red focus:border-b-red-900"
-                : "text-text-normal border-b-line focus:border-b-black"
+                : "text-text-normal border-b-border focus:border-b-black"
             } bottom-4 pb-4 border-b-2 focus:outline-none`}
             placeholder="Hi, I'd like help with..."
             name="message"
