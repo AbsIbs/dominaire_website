@@ -191,7 +191,7 @@ This structure improves indexing, strengthens SEO and makes the platform feel fa
       "A memorial platform to celebrate life beautifully — built with cinematic motion, emotional storytelling, and a deeply engineered foundation.",
     mainServices: ["Product Development"],
     subServices: ["UX Research", "UI Design", "Web Applications"],
-    coverImage: "/projects/everlum/everlum logo.png",
+    coverImage: "/projects/everlum/logo.png",
     tech_stack: ["Figma", "Next.js", "PostgreSQL", "Supabase"],
     review: "",
     project_name: "Everlum",
@@ -201,9 +201,9 @@ This structure improves indexing, strengthens SEO and makes the platform feel fa
     problem: {
       media: [
         {
-          type: "image",
-          src: "/projects/pulse-poetry/pulse problem hd.png",
-          caption: "Searching for shows",
+          type: "video",
+          src: "/projects/everlum/forevermissed-problem.webm",
+          caption: "Forevermissed",
         },
       ],
       description:
@@ -236,22 +236,22 @@ This structure improves indexing, strengthens SEO and makes the platform feel fa
           description:
             "A full‑screen, black‑background cinematic modal where visitors can light a CSS‑rendered flickering candle. It’s a small but powerful ritual — a moment of stillness that transforms Everlum from a website into an experience.",
         },
-        {
-          title: "Future Pillars: Legacy Page & AI Moderation",
-          description:
-            "Everlum’s roadmap includes a cinematic Legacy Page that composes all guest content into a single scrollable life story, and AI‑powered content moderation that filters harmful uploads before the memorial owner ever sees them.",
-        },
       ],
       media: [
         {
           type: "video",
-          src: "/projects/pulse-poetry/solution.webm",
-          caption: "Searching for shows",
+          src: "/projects/everlum/everlum-intro.webm",
+          caption: "Everlum",
         },
         {
           type: "video",
-          src: "/projects/pulse-poetry/solution 2.webm",
-          caption: "Uploading shows",
+          src: "/projects/everlum/everlum-tributes.webm",
+          caption: "Tributes"
+        },
+        {
+          type: "video",
+          src: "/projects/everlum/everlum-gallery.webm",
+          caption: "Gallery"
         },
       ],
     },
@@ -265,11 +265,6 @@ This structure improves indexing, strengthens SEO and makes the platform feel fa
         title: "Frictionless Participation for All Ages",
         description:
           "Older visitors were able to read, browse, and leave tributes with minimal guidance. Removing account creation dramatically increased participation.",
-      },
-      {
-        title: "A Platform Built for Real Loss",
-        description:
-          "Everlum has already been used to honour a loved one in a real memorial shared with family and friends. Engagement was high, with visitors reading each other’s posts and interacting with the space.",
       },
       {
         title: "A Foundation for Scalable, Emotional Storytelling",
