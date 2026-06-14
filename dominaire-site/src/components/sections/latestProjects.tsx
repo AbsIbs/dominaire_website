@@ -11,8 +11,10 @@ const LatestProjects = () => {
         <LatestProjectCard
           key={index}
           projectName={project.project_name}
-          subServices={project.subServices}
+          main_services={project.mainServices}
           image={project.coverImage}
+          client_id={project.client_id}
+          slug={project.slug}
         />
       ))}
     </div>

@@ -101,9 +101,16 @@ This structure improves indexing, strengthens SEO and makes the platform feel fa
     description:
       "A high‑integrity spreadsheet‑to‑platform pipeline that let Pulse Poetry publish hundreds of shows in minutes instead of hours.",
     mainServices: ["Product Development", "Workflow Audit", "Automation"],
-    subServices: ["Workflow Audit", "Automation"],
+    subServices: ["Workflow Analysis", "Automation", "Web Applications"],
     coverImage: "/projects/pulse-poetry/coverImage.png",
-    tech_stack: ["Google Sheets", "Next.js", "PostgreSQL", "Supabase"],
+    tech_stack: [
+      "Google Sheets",
+      "Python",
+      "Figma",
+      "Next.js",
+      "PostgreSQL",
+      "Supabase",
+    ],
     review: "",
     project_name: "Pulse Poetry",
     site_url: "https://www.pulsepoetry.com",
@@ -171,6 +178,140 @@ This structure improves indexing, strengthens SEO and makes the platform feel fa
         title: "Instant Platform Scalability",
         description:
           "The site could jump from 20 shows to over 100 in minutes. The uploader unlocked a level of throughput that manual entry simply couldn’t match.",
+      },
+    ],
+  },
+  {
+    id: "28f590fc-96fa-4ccb-bbfa-ab3c5fc90884",
+    client_id: "everlum",
+    commence_date: new Date("2025-05-01"),
+    end_date: null,
+    title: "Everlum - A platform to celebrate life beautifully",
+    description:
+      "A memorial platform to celebrate life beautifully — built with cinematic motion, emotional storytelling, and a deeply engineered foundation.",
+    mainServices: ["Product Development"],
+    subServices: ["UX Research", "UI Design", "Web Applications"],
+    coverImage: "/projects/everlum/everlum logo.png",
+    tech_stack: ["Figma", "Next.js", "PostgreSQL", "Supabase"],
+    review: "",
+    project_name: "Everlum",
+    site_url: "https://www.everlum.app",
+    slug: "everlum-app",
+    featured: true,
+    problem: {
+      media: [
+        {
+          type: "image",
+          src: "/projects/pulse-poetry/pulse problem hd.png",
+          caption: "Searching for shows",
+        },
+      ],
+      description:
+        "In one of the most emotionally vulnerable moments of a person’s life, the digital spaces available felt cold, dated, and hollow. Most memorial platforms hadn’t evolved in years — their interfaces resembled old blogs and social feeds, offering static templates instead of atmosphere, storytelling, or care. In a space that demands beauty and emotional depth, the market offered only functional archives.",
+    },
+    solution: {
+      content: [
+        {
+          title: "Guest Tributes Without Accounts",
+          description:
+            "One of the most common frustrations with existing platforms was forcing grieving guests to create accounts before leaving a tribute. Everlum removes this barrier entirely. Anyone can share memories, stories, photos, audio, or video without friction — while still maintaining a secure moderation pipeline for the memorial owner.",
+        },
+        {
+          title: "Cinematic Motion & Atmosphere",
+          description:
+            "Everlum’s emotional tone is shaped by motion. Smooth scrolling via Lenis, scroll‑triggered GSAP animations, and carefully timed transitions create a sense of calm, presence, and ceremony. The interface feels alive — not static — guiding visitors through a gentle, cinematic experience.",
+        },
+        {
+          title: "Bold, Spacious, Cinematic UI",
+          description:
+            "The UI rejects the cramped, feed‑based layouts of legacy platforms. Everlum uses large typography, generous negative space, and a visual rhythm inspired by film title sequences. The design is intentionally slow, intentional, and reverent — built for older demographics without sacrificing beauty.",
+        },
+        {
+          title: "Rich Media Storytelling",
+          description:
+            "Visitors can share stories, photos, audio, and video — each rendered in a clean, atmospheric layout. Media uploads are compressed, processed, and delivered through a custom pipeline to ensure fast performance without relying on expensive third‑party services.",
+        },
+        {
+          title: "Light‑a‑Candle Ritual",
+          description:
+            "A full‑screen, black‑background cinematic modal where visitors can light a CSS‑rendered flickering candle. It’s a small but powerful ritual — a moment of stillness that transforms Everlum from a website into an experience.",
+        },
+        {
+          title: "Future Pillars: Legacy Page & AI Moderation",
+          description:
+            "Everlum’s roadmap includes a cinematic Legacy Page that composes all guest content into a single scrollable life story, and AI‑powered content moderation that filters harmful uploads before the memorial owner ever sees them.",
+        },
+      ],
+      media: [
+        {
+          type: "video",
+          src: "/projects/pulse-poetry/solution.webm",
+          caption: "Searching for shows",
+        },
+        {
+          type: "video",
+          src: "/projects/pulse-poetry/solution 2.webm",
+          caption: "Uploading shows",
+        },
+      ],
+    },
+    impact: [
+      {
+        title: "A More Beautiful Way to Remember",
+        description:
+          "Early users consistently describe Everlum as 'beautiful' and 'emotional' — a stark contrast to the dated, template‑driven alternatives.",
+      },
+      {
+        title: "Frictionless Participation for All Ages",
+        description:
+          "Older visitors were able to read, browse, and leave tributes with minimal guidance. Removing account creation dramatically increased participation.",
+      },
+      {
+        title: "A Platform Built for Real Loss",
+        description:
+          "Everlum has already been used to honour a loved one in a real memorial shared with family and friends. Engagement was high, with visitors reading each other’s posts and interacting with the space.",
+      },
+      {
+        title: "A Foundation for Scalable, Emotional Storytelling",
+        description:
+          "The architecture supports rich media, cinematic motion, and future AI‑powered features — all while remaining cost‑efficient and maintainable.",
+      },
+    ],
+    engineering_notes: [
+      {
+        title: "Anonymous Tribute Authorization",
+        description:
+          "Designing a secure system where guests can upload stories and media without accounts required a custom authorization flow. Submissions are stored in a pending state, allowing memorial owners to approve or decline content without exposing the backend to anonymous writes.",
+      },
+      {
+        title: "Distributed Media Compression Pipeline",
+        description:
+          "To avoid expensive third‑party APIs, Everlum uses three custom microservices deployed on Render — one each for audio, images, and video. Uploads trigger a Supabase Edge Function, which forwards media to the appropriate service in a fire‑and‑forget pattern. The service compresses the file, uploads the optimized version, deletes the original, and updates the database. This system took weeks to stabilize due to Docker deployment challenges and async orchestration.",
+      },
+      {
+        title: "Atomic Multi‑Table Writes",
+        description:
+          "Tributes, media references, and metadata span multiple tables. All writes are atomic to prevent partial submissions. Error handling was a major challenge, especially when media uploads could fail independently of database writes.",
+      },
+      {
+        title: "Handling Multiple Media Uploads",
+        description:
+          "Visitors often upload several images or audio files at once. Everlum uses a combination of client‑side batching, server actions, and background processing to maintain performance while ensuring each file is validated, compressed, and stored correctly.",
+      },
+      {
+        title: "Motion Architecture with GSAP, Lenis, and Framer Motion",
+        description:
+          "Cinematic motion required blending three animation systems. GSAP handles scroll‑triggered sequences, Lenis controls the global scroll feel, and Framer Motion manages component‑level transitions. Balancing these without jank — especially on older devices — required deep tuning.",
+      },
+      {
+        title: "Error State Design for Older Users",
+        description:
+          "Because the audience includes older demographics, error states needed to be clear, gentle, and actionable. Upload failures, validation issues, and media processing delays are surfaced with simple language and calm UI patterns.",
+      },
+      {
+        title: "Silent Infinite Rerender Bug",
+        description:
+          "A subtle useEffect dependency issue caused silent infinite rerenders that only surfaced when Supabase usage hit 80%. Debugging and resolving this required a full audit of state and subscription lifecycles.",
       },
     ],
   },

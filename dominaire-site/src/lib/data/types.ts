@@ -28,4 +28,8 @@ export type ProjectData = {
     title: string;
     description: string;
   }[];
+  engineering_notes?: {
+    title: string;
+    description: string;
+  }[];
 };

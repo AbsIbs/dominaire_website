@@ -1,5 +1,6 @@
 // React
 import Image from "next/image";
+import Link from "next/link";
 
 // Components
 import { TextReveal } from "@/src/components/ui/text";
@@ -8,16 +9,23 @@ import { TextReveal } from "@/src/components/ui/text";
 type LatestProjectCardType = {
   projectName: string;
   image: string;
-  subServices: string[];
+  main_services: string[];
+  client_id: string;
+  slug: string;
 };
 
 const LatestProjectCard = ({
   projectName,
   image,
-  subServices,
+  main_services,
+  client_id,
+  slug,
 }: LatestProjectCardType) => {
   return (
-    <div className="flex items-center flex-col">
+    <Link
+      href={`/projects/${client_id}/${slug}`}
+      className="flex items-center flex-col"
+    >
       <div className="flex flex-col gap-6 w-full">
         <div className="flex flex-col gap-2">
           <div className="flex flex-col gap-2">
@@ -39,7 +47,7 @@ const LatestProjectCard = ({
           <div className="flex flex-col gap-3">
             <p className="font-light text-xl">Services</p>
             <div>
-              {subServices.map((item, index) => (
+              {main_services.map((item, index) => (
                 <div key={index}>
                   <TextReveal className="text-xl" text={item.toUpperCase()} />
                 </div>
@@ -48,7 +56,7 @@ const LatestProjectCard = ({
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
