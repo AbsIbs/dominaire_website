@@ -20,21 +20,22 @@ const SolutionsSection = ({ solutions }: Props) => {
     number: number;
   }) => {
     return (
-      <div className="flex gap-8 p-8 rounded-xl bg-surface">
+      <article className="flex flex-col md:flex-row gap-8 p-8 rounded-xl bg-surface">
         <p className="res-text-38 font-bold text-primary">0{number}</p>
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-2 md:gap-8">
           <p className="res-text-38 font-bold text-text">{title}</p>
           <p className="res-text-21 text-text">{description}</p>
         </div>
-      </div>
+      </article>
     );
   };
 
   return (
-    <div className="w-full flex flex-col gap-8">
+    <div className="w-full flex flex-col gap-2 md:gap-8">
       <TextReveal
         text="Our Solution"
-        className="res-text-60 uppercase font-semibold"
+        as={"h3"}
+        className="uppercase font-semibold"
       />
 
       <div className="flex flex-2 flex-col gap-8">

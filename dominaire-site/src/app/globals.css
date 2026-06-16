@@ -35,16 +35,34 @@ body {
   /* Firefox */
 }
 
+h1 {
+  font-size: clamp(4rem, 15vw, 96px);
+  line-height: 110%;
+}
+
+h2 {
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  line-height: 110%;
+}
+
+h3 {
+  font-size: clamp(2rem, 5vw, 5rem);
+}
+
+h4 {
+  font-size: clamp(1rem, 0.6rem + 1vw, 1.5rem);
+}
+
 .res-text-60 {
   @apply text-6xl
 }
 
 .res-text-48 {
-  @apply text-5xl
+  @apply text-2xl md:text-3xl lg:text-5xl
 }
 
 .res-text-38 {
-  @apply text-4xl
+  @apply text-2xl md:text-4xl
 }
 
 .res-text-30 {
@@ -52,5 +70,9 @@ body {
 }
 
 .res-text-21 {
-  @apply text-2xl
+  @apply text-xl md:text-2xl
+}
+
+.section-padding {
+  @apply px-4 py-24 md:py-48
 }

@@ -2,14 +2,16 @@
 // React
 import { useInView, motion } from "framer-motion";
 import { useRef } from "react";
+import type { ElementType } from "react";
 
 // Props
 type Props = {
   text: string;
   className: string;
+  as?: ElementType;
 };
 
-const TextReveal = ({ text, className }: Props) => {
+const TextReveal = ({ text, className, as: Tag = "p" }: Props) => {
   const description = useRef(null);
   const isInView = useInView(description);
 
@@ -30,7 +32,7 @@ const TextReveal = ({ text, className }: Props) => {
 
   return (
     <div ref={description}>
-      <p className={`${className}`}>
+      <Tag className={`${className}`}>
         {text.split(" ").map((word, index) => {
           return (
             <span key={index} className="relative overflow-hidden inline-flex">
@@ -46,7 +48,7 @@ const TextReveal = ({ text, className }: Props) => {
             </span>
           );
         })}
-      </p>
+      </Tag>
     </div>
   );
 };

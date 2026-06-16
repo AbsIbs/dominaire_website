@@ -54,7 +54,7 @@ const OurPorcesses = () => {
   };
 
   return (
-    <div className="grid grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-24 lg:gap-8">
       {data.map((item, index) => (
         <Card {...item} key={index} />
       ))}

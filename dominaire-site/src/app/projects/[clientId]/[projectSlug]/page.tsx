@@ -46,8 +46,8 @@ const Page = async ({ params }: Props) => {
   }
 
   return (
-    <div className="py-16">
-      <section className="pb-48">
+    <>
+      <section className="pb-24 md:pb-48 pt-16 px-4">
         <div className="flex gap-4 items-center justify-center">
           <div className="flex flex-col gap-24 w-360">
             <ProjectHeader
@@ -63,7 +63,7 @@ const Page = async ({ params }: Props) => {
         </div>
       </section>
 
-      <section className="py-48">
+      <section className="section-padding">
         <div className="flex gap-4 items-center justify-center">
           <div className="w-360">
             <ProblemSection problem={projectData.problem.description} />
@@ -71,7 +71,7 @@ const Page = async ({ params }: Props) => {
         </div>
       </section>
 
-      <section className="py-48 px-4">
+      <section className="section-padding">
         <div className="flex justify-center">
           <div className="flex flex-col gap-24">
             {projectData.problem.media.map((item, index) => {
@@ -116,7 +116,7 @@ const Page = async ({ params }: Props) => {
         </div>
       </section>
 
-      <section className="py-48">
+      <section className="section-padding">
         <div className="flex gap-4 items-center justify-center">
           <div className="w-360">
             <SolutionsSection solutions={projectData.solution.content} />
@@ -124,7 +124,7 @@ const Page = async ({ params }: Props) => {
         </div>
       </section>
 
-      <section className="py-48 px-4">
+      <section className="section-padding">
         <div className="flex justify-center">
           <div className="flex flex-col gap-24">
             {projectData.solution.media.map((item, index) => {
@@ -150,7 +150,7 @@ const Page = async ({ params }: Props) => {
                 return (
                   <div
                     key={index}
-                    className="relative flex flex-col gap-2 overflow-hidden max-w-480"
+                    className="relative flex flex-col gap-2 overflow-hidden max-w-480 "
                   >
                     <video
                       autoPlay
@@ -170,7 +170,7 @@ const Page = async ({ params }: Props) => {
       </section>
 
       {projectData.engineering_notes && (
-        <section className="py-48">
+        <section className="section-padding">
           <div className="flex gap-4 items-center justify-center">
             <div className="w-360">
               <EngineeringNotes
@@ -181,7 +181,7 @@ const Page = async ({ params }: Props) => {
         </section>
       )}
 
-      <section className="py-48">
+      <section className="section-padding">
         <div className="flex gap-4 items-center justify-center">
           <div className="w-360">
             <ImpactSection impact={projectData.impact} />
@@ -189,17 +189,17 @@ const Page = async ({ params }: Props) => {
         </div>
       </section>
 
-      <section className="flex justify-center py-48">
+      <section className="flex justify-center section-padding">
         <div className="flex items-center">
           <Link
             href={"/projects"}
-            className="hover:text-surface hover:bg-text duration-300 transition-all py-4 px-12 border border-text text-text rounded-full res-text-30"
+            className="hover:text-surface hover:bg-text duration-300 transition-all py-4 px-12 border border-text text-text rounded-full res-text-21"
           >
             All projects
           </Link>
         </div>
       </section>
-    </div>
+    </>
   );
 };
 

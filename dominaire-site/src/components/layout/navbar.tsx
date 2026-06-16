@@ -68,12 +68,19 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="sticky z-800 top-0 w-full flex justify-center items-center bg-background border-b border-b-border">
+      <div className="sticky z-800 top-0 h-16 w-full flex justify-center items-center bg-background border-b border-b-border">
         <div className="flex justify-between items-center w-full h-full pl-4">
           {/* Left */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-4">
             <MenuButton />
-            <Image src={"/logos/logo_1.svg"} height={128} width={128} alt="" />
+            <Link href={"/"}>
+              <Image
+                src={"/logos/logo_1.svg"}
+                height={128}
+                width={128}
+                alt=""
+              />
+            </Link>
           </div>
           {/* Right */}
           <div className="h-full w-full flex items-center justify-end gap-16 text-sm">
@@ -90,12 +97,12 @@ const Navbar = () => {
                 ))}
               </ul>
             </div>
-            <div className="flex items-center justify-center gap-4">
+            <div className="flex items-center justify-center h-full gap-4">
               <Link
                 href={"/contact-us"}
-                className="flex gap-2 justify-center items-center py-4 px-8 bg-primary"
+                className="flex gap-2 justify-center items-center h-full px-8 bg-primary"
               >
-                <p className="text-text res-text-base font-bold font-barlow-condensed uppercase text-lg">
+                <p className="text-text res-text-base font-bold font-barlow-condensed uppercase lg:text-lg">
                   Let&apos;s talk
                 </p>
                 <IoIosCall className="text-text text-2xl" />

@@ -29,7 +29,7 @@ const AccordionItem = ({
         onClick={() => onClick()}
         className="w-full pb-4 text-left flex justify-between"
       >
-        {title}
+        <h3>{title}</h3>
         <FaChevronLeft
           className={`text-text text-lg ${open ? "-rotate-90" : "rotate-0"} transition-all duration-300`}
         />

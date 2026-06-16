@@ -6,7 +6,7 @@ import { PROJECT_DATA } from "@/src/lib/data/projects";
 
 const LatestProjects = () => {
   return (
-    <div className="grid grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-24 lg:gap-8">
       {PROJECT_DATA.map((project, index) => (
         <LatestProjectCard
           key={index}

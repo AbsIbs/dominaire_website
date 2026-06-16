@@ -24,8 +24,8 @@ type AccordionItem = {
 // UI
 const AccordionTitle = ({ label }: AccordionTitle) => {
   return (
-    <div className="flex text-4xl items-center gap-2">
-      <p className="uppercase">{label}</p>
+    <div className="flex items-center gap-2">
+      <p className="uppercase res-text-38">{label}</p>
     </div>
   );
 };
