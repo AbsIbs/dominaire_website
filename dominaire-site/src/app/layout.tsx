@@ -16,9 +16,9 @@ const barlowFont = Barlow_Condensed({
 });
 
 export const metadata: Metadata = {
-  title: "Dominaire — Operational Engineering Partner",
+  title: "Dominaire — IT Consultancy",
   description:
-    "Dominaire eliminates operational inefficiencies with bespoke, data‑driven tools that help mid‑sized companies dominate their markets.",
+    "Dominaire is an IT Consultancy eliminates operational inefficiencies with bespoke, data‑driven tools that help mid‑sized companies dominate their markets.",
   keywords: [
     "Dominaire",
     "Operational Engineering",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Dominaire" }],
   openGraph: {
-    title: "Dominaire — Operational Engineering Partner",
+    title: "Dominaire — IT Consultancy",
     description:
       "We build bespoke digital systems that save time, reduce friction, and help companies dominate their markets.",
     url: "https://dominaire.io",
