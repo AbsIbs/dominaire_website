@@ -61,9 +61,8 @@ export default function Drawer({
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
           />
-
           <motion.div
-            className={`fixed ${position[anchor]} z-900`}
+            className={`fixed bg-red-900 ${position[anchor]} z-900`}
             variants={variants[anchor]}
             initial="initial"
             animate="animate"
