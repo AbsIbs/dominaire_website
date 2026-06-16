@@ -10,7 +10,7 @@ import { MdNorthEast } from "react-icons/md";
 const GetInTouch = () => {
   return (
     <section className="flex flex-col gap-24 items-center">
-      <div className="w-full">
+      <div className="hidden lg:block w-full">
         <TextSlider className={"h-25 md:h-50 lg:h-75"}>
           <span
             className={
@@ -26,11 +26,12 @@ const GetInTouch = () => {
         <div className="max-w-480 flex flex-col gap-8 text-text lg:flex-row lg:gap-0">
           <div
             id="contact"
-            className="flex-3 flex flex-col gap-16 border-r border-r-border pr-16"
+            className="flex-3 flex flex-col gap-16 lg:border-r lg:border-r-border lg:pr-16"
           >
             <TextReveal
               text="Contact us"
-              className="text-text font-extralight text-7xl leading-none tracking-wider"
+              as={"h2"}
+              className="text-text font-extralight leading-none tracking-wider"
             />
             <p className="text-xl">
               Looking to elevate your company to the next level? Reach out to us
@@ -44,18 +45,6 @@ const GetInTouch = () => {
                   EMAIL
                 </p>
                 <p className="text-xl">hello@dominaire.com</p>
-              </div>
-              <div className="flex flex-col gap-2">
-                <p className="text-xl text-textMuted font-light tracking-widest">
-                  INSTAGRAM
-                </p>
-                <Link
-                  href={"https://www.instagram.com/dominaire.edge/"}
-                  target="_blank"
-                  className="text-xl"
-                >
-                  dominaire.edge
-                </Link>
               </div>
             </div>
           </div>

@@ -37,7 +37,7 @@ const InputField = ({
 }: InputField) => {
   return (
     <div className="flex flex-col gap-4">
-      <div className="flex gap-6">
+      <div className="flex flex-col md:flex-row gap-6">
         <div className="h-full">
           <p
             className={`res-text-21 ${
@@ -48,15 +48,20 @@ const InputField = ({
           </p>
         </div>
         <div className="flex-1 flex-col flex gap-4">
-          <label className={`res-text-30 ${error && "text-red-900"}`}>
-            {label}
-          </label>
-          {children}
-          <div className="flex justify-between w-full res-text-21">
-            <p className={` text-red-700 ${error ? "block" : "invisible"}`}>
+          <div className="flex flex-col gap-2">
+            <label className={`res-text-30 ${error && "text-red-900"}`}>
+              {label}
+            </label>
+            <p
+              className={`res-text-21 text-red-900 ${error ? "block" : "invisible"}`}
+            >
               {errorLabel}
             </p>
-            <p className="res-text-21 text-text-normal-70">
+          </div>
+
+          {children}
+          <div className="flex justify-end w-full res-text-21">
+            <p className="text-text-normal-70">
               {length}/{maxLength}
             </p>
           </div>
@@ -309,7 +314,7 @@ const ContactForm = () => {
           />
         </InputField>
 
-        <button className="bg-primary flex justify-center items-center gap-4 rounded-full h-20 px-4 w-full">
+        <button className="bg-primary flex justify-center items-center gap-4 rounded-full h-14 md:h-20 px-4 w-full">
           {isPending ? (
             <Spinner spinnerColor="#fff" />
           ) : (

@@ -12,11 +12,11 @@ export const metadata = {
 const Page = async () => {
   return (
     <>
-      <section className="flex py-48 justify-center">
-        <div className="w-360 px-4 flex flex-col gap-48">
-          <p className="text-8xl font-light leading-tight">
+      <section className="flex section-padding justify-center">
+        <div className="w-360 flex flex-col gap-24 lg:gap-48">
+          <h2 className="font-light leading-tight">
             Let&apos;s build something great together
-          </p>
+          </h2>
           <ContactOptions />
           <div id="contact">
             <ContactForm />

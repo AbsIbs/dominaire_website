@@ -27,11 +27,11 @@ const Page = async ({ params }: Props) => {
 
   return (
     <>
-      <section className="flex py-48 justify-center">
+      <section className="flex section-padding justify-center">
         <div className="w-360 px-4 flex flex-col gap-24">
-          <p className="text-8xl font-light leading-tight">
+          <h1 className="font-light leading-tight">
             Our projects with {CLIENT_DATA[clientId].name}
-          </p>
+          </h1>
           <div className="grid gap-x-16 gap-y-12 md:gap-y-24 lg:gap-y-48 grid-cols-1 md:grid-cols-2">
             {clientProjects.map((project, index) => (
               <div key={index}>

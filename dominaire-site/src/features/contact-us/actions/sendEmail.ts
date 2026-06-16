@@ -32,37 +32,38 @@ const categories = [
 const contactFormSchema = z.object({
   categories: z
     .array(z.enum([...categories]))
-    .min(1, "Select at least one category"),
+    .min(1, "Select at least one category."),
 
   name: z
     .string()
-    .min(2, "Please enter at least 2 characters for your name")
-    .max(50, "Your name seems too long — keep it under 50 characters")
+    .min(2, "Please enter at least 2 characters for your name.")
+    .max(50, "Your name seems too long — keep it under 50 characters.")
     .regex(
       /^[a-zA-Z\s'-]+$/,
-      "Your name can only include letters, spaces, apostrophes, and hyphens",
+      "Your name can only include letters, spaces, apostrophes, and hyphen.s",
     ),
 
   email: z
-    .email("Hmm, that doesn’t look like a valid email address")
-    .max(100, "Email seems too long — under 100 characters works best"),
+    .email("Hmm, that doesn’t look like a valid email address.")
+    .max(100, "Email seems too long — under 100 characters works best."),
 
   organisation: z
     .string()
+    .min(3, "We expect your organisation to be at least 3 characters long.")
     .max(
       100,
-      "Whoa, that’s a lot! Keep your organisation name under 1000 characters",
+      "Please keep your organisation name under 1000 characters.",
     ),
 
   websiteUrl: z
-    .url()
-    .max(100, "Whoa, that’s a lot! Keep your url under 1000 characters")
+    .url("That does not look like a valid url.")
+    .max(100, "Please keep your url under 1000 characters.")
     .or(z.literal("")),
 
   message: z
     .string()
     .min(10, "Could you write a bit more? At least 10 characters please")
-    .max(1000, "Whoa, that’s a lot! Keep your message under 1000 characters"),
+    .max(1000, "Please keep your message under 1000 characters."),
 });
 
 export const sendEmail = async (

@@ -13,7 +13,7 @@ const ContactOptions = () => {
   const lenis = useLenis();
 
   return (
-    <div className="flex gap-8">
+    <div className="flex flex-col md:flex-row gap-8">
       <div className="flex-1 h-full p-8 rounded-2xl bg-surface border-white/10 border flex flex-col gap-8">
         <p className="text-primary uppercase font-barlow-condensed res-text-21">
           INSTANT BOOKING
