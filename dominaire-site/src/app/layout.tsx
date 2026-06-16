@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Dominaire — IT Consultancy",
     description:
       "We build bespoke digital systems that save time, reduce friction, and help companies dominate their markets.",
-    url: "https://dominaire.io",
+    url: "https://dominaire.com",
     siteName: "Dominaire",
     images: [
       {
