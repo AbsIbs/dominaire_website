@@ -5,7 +5,7 @@ import {
 } from "@/src/features/contact-us/components";
 
 export const metadata = {
-  title: "Get in touch",
+  title: "Get in touch with Domainaire",
   description: "Let's build something great together",
 };
 

@@ -7,7 +7,7 @@ import { ProjectCard } from "@/src/features/projects/components";
 
 export const metadata = {
   title: "Our projects",
-  description: "What we've done.",
+  description: "What Dominaire has done.",
 };
 
 // Types

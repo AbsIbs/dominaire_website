@@ -23,20 +23,31 @@ type Props = {
   params: Promise<{ clientId: ClientId; projectSlug: string }>;
 };
 
-/* export const generateMetadata = async ({ params }) => {
-  const title = params;
+export const generateMetadata = async ({ params }: Props) => {
+  const currentParams = await params;
+  const { clientId, projectSlug } = currentParams;
+
+  const clientData = CLIENT_DATA[clientId];
+  const projectData = PROJECT_DATA.find(
+    (project) => project.slug == projectSlug,
+  );
+
+  if (!projectData) {
+    notFound();
+  }
 
   return {
-    title: `${title.name} | Dominaire`,
-    description: `Our project with ${title.name}.`,
+    title: `${projectData.title} | A Dominaire Project`,
+    description: `A Dominaire project with ${clientData.name}.`,
   };
-}; */
+};
 
 const Page = async ({ params }: Props) => {
   const currentParams = await params;
   const { clientId, projectSlug } = currentParams;
 
   const clientData = CLIENT_DATA[clientId];
+
   const projectData = PROJECT_DATA.find(
     (project) => project.slug == projectSlug,
   );

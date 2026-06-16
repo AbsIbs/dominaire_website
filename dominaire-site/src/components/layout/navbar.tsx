@@ -73,7 +73,7 @@ const Navbar = () => {
             height={128}
             width={128}
             src={"/logos/Honeydew_1.svg"}
-            alt=""
+            alt="Dominaire Logo Honeydew color scheme"
           />
           <button
             onClick={toggleDrawer}

@@ -31,7 +31,7 @@ const Hero = () => {
         <Image
           fill
           style={{ objectFit: "cover" }}
-          alt=""
+          alt="White Book on Brown Wooden Table"
           src={
             "https://images.pexels.com/photos/5717271/pexels-photo-5717271.jpeg"
           }
