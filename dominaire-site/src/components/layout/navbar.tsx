@@ -54,9 +54,7 @@ const Navbar = () => {
               </li>
             ))}
             <Link href={"/contact-us"} onClick={toggleDrawer}>
-              <p className="text-3xl text-text font-extralight">
-                CONTACT
-              </p>
+              <p className="text-3xl text-text font-extralight">CONTACT</p>
             </Link>
           </ul>
         </div>
@@ -86,29 +84,39 @@ const Navbar = () => {
 
       {/* Desktop Navbar */}
       <nav className="sticky hidden z-800 top-0 h-16 w-full md:flex justify-center items-center bg-background border-b border-b-border">
-        <div className="h-full w-full flex items-center justify-end gap-16 text-sm">
-          <ul className="flex gap-12">
-            {menuItems.map((items, index) => (
-              <li key={index}>
-                <Link
-                  href={items.link}
-                  className="nav font-barlow-condensed text-lg font-semibold"
-                >
-                  <p>{items.label.toUpperCase()}</p>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <div className="flex items-center justify-center h-full gap-4">
-            <Link
-              href={"/contact-us"}
-              className="flex gap-2 justify-center items-center h-full px-8 bg-primary"
-            >
-              <p className="text-text res-text-base font-bold font-barlow-condensed uppercase lg:text-lg">
-                Let&apos;s talk
-              </p>
-              <IoIosCall className="text-text text-2xl" />
-            </Link>
+        <div className="h-full w-full flex items-center justify-between gap-16 text-sm">
+          <div className="px-4">
+            <Image
+              height={128}
+              width={128}
+              src={"/logos/Honeydew_1.svg"}
+              alt="Dominaire Logo Honeydew color scheme"
+            />
+          </div>
+          <div className="items h-full flex items-center gap-12">
+            <ul className="flex gap-12">
+              {menuItems.map((items, index) => (
+                <li key={index}>
+                  <Link
+                    href={items.link}
+                    className="nav font-barlow-condensed text-lg font-semibold"
+                  >
+                    <p>{items.label.toUpperCase()}</p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <div className="flex items-center justify-center h-full gap-4">
+              <Link
+                href={"/contact-us"}
+                className="flex gap-2 justify-center items-center h-full px-8 bg-primary"
+              >
+                <p className="text-text res-text-base font-bold font-barlow-condensed uppercase lg:text-lg">
+                  Let&apos;s talk
+                </p>
+                <IoIosCall className="text-text text-2xl" />
+              </Link>
+            </div>
           </div>
         </div>
       </nav>
